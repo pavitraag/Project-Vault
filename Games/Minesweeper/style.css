@@ -1,0 +1,184 @@
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ef 0%, #b6c6e0 100%);
+}
+
+h1 {
+  margin-bottom: 28px;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: #2d3a4a;
+  text-shadow: 0 2px 8px #fff, 0 1px 0 #b6c6e0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+footer {
+  margin-top: 36px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credits {
+  color: #6a7ba2;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.85;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 44px);
+  gap: 6px;
+  margin-bottom: 28px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px #b6c6e0, 0 1.5px 0 #fff;
+  padding: 18px;
+  border: 2px solid #b6c6e0;
+}
+
+.cell {
+  width: 44px;
+  height: 44px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px #b6c6e0;
+  overflow: hidden;
+  background: linear-gradient(145deg, #e3eaf6 60%, #c7d3ea 100%);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  border: 1.5px solid #b6c6e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell:hover {
+  background: linear-gradient(145deg, #d1d9e6 60%, #b6c6e0 100%);
+  box-shadow: 0 2px 8px #b6c6e0;
+  transform: scale(1.06);
+  z-index: 2;
+}
+
+.cell:active {
+  background: #b6c6e0;
+  box-shadow: 0 1px 2px #b6c6e0;
+}
+
+.cell input {
+  display: none;
+}
+
+.cell span {
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-shadow: 0 1px 4px #b6c6e0;
+  border: 1.5px solid #b6c6e0;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  animation: reveal 0.3s cubic-bezier(.4,2,.6,1) 1;
+}
+
+@keyframes reveal {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.cell input:checked + span {
+  display: flex;
+}
+
+.cell[data-type="mine"] input:checked + span {
+  color: #e53935;
+  background: #ffe5e5;
+  font-size: 1.5rem;
+  text-shadow: 0 2px 8px #fff;
+}
+
+.cell[data-type="number"][data-count="1"] input:checked + span { color: #1976d2; }
+.cell[data-type="number"][data-count="2"] input:checked + span { color: #388e3c; }
+.cell[data-type="number"][data-count="3"] input:checked + span { color: #d32f2f; }
+.cell[data-type="number"][data-count="4"] input:checked + span { color: #7b1fa2; }
+.cell[data-type="number"][data-count="5"] input:checked + span { color: #fbc02d; }
+.cell[data-type="number"][data-count="6"] input:checked + span { color: #0097a7; }
+.cell[data-type="number"][data-count="7"] input:checked + span { color: #616161; }
+.cell[data-type="number"][data-count="8"] input:checked + span { color: #c2185b; }
+
+button {
+  background: linear-gradient(90deg, #e3eaf6 60%, #b6c6e0 100%);
+  color: #2d3a4a;
+  border: 2px solid #b6c6e0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 10px 32px;
+  margin: 0 8px;
+  box-shadow: 0 2px 8px #b6c6e0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+button:hover {
+  background: #b6c6e0;
+  color: #fff;
+  box-shadow: 0 4px 16px #b6c6e0;
+}
+
+/* Game Over overlay logic */
+#gameover-toggle {
+  display: none;
+}
+#gameover-toggle:checked ~ .gameover {
+  display: flex;
+}
+.gameover {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44,62,80,0.92);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  color: #fff;
+  font-size: 2.5rem;
+  flex-direction: column;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #000, 0 1px 0 #b6c6e0;
+}
+.gameover button {
+  margin-top: 28px;
+  font-size: 1.3rem;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  background: #fff;
+  color: #e53935;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #b6c6e0;
+  transition: background 0.2s, color 0.2s;
+}
+.gameover button:hover {
+  background: #e53935;
+  color: #fff;
+}
