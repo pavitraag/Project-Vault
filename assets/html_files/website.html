@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <title>Websites - Project Vault</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
   <header>
     <h1>🌐Webfolio</h1>
-    <a href="/index.html" class="back-button">← Back to Home</a>
+    <a href="../../index.html" class="back-button">← Back to Home</a>
   </header>
   <main class="category-container">
     <div class="category-card">
@@ -26,7 +26,7 @@
 </body>
 <div id="footer-placeholder"></div>
 <script>
-  fetch("/footer.html")
+  fetch("../../footer.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
