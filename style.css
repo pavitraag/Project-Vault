@@ -22,9 +22,11 @@ nav {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1rem 2rem;
   position: sticky;
+ 
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
 /* Header */
 header {
   background: linear-gradient(to right, #3f51b5, #5a55ae); /* Deep indigo gradient */
@@ -46,6 +48,7 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10rem;
 }
 
 .nav-logo {
@@ -245,9 +248,8 @@ nav {
 }
 
 .mobile-menu.active {
-  left: 0;
-nav a,
-nav .dropdown-content a {
+  left: 0;}
+nav a,nav .dropdown-content a {
   color: #fff;
   text-decoration: none;
   margin: 0 1rem;
