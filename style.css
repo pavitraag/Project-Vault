@@ -247,6 +247,7 @@ nav {
 
 .mobile-menu.active {
   left: 0;
+}
 nav a,
 nav .dropdown-content a {
   color: #fff;
