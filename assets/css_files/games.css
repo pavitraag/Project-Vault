@@ -162,8 +162,8 @@ main {
   opacity: 0.85;
 }
 
-/* Enhanced Play Button */
-.play-button {
+/* Enhanced Play Button, Code Button*/
+.play-button, .code-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -179,7 +179,7 @@ main {
   font-size: 0.95rem;
 }
 
-.play-button::before {
+.play-button::before, .code-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -190,11 +190,11 @@ main {
   transition: left 0.5s;
 }
 
-.play-button:hover::before {
+.play-button:hover::before, .code-button:hover::before {
   left: 100%;
 }
 
-.play-button:hover {
+.play-button:hover, .code-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
   background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
@@ -206,7 +206,7 @@ main {
   transition: transform 0.3s ease;
 }
 
-.play-button:hover::after {
+.play-button:hover::after, .code-button:hover::after {
   transform: scale(1.2) rotate(10deg);
 }
 
