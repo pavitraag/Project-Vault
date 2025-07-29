@@ -920,7 +920,6 @@ footer::before {
     transform: translateY(0);
   }
 }
-
 .loading {
   display: inline-block;
   width: 20px;
@@ -930,5 +929,3 @@ footer::before {
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
 }
-
-
