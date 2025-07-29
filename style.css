@@ -898,3 +898,36 @@ footer::before {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  padding: 12px 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 600;
+  background-color: #4caf50; /* success default */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  animation: fadein 0.5s ease, fadeout 0.5s ease 2.5s;
+}
+
+.toast-error {
+  background-color: #f44336;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-20px); }
+}

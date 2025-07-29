@@ -63,18 +63,16 @@ document.addEventListener("DOMContentLoaded", () => {
     e.stopPropagation();
   });
 
-
-
-
   // --- Contact Form Handling ---
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
-       if (!this.checkValidity()) {
-    this.reportValidity();  // Show native browser messages
-    return;
-       }
+      if (!this.checkValidity()) {
+        this.reportValidity(); // Show native browser messages
+        return;
+      }
+
       const formData = new FormData(this);
       const button = this.querySelector('button[type="submit"]');
       const buttonText = button.querySelector(".button-text");
@@ -92,59 +90,94 @@ document.addEventListener("DOMContentLoaded", () => {
         loading.style.display = "none";
         button.disabled = false;
 
-        alert("Thank you for your message! We'll get back to you soon.");
+        showToast("Thank you for your message! We'll get back to you soon.");
       }, 2000);
     });
   }
-const NUM_TRAILS = 30;
-const snakeDots = [];
 
-for (let i = 0; i < NUM_TRAILS; i++) {
-  const dot = document.createElement("div");
-  dot.classList.add("snake-dot");
-  document.body.appendChild(dot);
-  snakeDots.push({
-    el: dot,
-    x: window.innerWidth / 2,
-    y: window.innerHeight / 2,
-    scale: 1 - i * 0.02,
-    opacity: 1 - i * 0.02
+  // --- Toast Notification ---
+  function showToast(message) {
+    let toastContainer = document.getElementById("toast-container");
+
+    if (!toastContainer) {
+      toastContainer = document.createElement("div");
+      toastContainer.id = "toast-container";
+      toastContainer.style.position = "fixed";
+      toastContainer.style.top = "20px";
+      toastContainer.style.right = "20px";
+      toastContainer.style.zIndex = "10000";
+      document.body.appendChild(toastContainer);
+    }
+
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.textContent = message;
+
+    Object.assign(toast.style, {
+      backgroundColor: "#28a745",
+      color: "#fff",
+      padding: "12px 20px",
+      borderRadius: "5px",
+      marginTop: "10px",
+      opacity: "0.95",
+      animation: "fadein 0.5s, fadeout 0.5s 2.5s",
+    });
+
+    toastContainer.appendChild(toast);
+
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  }
+
+  // --- Snake Cursor Trail ---
+  const NUM_TRAILS = 30;
+  const snakeDots = [];
+
+  for (let i = 0; i < NUM_TRAILS; i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("snake-dot");
+    document.body.appendChild(dot);
+    snakeDots.push({
+      el: dot,
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2,
+      scale: 1 - i * 0.02,
+      opacity: 1 - i * 0.02
+    });
+  }
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   });
-}
 
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
+  function animateSnakeCursor() {
+    let x = mouseX;
+    let y = mouseY;
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
+    snakeDots.forEach((dot, i) => {
+      const next = snakeDots[i + 1] || { x, y };
 
-function animateSnakeCursor() {
-  let x = mouseX;
-  let y = mouseY;
+      dot.x += (x - dot.x) * 0.35;
+      dot.y += (y - dot.y) * 0.35;
 
-  snakeDots.forEach((dot, i) => {
-    const next = snakeDots[i + 1] || { x, y };
+      dot.el.style.left = `${dot.x}px`;
+      dot.el.style.top = `${dot.y}px`;
+      dot.el.style.transform = `translate(-50%, -50%) scale(${dot.scale})`;
+      dot.el.style.opacity = dot.opacity;
 
-    // Faster follow speed
-    dot.x += (x - dot.x) * 0.35;
-    dot.y += (y - dot.y) * 0.35;
+      x = dot.x;
+      y = dot.y;
+    });
 
-    dot.el.style.left = `${dot.x}px`;
-    dot.el.style.top = `${dot.y}px`;
-    dot.el.style.transform = `translate(-50%, -50%) scale(${dot.scale})`;
-    dot.el.style.opacity = dot.opacity;
+    requestAnimationFrame(animateSnakeCursor);
+  }
 
-    x = dot.x;
-    y = dot.y;
-  });
-
-  requestAnimationFrame(animateSnakeCursor);
-}
-
-animateSnakeCursor();
-
+  animateSnakeCursor();
 
   // --- Set Current Year ---
   const currentYearElement = document.getElementById("currentYear");
@@ -152,16 +185,16 @@ animateSnakeCursor();
     currentYearElement.textContent = new Date().getFullYear();
   }
 });
+
 const currentPath = window.location.pathname.split("/").pop();
 
-// Navbar
 document
   .querySelectorAll(".nav-link, .mobile-menu-link, .footer-ul li a")
   .forEach((link) => {
     if (link.getAttribute("href").includes(currentPath)) {
       link.classList.add("active");
     }
-    // Highlight dropdown 'Components' if any of its child pages is active
+
     const componentPages = ["website.html", "games.html", "ml.html"];
     const dropdownToggle = document.querySelector(".dropdown-toggle");
 
