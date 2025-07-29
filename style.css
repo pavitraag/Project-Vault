@@ -295,6 +295,11 @@ nav a:hover,
 .mobile-menu-link:hover {
   background: rgba(255, 255, 255, 0.1);
 }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+
 #toast-container {
   position: fixed;
   top: 20px;
@@ -924,10 +929,6 @@ footer::before {
   border-radius: 50%;
   border-top-color: #fff;
   animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
 
 
