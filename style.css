@@ -295,71 +295,7 @@ nav a:hover,
 .mobile-menu-link:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
 
-
-#toast-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-}
-
-.toast {
-  padding: 12px 20px;
-  margin-top: 10px;
-  border-radius: 6px;
-  color: white;
-  font-weight: 600;
-  background-color: #4caf50; /* success default */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  animation: fadein 0.5s ease, fadeout 0.5s ease 2.5s;
-}
-
-.toast-error {
-  background-color: #f44336;
-}
-
-@keyframes fadein {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeout {
-  from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(-20px); }
-}
-
-/* Header */
-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #ffffff;
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-header::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  animation: float 20s ease-in-out infinite;
-  opacity: 0.3;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-  25% { transform: translateX(-20px) translateY(-20px) rotate(90deg); }
-  50% { transform: translateX(20px) translateY(-10px) rotate(180deg); }
-  75% { transform: translateX(-10px) translateY(20px) rotate(270deg); }
-}
 
 header h1 {
   font-size: clamp(2rem, 5vw, 4rem);
