@@ -14,6 +14,7 @@ draw = mp.solutions.drawing_utils
 cam = cv2.VideoCapture(0)
 last = time.time()
 cool = 1.5
+prev_gesture = None  #Keep track of last gesture
 name = "Snake_Window"
 cv2.namedWindow(name)
 
@@ -41,10 +42,10 @@ while True:
             draw.draw_landmarks(img, hand, mp_hands.HAND_CONNECTIONS)
             f = fingers_up(hand.landmark)
             g = detect(f)
-
-            if g and time.time() - last > cool:
+            if g and (g != prev_gesture or time.time() - last > cool):
                 pyautogui.press(g)
                 last = time.time()
+                prev_gesture = g  #updates last gesture
 
     #instructions
     for i, text in enumerate(instructions):
