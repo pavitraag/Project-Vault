@@ -1,0 +1,572 @@
+/* Glassmorphism Base Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Animated Background */
+.animate-gradient {
+    animation: gradient-shift 8s ease-in-out infinite;
+}
+
+.animate-gradient-reverse {
+    animation: gradient-shift-reverse 10s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.1); }
+}
+
+@keyframes gradient-shift-reverse {
+    0%, 100% { opacity: 0.5; transform: scale(1.1); }
+    50% { opacity: 0.7; transform: scale(1); }
+}
+
+/* Floating Animations */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 8s ease-in-out infinite 2s;
+}
+
+.animate-float-slow {
+    animation: float 10s ease-in-out infinite 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Glass Button */
+.glass-button {
+    position: relative;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 12px 24px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.glass-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.glass-button:active {
+    transform: translateY(0);
+}
+
+.button-glow {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.glass-button:hover .button-glow {
+    left: 100%;
+}
+
+/* Stats Styling */
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Game Board Container */
+.game-board-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    touch-action: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Enhanced Candy Styles */
+.candy {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.4),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-image: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+    background-size: 60% 60%, 100% 100%;
+}
+
+.candy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.6) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.4) 0%, transparent 40%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.candy::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 20%;
+    height: 20%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.candy:hover::before {
+    opacity: 1;
+}
+
+/* Candy Colors with Enhanced Candy Effects */
+.candy.red {
+    background: 
+        radial-gradient(circle at 25% 25%, #ff9a9a 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, #ff6b6b 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #ff4757 0%, transparent 60%),
+        linear-gradient(135deg, #ff6b6b 0%, #ee5a52 30%, #ff4757 70%, #ff3742 100%);
+    box-shadow: 
+        0 4px 8px rgba(255, 107, 107, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candy.blue {
+    background: 
+        radial-gradient(circle at 25% 25%, #74b9ff 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, #4ecdc4 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #0984e3 0%, transparent 60%),
+        linear-gradient(135deg, #4ecdc4 0%, #44a08d 30%, #0984e3 70%, #00a8ff 100%);
+    box-shadow: 
+        0 4px 8px rgba(78, 205, 196, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candy.green {
+    background: 
+        radial-gradient(circle at 25% 25%, #a8e6cf 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, #88d8c0 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #00b894 0%, transparent 60%),
+        linear-gradient(135deg, #a8e6cf 0%, #88d8c0 30%, #00b894 70%, #00cec9 100%);
+    box-shadow: 
+        0 4px 8px rgba(168, 230, 207, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candy.yellow {
+    background: 
+        radial-gradient(circle at 25% 25%, #ffeaa7 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, #ffd93d 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #fdcb6e 0%, transparent 60%),
+        linear-gradient(135deg, #ffd93d 0%, #ffb347 30%, #fdcb6e 70%, #ffa502 100%);
+    box-shadow: 
+        0 4px 8px rgba(255, 217, 61, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candy.purple {
+    background: 
+        radial-gradient(circle at 25% 25%, #e056fd 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, #d4a5ff 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #a29bfe 0%, transparent 60%),
+        linear-gradient(135deg, #d4a5ff 0%, #b19cd9 30%, #a29bfe 70%, #6c5ce7 100%);
+    box-shadow: 
+        0 4px 8px rgba(212, 165, 255, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.candy.orange {
+    background: 
+        radial-gradient(circle at 25% 25%, #ffa726 0%, transparent 40%),
+        radial-gradient(circle at 75% 75%, #ff9a56 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, #ff7043 0%, transparent 60%),
+        linear-gradient(135deg, #ff9a56 0%, #ff7f50 30%, #ff7043 70%, #ff5722 100%);
+    box-shadow: 
+        0 4px 8px rgba(255, 154, 86, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Special Candy Types */
+.candy.striped {
+    background: 
+        linear-gradient(45deg, 
+            rgba(255, 255, 255, 0.5) 25%, 
+            transparent 25%, 
+            transparent 50%, 
+            rgba(255, 255, 255, 0.5) 50%, 
+            rgba(255, 255, 255, 0.5) 75%, 
+            transparent 75%, 
+            transparent),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+    background-size: 20px 20px, 60% 60%, 100% 100%, 80% 80%;
+    animation: striped-animation 1.5s linear infinite;
+    box-shadow: 
+        0 6px 12px rgba(255, 255, 255, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.candy.wrapped {
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 1) 0%, transparent 50%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.6) 0%, transparent 70%),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.8) 0%, transparent 40%);
+    background-size: 60% 60%, 100% 100%, 80% 80%, 40% 40%;
+    animation: wrapped-animation 2.5s ease-in-out infinite;
+    box-shadow: 
+        0 8px 16px rgba(255, 255, 255, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Enhanced Candy States */
+.candy:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.7),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.candy.selected {
+    transform: scale(1.25) rotate(8deg);
+    box-shadow: 
+        0 0 30px rgba(255, 255, 255, 0.9),
+        0 0 60px rgba(255, 255, 255, 0.6),
+        0 0 90px rgba(255, 255, 255, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.8),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    animation: candy-pulse 0.6s ease-in-out infinite alternate;
+}
+
+.candy.matched {
+    animation: enhanced-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Enhanced Animations */
+@keyframes enhanced-pop {
+    0% { 
+        transform: scale(1) rotate(0deg); 
+        opacity: 1; 
+        filter: brightness(1);
+    }
+    25% { 
+        transform: scale(1.3) rotate(90deg); 
+        opacity: 0.9; 
+        filter: brightness(1.2);
+    }
+    50% { 
+        transform: scale(1.5) rotate(180deg); 
+        opacity: 0.7; 
+        filter: brightness(1.5);
+    }
+    100% { 
+        transform: scale(0) rotate(360deg); 
+        opacity: 0; 
+        filter: brightness(0);
+    }
+}
+
+@keyframes striped-animation {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+@keyframes wrapped-animation {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(10deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes candy-pulse {
+    0% { 
+        transform: scale(1.25) rotate(8deg);
+        box-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.9),
+            0 0 60px rgba(255, 255, 255, 0.6),
+            0 0 90px rgba(255, 255, 255, 0.3);
+    }
+    100% { 
+        transform: scale(1.3) rotate(8deg);
+        box-shadow: 
+            0 0 40px rgba(255, 255, 255, 1),
+            0 0 80px rgba(255, 255, 255, 0.8),
+            0 0 120px rgba(255, 255, 255, 0.5);
+    }
+}
+
+/* Instructions Styling */
+.instruction-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.98);
+    font-size: 15px;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.instruction-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Legend Styling */
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.legend-candy {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.striped-preview {
+    background: 
+        linear-gradient(45deg, 
+            rgba(255, 255, 255, 0.4) 25%, 
+            transparent 25%, 
+            transparent 50%, 
+            rgba(255, 255, 255, 0.4) 50%, 
+            rgba(255, 255, 255, 0.4) 75%, 
+            transparent 75%, 
+            transparent),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+        linear-gradient(135deg, #d4a5ff 0%, #b19cd9 50%, #a29bfe 100%);
+    background-size: 16px 16px, 60% 60%, 100% 100%;
+    animation: striped-animation 2s linear infinite;
+    box-shadow: 
+        0 2px 4px rgba(212, 165, 255, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.wrapped-preview {
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%),
+        linear-gradient(135deg, #d4a5ff 0%, #b19cd9 50%, #a29bfe 100%);
+    background-size: 60% 60%, 100% 100%, 80% 80%, 100% 100%;
+    animation: wrapped-animation 3s ease-in-out infinite;
+    box-shadow: 
+        0 2px 4px rgba(212, 165, 255, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.legend-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Scoring Styling */
+.scoring-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.scoring-item:last-child {
+    border-bottom: none;
+}
+
+.scoring-points {
+    font-weight: 700;
+    color: #ffd93d;
+    font-size: 18px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 217, 61, 0.4);
+}
+
+.scoring-text {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    
+    .candy {
+        border-radius: 12px;
+    }
+    
+    .game-board-container {
+        gap: 2px;
+        padding: 12px;
+    }
+    
+    .stat-value {
+        font-size: 24px;
+    }
+    
+    h1 {
+        font-size: 3rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .glass-card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .candy {
+        border-radius: 8px;
+    }
+    
+    .game-board-container {
+        gap: 1px;
+        padding: 8px;
+    }
+    
+    .stat-value {
+        font-size: 20px;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+} 

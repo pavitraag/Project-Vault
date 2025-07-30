@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="typing-test">
+            <div class="header">
+                <h1>Typing Speed Test</h1>
+                <p class="subtitle">Test your typing skills and improve your WPM</p>
+            </div>
+            
+            <div class="content-area">
+                <div class="quote-text" tabindex="0" id="quote"></div>
+                <input type="text" class="hidden-input" id="input">
+                
+                <div class="stats-panel">
+                    <div class="stat-box">
+                        <div class="stat-label">WPM</div>
+                        <div class="stat-value" id="wpm">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">CPM</div>
+                        <div class="stat-value" id="cpm">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Mistakes</div>
+                        <div class="stat-value" id="mistakes">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Time</div>
+                        <div class="stat-value" id="time">60</div>
+                    </div>
+                </div>
+                
+                <button class="btn restart-btn" id="restart">Try Again</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

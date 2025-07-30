@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #dac8f7;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #bfcddb;
+  padding: 25px 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.header h1 {
+  color: #6c548a;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+.subtitle {
+  color: #928aac;
+  font-size: 16px;
+}
+
+.level-display {
+  text-align: center;
+  margin: 13px 0;
+  color: #8c7aad;
+  font-size: 15px;
+}
+
+.level-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.level-btn {
+  background: #ede4fe;
+  color: #7f67a3;
+  border: 2px solid #a799d9;
+  border-radius: 14px;
+  padding: 8px 12px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.level-btn.active,
+.level-btn:hover {
+  background: #7f67a3;
+  color: #fff;
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.quote-text {
+  background: #f0eaff;
+  border: 2px solid #cbbdf7;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 17px;
+  min-height: 90px;
+  cursor: pointer;
+  font-family: monospace;
+}
+
+/* Correct & incorrect styles for green and red */
+.quote-text span.correct {
+  background: #e3fbe6;
+  color: #1db954;
+}
+.quote-text span.incorrect {
+  background: #ffeaea;
+  color: #d90000;
+}
+.quote-text span.active {
+  background: #e8e0fb;
+  color: #715ca9;
+  border-bottom: 2px solid #715ca9;
+}
+
+.stats-panel {
+  display: flex;
+  gap: 13px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.stat-box {
+  background: #f0ebff;
+  border: 1px solid #d8cfff;
+  border-radius: 9px;
+  padding: 8px 5px;
+  flex: 1;
+  text-align: center;
+}
+.stat-label {
+  font-size: 12px;
+  color: #6e5e8b;
+}
+.stat-value {
+  font-size: 17px;
+  color: #6c548a;
+  font-weight: bold;
+}
+
+.restart-btn {
+  margin: 0 auto;
+  display: block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 16px;
+  background: #715ca9;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.restart-btn:hover {
+  background: #513b7f;
+}
+
+@media (max-width: 700px) {
+  .container { padding: 12px 6px; }
+  .header h1 { font-size: 18px; }
+  .quote-text { font-size: 13px; padding: 10px;}
+}

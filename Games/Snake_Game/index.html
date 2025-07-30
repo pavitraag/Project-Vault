@@ -54,11 +54,26 @@
   .overlay button:hover {
     background-color: #388E3C;
   }
-    </style>
+
+  #startBtn, #pauseBtn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 1px;
+    background-color: #222;
+    color: white;
+    transition: background-color 0.2s;
+  }
+  </style>
 </head>
 <body>
     <h1>Snake Game</h1>
     <canvas id="game" width="400" height="400"></canvas>
+ 
+    <h2 id="instruction" style="margin-top: 40px;">Use the arrow keys to control the snake.</h2>
+    <p id="note" style="margin-top: 5px;">Speed increases each time you eat an apple! Good Luck!</p>
+    <button id="startBtn" style="margin-top: 10px;">Start Game</button>
+    <button id="pauseBtn" style="margin-top: 40px; display:none;">Pause</button>
 
 <div id="gameOverOverlay" class="overlay hidden">
   <h2>Game Over!</h2>

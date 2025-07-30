@@ -37,9 +37,25 @@ const overlay = document.getElementById("gameOverOverlay");
 const restartBtn = document.getElementById("restartBtn");
 const exitBtn = document.getElementById("exitBtn");
 
+const pauseBtn = document.getElementById("pauseBtn");
+let isPaused = false;
+let gameTimeoutId = null;
+
+// Pause button event
+pauseBtn.addEventListener("click", () => {
+  isPaused = !isPaused;
+  pauseBtn.textContent = isPaused ? "Resume" : "Pause";
+  if (!isPaused) {
+    drawGame();
+  } else if (gameTimeoutId) {
+    clearTimeout(gameTimeoutId);
+  }
+});
 
 //game loop
 function drawGame() {
+  if (isPaused) return;
+
   xVelocity = inputsXVelocity;
   yVelocity = inputsYVelocity;
 
@@ -64,7 +80,7 @@ function drawGame() {
     speed = 11;
   }
 
-  setTimeout(drawGame, 1000 / speed);
+  gameTimeoutId = setTimeout(drawGame, 1000 / speed);
 }
 
 function isGameOver() {
@@ -144,6 +160,7 @@ function checkAppleCollision() {
     tailLength++;
     score++;
     gulpSound.play();
+    speed++; //To increase the level of difficulty
   }
 }
 
@@ -183,13 +200,57 @@ function keyDown(event) {
   }
 }
 
-drawGame()
-// Handle Restart and Exit button actions
-restartBtn.addEventListener("click", () => {
-  location.reload(); // Restart the game
-});
 
 exitBtn.addEventListener("click", () => {
-  window.location.href = "../../index.html";  // Updated path
+  window.location.href = "../../index.html";  
 });
 ;
+
+const startBtn = document.getElementById("startBtn");
+// Start the game when Start button is clicked
+startBtn.addEventListener("click", () => {
+  startGame();
+});  
+
+// Restart the game when Restart button is clicked
+restartBtn.addEventListener("click", () => {
+  startGame();
+});
+
+function startGame() {
+  headX = 10;
+  headY = 10;
+  snakeParts = [];
+  tailLength = 2;
+  appleX = 5;
+  appleY = 5;
+  inputsXVelocity = 1;
+  inputsYVelocity = 0;
+  xVelocity = 0;
+  yVelocity = 0;
+  score = 0;
+  speed = 3;
+  overlay.classList.add("hidden"); 
+
+  // Gets hidden once the game start
+  startBtn.style.display = "none";
+  instruction.style.display = "none";
+  note.style.display = "none";
+  pauseBtn.style.display = "block";  
+
+  isPaused = false;
+  pauseBtn.textContent = "Pause";
+
+  drawGame();
+}
+
+startBtn.addEventListener("click", startGame);
+
+function drawInitialBoard() {
+  clearScreen();
+  drawApple();
+  drawSnake();
+  drawScore();
+}
+
+drawInitialBoard();

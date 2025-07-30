@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Project Vault</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-        rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
     />
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="../css_files/aboutus.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-header">
@@ -35,23 +35,61 @@
                     <a href="./website.html" class="mobile-menu-link">Webfolio</a>
                     <a href="./games.html" class="mobile-menu-link">Games</a>
                     <a href="./ml.html" class="mobile-menu-link">ML Projects</a>
+                    <a href="./techStack.html" class="mobile-menu-link"><i class="fa-solid fa-search"></i> by Tech Stack</a>
                 </div>
             </div>
 
             <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+            <a href="./discussion.html" class="mobile-menu-link"><i class="fa-solid fa-comment"></i> Forum</a>
             <a href="./contact.html" class="mobile-menu-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      <div class="mobile-menu-header">
+        <div class="nav-logo">Project Vault</div>
+        <div class="mobile-menu-close" id="mobileMenuClose">&times;</div>
+      </div>
+      <div class="mobile-menu-items">
+        <a href="../../index.html" class="mobile-menu-link"
+          ><i class="fa-solid fa-house"></i> Home</a
+        >
+        <a href="./aboutus.html" class="mobile-menu-link"
+          ><i class="fa-solid fa-circle-info"></i> About Us</a
+        >
+
+
+            <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+            <a href="./discussion.html" class="mobile-menu-link"><i class="fa-solid fa-comment"></i> Forum</a>
+            <a href="./contact.html" class="mobile-menu-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+
+        <div class="mobile-submenu">
+          <div class="mobile-menu-link submenu-toggle">
+            <i class="fa-solid fa-icons"></i> Components
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </div>
+          <div class="submenu-items">
+            <a href="./website.html" class="mobile-menu-link">Webfolio</a>
+            <a href="./games.html" class="mobile-menu-link">Games</a>
+            <a href="./ml.html" class="mobile-menu-link">ML Projects</a>
+          </div>
+
         </div>
+
+        <a href="../../faq.html" class="mobile-menu-link"
+          ><i class="fa-solid fa-question-circle"></i> FAQ</a
+        >
+        <a href="./contact.html" class="mobile-menu-link"
+          ><i class="fa-solid fa-phone"></i> Contact Us</a
+        >
+      </div>
     </div>
 
     <nav>
-        <div class="nav-container">
-            <div class="nav-logo">Project Vault</div>
+      <div class="nav-container">
+        <div class="nav-logo">Project Vault</div>
 
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
             <div class="nav-right">
                 <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
@@ -62,175 +100,266 @@
                         <a href="./website.html">Webfolio</a>
                         <a href="./games.html">Games</a>
                         <a href="./ml.html">ML Projects</a>
+                        <a href="./techStack.html"><i class="fa-solid fa-search"></i> by Tech Stack</a>
                     </div>
                 </div>
                 <a href="../../faq.html" class="nav-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+                <a href="./discussion.html" class="nav-link"><i class="fa-solid fa-comment"></i> Forum</a>
                 <a href="./contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+        <div class="nav-right">
+          <a href="../../index.html" class="nav-link"
+            ><i class="fa-solid fa-house"></i> Home</a
+          >
+          <a href="./aboutus.html" class="nav-link active"
+            ><i class="fa-solid fa-circle-info"></i> About Us</a
+          >
+          <div class="dropdown">
+            <div class="dropdown-toggle nav-link">
+              <i class="fa-solid fa-icons"></i> Components ▾
+
             </div>
+            <div class="dropdown-content">
+              <a href="./website.html">Webfolio</a>
+              <a href="./games.html">Games</a>
+              <a href="./ml.html">ML Projects</a>
+            </div>
+          </div>
+          <a href="../../faq.html" class="nav-link"
+            ><i class="fa-solid fa-question-circle"></i> FAQ</a
+          >
+          <a href="./contact.html" class="nav-link"
+            ><i class="fa-solid fa-phone"></i> Contact Us</a
+          >
         </div>
+      </div>
     </nav>
 
     <header class="about-header">
-        <div class="header-content">
-            <h1 class="main-title">About Project Vault</h1>
-            <p class="subtitle">Empowering developers with curated collections of innovative projects</p>
-        </div>
-        <div class="header-decoration">
-            <div class="floating-icon"><i class="fa-solid fa-code"></i></div>
-            <div class="floating-icon"><i class="fa-solid fa-gamepad"></i></div>
-            <div class="floating-icon"><i class="fa-solid fa-robot"></i></div>
-        </div>
+      <div class="header-content">
+        <h1 class="main-title">About Project Vault</h1>
+        <p class="subtitle">
+          Empowering developers with curated collections of innovative projects
+        </p>
+      </div>
+      <div class="header-decoration">
+        <div class="floating-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-gamepad"></i></div>
+        <div class="floating-icon"><i class="fa-solid fa-robot"></i></div>
+      </div>
     </header>
 
     <main class="about-main">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-card introduction-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <h2>Introduction</h2>
-                    <p>Welcome to Project Vault! Your go-to destination for a rich collection of web, game, and machine learning projects. Project Vault empowers learners and developers to explore, build, and get inspired by real-world implementations.</p>
-                </div>
-
-                <div class="about-card background-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-                    <h2>Our Vision</h2>
-                    <p>Project Vault was created with the vision of organizing and showcasing projects that span across different domains of web development and AI. Whether you're just starting or are a seasoned developer, this platform offers something to ignite your curiosity and creativity.</p>
-                </div>
-
-                <div class="about-card collection-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-compass"></i>
-                    </div>
-                    <h2>Explore Our Collection</h2>
-                    <p>Dive into fully responsive websites, engaging JavaScript games, and practical ML applications. Each project is crafted to help you learn, adapt, and apply technology with clarity and confidence.</p>
-                </div>
-
-                <div class="about-card connect-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <h2>Connect with Us</h2>
-                    <p>We're always excited to connect with passionate individuals in tech. Whether you're interested in collaboration, feedback, or just exchanging ideas, don't hesitate to reach out. Together, let's build a community where learning never stops!</p>
-                </div>
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-card introduction-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-star"></i>
             </div>
+            <h2>Introduction</h2>
+            <p>
+              Welcome to Project Vault! Your go-to destination for a rich
+              collection of web, game, and machine learning projects. Project
+              Vault empowers learners and developers to explore, build, and get
+              inspired by real-world implementations.
+            </p>
+          </div>
 
-            <div class="stats-section">
-                <h2 class="section-title">Project Vault by Numbers</h2>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Categories</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Open Source</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">∞</div>
-                        <div class="stat-label">Learning</div>
-                    </div>
-                </div>
+          <div class="about-card background-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-lightbulb"></i>
             </div>
+            <h2>Our Vision</h2>
+            <p>
+              Project Vault was created with the vision of organizing and
+              showcasing projects that span across different domains of web
+              development and AI. Whether you're just starting or are a seasoned
+              developer, this platform offers something to ignite your curiosity
+              and creativity.
+            </p>
+          </div>
 
-            <div class="features-section">
-                <h2 class="section-title">What Makes Us Different</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-palette"></i>
-                        </div>
-                        <h3>Modern Design</h3>
-                        <p>Every project follows contemporary design principles with attention to user experience</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-mobile-alt"></i>
-                        </div>
-                        <h3>Fully Responsive</h3>
-                        <p>All projects are optimized for seamless experience across all devices and screen sizes</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-code-branch"></i>
-                        </div>
-                        <h3>Open Source</h3>
-                        <p>Complete source code available for learning, modification, and contribution</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <h3>Educational</h3>
-                        <p>Each project includes documentation and explanations to enhance learning</p>
-                    </div>
-                </div>
+          <div class="about-card collection-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-compass"></i>
             </div>
+            <h2>Explore Our Collection</h2>
+            <p>
+              Dive into fully responsive websites, engaging JavaScript games,
+              and practical ML applications. Each project is crafted to help you
+              learn, adapt, and apply technology with clarity and confidence.
+            </p>
+          </div>
 
-            <div class="thank-you-section">
-                <div class="thank-you-card">
-                    <h2>Thank You for Exploring Project Vault!</h2>
-                    <p>Your curiosity and passion for learning drive us to create better projects and experiences. Together, we're building a community where innovation thrives and knowledge is shared freely.</p>
-                    <div class="cta-buttons">
-                        <a href="../../index.html" class="btn btn-primary">
-                            <i class="fa-solid fa-home"></i>
-                            Back to Home
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fa-solid fa-envelope"></i>
-                            Get in Touch
-                        </a>
-                    </div>
-                </div>
+          <div class="about-card connect-card">
+            <div class="card-icon">
+              <i class="fas fa-user-plus"></i>
             </div>
+            <h2>Connect with Us</h2>
+            <p>
+              We're always excited to connect with passionate individuals in
+              tech. Whether you're interested in collaboration, feedback, or
+              just exchanging ideas, don't hesitate to reach out. Together,
+              let's build a community where learning never stops!
+            </p>
+          </div>
+          <div class="about-card collection-card">
+            <div class="card-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h2>Community</h2>
+            <p>
+              At Project Vault, you're not just a visitor — you're part of a
+              growing community. Join a supportive environment of learners,
+              developers, and innovators who are constantly exploring and
+              building together. From brainstorming ideas to helping each other
+              debug code, our community thrives on collaboration, respect, and
+              continuous growth.
+            </p>
+          </div>
+          <div class="about-card collection-card">
+            <div class="card-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h2>Get Involved</h2>
+            <p>
+              Want to make a difference? Whether you're a coder, designer, or
+              tester, there's a place for you here. Contribute to meaningful
+              projects, learn from real-world challenges. Every contribution —
+              big or small — helps us grow as a team and make tech more
+              accessible for everyone.
+            </p>
+          </div>
         </div>
+
+        <div class="stats-section">
+          <h2 class="section-title">Project Vault by Numbers</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">100%</div>
+              <div class="stat-label">Open Source</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">∞</div>
+              <div class="stat-label">Learning</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="features-section">
+          <h2 class="section-title">What Makes Us Different</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-palette"></i>
+              </div>
+              <h3>Modern Design</h3>
+              <p>
+                Every project follows contemporary design principles with
+                attention to user experience
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-mobile-alt"></i>
+              </div>
+              <h3>Fully Responsive</h3>
+              <p>
+                All projects are optimized for seamless experience across all
+                devices and screen sizes
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-code-branch"></i>
+              </div>
+              <h3>Open Source</h3>
+              <p>
+                Complete source code available for learning, modification, and
+                contribution
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <h3>Educational</h3>
+              <p>
+                Each project includes documentation and explanations to enhance
+                learning
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="thank-you-section">
+          <div class="thank-you-card">
+            <h2>Thank You for Exploring Project Vault!</h2>
+            <p>
+              Your curiosity and passion for learning drive us to create better
+              projects and experiences. Together, we're building a community
+              where innovation thrives and knowledge is shared freely.
+            </p>
+            <div class="cta-buttons">
+              <a href="../../index.html" class="btn btn-primary">
+                <i class="fa-solid fa-home"></i>
+                Back to Home
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fa-solid fa-envelope"></i>
+                Get in Touch
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-section company-info">
-                <h1 class="heading">Project Vault</h1>
-                <p>
-                    Project Vault is a curated collection of diverse projects ranging
-                    from stunning websites and interactive games to intelligent machine
-                    learning applications. It serves as a one-stop destination to
-                    explore, learn, and get inspired by practical implementations of web
-                    technologies and AI solutions.
-                </p>
-                <div class="social">
-                    <a
-                        class="message"
-                        href="mailto:pavitraagopi@gmail.com"
-                        target="_blank"
-                        aria-label="Email"
-                    >
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                    <a
-                        class="linkedin"
-                        href="https://www.linkedin.com/in/pavitraa-g/"
-                        target="_blank"
-                        aria-label="LinkedIn"
-                    >
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a
-                        class="github"
-                        href="https://www.github.com/pavitraag"
-                        target="_blank"
-                        aria-label="GitHub"
-                    >
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section company-info">
+          <h1 class="heading">Project Vault</h1>
+          <p>
+            Project Vault is a curated collection of diverse projects ranging
+            from stunning websites and interactive games to intelligent machine
+            learning applications. It serves as a one-stop destination to
+            explore, learn, and get inspired by practical implementations of web
+            technologies and AI solutions.
+          </p>
+          <div class="social">
+            <a
+              class="message"
+              href="mailto:pavitraagopi@gmail.com"
+              target="_blank"
+              aria-label="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              class="linkedin"
+              href="https://www.linkedin.com/in/pavitraa-g/"
+              target="_blank"
+              aria-label="LinkedIn"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              class="github"
+              href="https://www.github.com/pavitraag"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
 
             <div class="footer-section quick-links">
                 <h1 class="heading">Quick Links</h1>
@@ -248,54 +377,92 @@
                         <a href="../../faq.html"><i class="fa-solid fa-question-circle"></i> FAQ</a>
                     </li>
                     <li>
+                        <a href="./discussion.html"><i class="fa-solid fa-comment"></i> Forum</a>
+                    </li>
+                    <li>
                         <a href="./contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
                     </li>
                 </ul>
             </div>
 
-            <div class="footer-section send-message">
-                <h1 class="heading">Keep In Touch</h1>
-                <form id="contact-form" name="Project Vault Contact" autocomplete="off">
-                    <div class="form-group group1">
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your name"
-                            autocomplete="name"
-                            required
-                        />
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your email"
-                            autocomplete="email"
-                            required
-                        />
-                    </div>
-                    <div class="form-group">
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Your message"
-                            required
-                        ></textarea>
-                        <button type="submit">
-                            <span class="button-text">SEND MESSAGE</span>
-                            <div class="loading" style="display: none"></div>
-                        </button>
-                    </div>
-                </form>
-            </div>
+        <div class="footer-section quick-links">
+          <h1 class="heading">Quick Links</h1>
+          <ul class="footer-ul">
+            <li>
+              <a href="../../index.html"
+                ><i class="fa-solid fa-house"></i> Home</a
+              >
+            </li>
+            <li>
+              <a href="./aboutus.html"
+                ><i class="fa-solid fa-circle-info"></i> About</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fa-solid fa-icons"></i> Components</a>
+            </li>
+            <li>
+              <a href="../../faq.html"
+                ><i class="fa-solid fa-question-circle"></i> FAQ</a
+              >
+            </li>
+            <li>
+              <a href="./contact.html"
+                ><i class="fa-solid fa-phone"></i> Contact</a
+              >
+            </li>
+          </ul>
         </div>
 
-        <div class="copyright">
-            Created By Pavitraa ❤️ | © <span id="currentYear">2024</span> All Rights Reserved
+
+        <div class="footer-section send-message">
+          <h1 class="heading">Keep In Touch</h1>
+          <form
+            id="contact-form"
+            name="Project Vault Contact"
+            autocomplete="off"
+          >
+            <div class="form-group group1">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Your message"
+                required
+              ></textarea>
+              <button type="submit">
+                <span class="button-text">SEND MESSAGE</span>
+                <div class="loading" style="display: none"></div>
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
+
+      <div class="copyright">
+        Created By Pavitraa ❤️ | © <span id="currentYear">2024</span> All Rights
+        Reserved
+      </div>
     </footer>
 
     <script src="../js_files/aboutus.js"></script>
     <script src="../../script.js"></script>
-</body>
+  </body>
 </html>

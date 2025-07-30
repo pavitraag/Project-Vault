@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact us_ Project Vault</title>
+    <title>Contact us | Project Vault</title>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
       rel="stylesheet"
@@ -13,14 +14,24 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../../style.css" />
+
     <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+      }
+
       .contact-section {
         background: #ffffff;
         padding: 4rem 1rem;
         border-radius: 16px;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
         max-width: 900px;
-        margin: 4rem auto;
+        margin: 6rem auto 4rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .contact-container {
@@ -70,27 +81,6 @@
         background-color: #f9f9f9;
         transition: border 0.3s ease, box-shadow 0.3s ease;
       }
-      .spinner {
-        margin-left: 10px;
-        width: 16px;
-        height: 16px;
-        border: 3px solid rgba(255, 255, 255, 0.6);
-        border-top: 3px solid white;
-        border-radius: 50%;
-        animation: spin 0.7s linear infinite;
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      .hidden {
-        display: none;
-      }
-
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
-      }
 
       .contact-input:focus,
       .contact-textarea:focus {
@@ -120,22 +110,40 @@
       .contact-button:hover {
         background-color: #5a55e5;
       }
+
+      .spinner {
+        margin-left: 10px;
+        width: 16px;
+        height: 16px;
+        border: 3px solid rgba(255, 255, 255, 0.6);
+        border-top: 3px solid white;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-menu-header">
         <div class="nav-logo">Project Vault</div>
         <div class="mobile-menu-close" id="mobileMenuClose">&times;</div>
       </div>
       <div class="mobile-menu-items">
-        <a href="../../index.html" class="mobile-menu-link"
-          ><i class="fa-solid fa-house"></i> Home</a
-        >
-        <a href="./aboutus.html" class="mobile-menu-link"
-          ><i class="fa-solid fa-circle-info"></i> About Us</a
-        >
-
+        <a href="../../index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="./aboutus.html" class="mobile-menu-link"><i class="fa-solid fa-circle-info"></i> About Us</a>
         <div class="mobile-submenu">
           <div class="mobile-menu-link submenu-toggle">
             <i class="fa-solid fa-icons"></i> Components
@@ -145,35 +153,27 @@
             <a href="./website.html" class="mobile-menu-link">Webfolio</a>
             <a href="./games.html" class="mobile-menu-link">Games</a>
             <a href="./ml.html" class="mobile-menu-link">ML Projects</a>
+            <a href="./techStack.html" class="mobile-menu-link"><i class="fa-solid fa-search"></i> by Tech Stack</a>
           </div>
         </div>
-
-        <a href="../../faq.html" class="mobile-menu-link"
-          ><i class="fa-solid fa-question-circle"></i> FAQ</a
-        >
-        <a href="#contact" class="mobile-menu-link"
-          ><i class="fa-solid fa-phone"></i> Contact Us</a
-        >
+        <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+        <a href="./discussion.html" class="mobile-menu-link"><i class="fa-solid fa-comment"></i> Forum</a>
+        <a href="#contact" class="mobile-menu-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
       </div>
     </div>
 
+    <!-- Desktop Navbar -->
     <nav>
       <div class="nav-container">
         <div class="nav-logo">Project Vault</div>
-
         <div class="mobile-menu-toggle" id="mobileMenuToggle">
           <span></span>
           <span></span>
           <span></span>
         </div>
-
         <div class="nav-right">
-          <a href="../../index.html" class="nav-link"
-            ><i class="fa-solid fa-house"></i> Home</a
-          >
-          <a href="./aboutus.html" class="nav-link active"
-            ><i class="fa-solid fa-circle-info"></i> About Us</a
-          >
+          <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="./aboutus.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About Us</a>
           <div class="dropdown">
             <div class="dropdown-toggle nav-link">
               <i class="fa-solid fa-icons"></i> Components ▾
@@ -182,23 +182,22 @@
               <a href="./website.html">Webfolio</a>
               <a href="./games.html">Games</a>
               <a href="./ml.html">ML Projects</a>
+              <a href="./techStack.html"><i class="fa-solid fa-search"></i> by Tech Stack</a>
             </div>
           </div>
-          <a href="../../faq.html" class="nav-link"
-            ><i class="fa-solid fa-question-circle"></i> FAQ</a
-          >
-          <a href="#contact" class="nav-link"
-            ><i class="fa-solid fa-phone"></i> Contact Us</a
-          >
+          <a href="../../faq.html" class="nav-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+          <a href="./discussion.html" class="nav-link"><i class="fa-solid fa-comment"></i> Forum</a>
+          <a href="#contact" class="nav-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
         </div>
       </div>
     </nav>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
       <div class="contact-container">
         <h2 class="contact-heading">Get in Touch</h2>
         <p class="contact-subheading">
-          We’d love to hear from you! Fill out the form and we'll get back to
-          you soon.
+          We’d love to hear from you! Fill out the form and we'll get back to you soon.
         </p>
         <form
           id="contact-form"
@@ -240,38 +239,42 @@
             <span class="button-text">Send Message</span>
             <span class="spinner hidden" id="spinner"></span>
           </button>
+          <p id="successMsg" style="color: green; display: none; margin-top: 1rem;">
+            Thanks for your message! We'll get back to you soon.
+          </p>
         </form>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="copyright">
-      Created By Pavitraa ❤️ | © <span id="currentYear">2024</span> All Rights
-      Reserved
+      Created By Pavitraa ❤️ | © <span id="currentYear">2024</span> All Rights Reserved
     </footer>
+
+    <!-- Scripts -->
     <script src="../../script.js"></script>
     <script>
       function handleFormSubmit(event) {
         event.preventDefault();
 
         const btn = document.getElementById("submitBtn");
-        const spinner = document.getElementById("spinner");
+        const originalHTML = btn.innerHTML;
         const form = document.getElementById("contact-form");
+        const successMsg = document.getElementById("successMsg");
 
-        // Disable button & show spinner
+        btn.innerHTML = `<span class="spinner" id="spinner"></span> Sending...`;
         btn.disabled = true;
-        spinner.classList.remove("hidden");
 
-        // Simulate submission delay
         setTimeout(() => {
-          // Show success alert first
-          alert("Thanks for your message! We'll get back to you soon.");
-
-          // Then reset form and loading state
           form.reset();
-          spinner.classList.add("hidden");
+          btn.innerHTML = originalHTML;
           btn.disabled = false;
-        }, 2000); // 2 seconds delay
+          successMsg.style.display = "block";
+        }, 2000);
       }
+
+      // Dynamic year update
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
   </body>
 </html>

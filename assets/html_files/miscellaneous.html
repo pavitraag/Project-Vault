@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Miscellaneous Projects - Project Vault</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../css_files/website.css" />
+</head>
+
+<body>
+  <header>
+    <h1>🛠️ Miscellaneous Projects</h1>
+    <a href="website.html" class="back-button">← Back to Home</a>
+  </header>
+
+  <main class=".webfolio-main">
+    <div class="category-container">
+
+      <div class="category-card">
+        <h3>Face Recognition Login System</h3>
+        <p>A secure login system using Flask and OpenCV to authenticate users through facial recognition. Great for
+          learning basic computer vision and authentication.</p>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/Miscellaneous/face-recognition-login" class="view-button">View Code</a><br>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../../footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>
