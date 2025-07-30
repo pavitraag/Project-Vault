@@ -168,4 +168,20 @@ document
     if (componentPages.includes(currentPath) && dropdownToggle) {
       dropdownToggle.classList.add("active");
     }
+    // --- Typing Animation for Hero Section ---
+const options = {
+  strings: [
+    "Discover amazing projects in Web Dev",
+    "Explore creative Games and Designs",
+    "Dive into innovative Machine Learning",
+  ],
+  typeSpeed: 50,    // Type karne ki speed
+  backSpeed: 25,    // Backspace ki speed
+  backDelay: 1500,  // Ek line likhne ke baad rukne ka time
+  loop: true        // Hamesha chalta rahega
+};
+
+// Yeh line uss #animated-text (jo humne HTML mein banaya tha) ko dhundhti hai
+// aur uspar upar diye gaye options ke saath animation shuru kar deti hai.
+const typed = new Typed('#animated-text', options);
   });
