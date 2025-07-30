@@ -185,8 +185,8 @@ button:hover {
 
 /* == Discussion Title's header== */
 header h1 {
-  color: #eeeb28;
-  text-shadow: 10px 10px 19px rgba(243, 239, 7, 0.904);
+  color: #f0d90c;
+  text-shadow: 10px 10px 20px rgb(4, 8, 255);
   margin-left: 1rem;
   text-align: center;
   border-radius:16px;
@@ -195,7 +195,6 @@ header h1 {
 
 /* ==header== */
 header {
-
   color: white;
   padding: 5rem;
   text-align: center;
