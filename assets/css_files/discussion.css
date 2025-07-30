@@ -7,6 +7,8 @@ body {
 h1 {
   color: #333;
   margin-bottom: 1.5rem;
+  text-shadow: #090ca3 1px 1px 2px;
+  text-align: center;
 }
 
 form {
@@ -29,9 +31,14 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 4px;
-  background-color: #0077cc;
+  background-color: #0782da;
   color: #fff;
   cursor: pointer;
+  box-shadow: 0 2px 5px rgb(50, 12, 218)
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:0 4px 20px rgba(0, 0, 0, 0.2);
+  border:1px solid rgba(255, 255, 255, 0.2);
+  border-radius:25px;
 }
 
 button:hover {
@@ -44,4 +51,220 @@ button:hover {
   border-radius: 6px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
+}
+
+/* Enhanced Heading Style */
+.discussion-heading {
+  @apply text-4xl md:text-5xl font-extrabold text-center mb-8 tracking-wide relative text-white;
+
+  animation: fadeInUp 1s ease-out;
+}
+
+/* animated */
+.discussion-heading::after {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right, #ffffff, #e0e0ff);
+  border-radius: 2px;
+  box-shadow: 0 0 10px #ffffffaa;
+}
+
+/* Glow text effect */
+.discussion-heading {
+  text-shadow: 0 0 6px rgba(21, 23, 165, 0.5),
+               0 0 10px rgba(90, 85, 174, 0.6),
+               0 0 20px rgba(63, 81, 181, 0.4);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}          
+
+
+/* Fade animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*fade-in animation */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-in-out both;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* == What's in your mind section's button */
+@layer utilities {
+  .animate-glow {
+    animation: glow 2s infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 10px #5a55ae44, 0 0 20px #3f51b544;
+    }
+    to {
+      box-shadow: 0 0 20px #5a55aeaa, 0 0 40px #566ffdaa;
+    }
+  }
+}
+
+#new-post-form{
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 6000px;
+  margin: auto;
+  border-radius: 2px;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: content-box;
+}
+#post-content{
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 7px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  background-color: rgba(174, 140, 236, 0.445);
+}
+/* ==Nav Bar animation */
+.nav-link:hover {
+  background-color: rgba(152, 3, 252, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==Headings== */
+.heading{
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0212a1;
+  text-shadow: 0 2px 2px rgba(3, 3, 20, 0.521);
+  padding-left: 30px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+/* == Discussion Title's header== */
+header h1 {
+  color: #eeeb28;
+  text-shadow: 10px 10px 19px rgba(243, 239, 7, 0.904);
+  margin-left: 1rem;
+  text-align: center;
+  border-radius:16px;
+  
+}
+
+/* ==header== */
+header {
+
+  color: white;
+  padding: 5rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(83, 84, 143, 0.514);
+  margin-top: 2rem;
+  
+}
+
+/* ==Quick links section */
+.footer-ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  gap: 2rem;
+}
+/* ===Conatct Form=== */
+.footer-section {
+  background-color: #fcfeff;
+  color: #343a40;
+  padding: 2rem;
+  text-align: center;
+  border-top: 10px solid #c3d6f1;
+}
+#contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #5568bd94;
+  border-radius: 0px;
+  box-shadow: 1px 20px 10px rgba(97, 95, 219, 0.795);
+  box-sizing:content-box;
+}
+
+#name{
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin: 1px;
+}
+#email {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+#message {
+  width: 100%;
+  height: 100px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  margin: 1px
+}
+
+/* == copy right== */
+.copyright{
+  background-color: #d1d7f194;
+  color: #222e38;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  border-top: 1px solid #dee2e6;
+  margin: 1px;
+  
+
 }

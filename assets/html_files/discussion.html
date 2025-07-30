@@ -19,7 +19,7 @@
 
       <nav>
         <div class="nav-container">
-            <div class="nav-logo">Project Vault</div>
+            <div class="nav-logo"><b>Project Vault</b></div>
 
             <div class="mobile-menu-toggle" id="mobileMenuToggle">
                 <span></span>
@@ -47,18 +47,31 @@
         </div>
     </nav>
 
-    <header>
-      <h1>🗨️ Discussion Forum</h1>
-    </header> 
+   <header class="w-full bg-gradient-to-r from-[#3f51b5] to-[#5a55ae] py-6 shadow-md rounded-b-xl">
+  <h1 class="discussion-heading text-white text-3xl sm:text-4xl font-bold text-center tracking-wide animate-fade-in">
+          🗨️ Discussion Forum
+  </h1>
+</header>
+    <main class="px-4 sm:px-8 py-6 max-w-3xl mx-auto">
+  <form id="new-post-form" class="space-y-4">
+    <textarea 
+      id="post-content" 
+      placeholder="Share your thoughts, questions, or ideas with the community!" 
+      class="w-full p-4 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#5a55ae] focus:border-transparent resize-none text-gray-800"
+      rows="3"
+    ></textarea>
 
-    <main>
-      <form id="new-post-form">
-        <textarea id="post-content" placeholder="What's on your mind?"></textarea>
-        <button type="submit">Post</button>
-      </form>
+    <button 
+      type="submit" 
+      class="bg-gradient-to-r from-[#3f51b5] to-[#5a55ae] text-white font-semibold py-2 px-6 rounded-lg shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:from-[#5a55ae] hover:to-[#3f51b5] focus:outline-none animate-glow"
+    >
+       Post 
+    </button>
+  </form>
 
-      <div id="forum-feed"></div>
-    </main>
+  <div id="forum-feed" class="mt-8 space-y-4"></div>
+</main>
+
 
     <footer>
     <div class="footer-container">
