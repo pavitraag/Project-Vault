@@ -180,6 +180,18 @@ const options = {
   backDelay: 1500,  // Ek line likhne ke baad rukne ka time
   loop: true        // Hamesha chalta rahega
 };
+// --- Typing Animation for Main Title ---
+// --- Typing Animation for Main Title ---
+const titleOptions = {
+  strings: ["Project Vault"],
+  typeSpeed: 70,
+  backSpeed: 40,      // <-- Yeh line add karein (mitane ki speed)
+  backDelay: 2000,    // <-- Yeh line add karein (mitane se pehle rukne ka time)
+  showCursor: false,
+  loop: true        // <-- Isse 'false' se 'true' kar dein
+};
+
+const typedTitle = new Typed('#animated-title', titleOptions);
 
 // Yeh line uss #animated-text (jo humne HTML mein banaya tha) ko dhundhti hai
 // aur uspar upar diye gaye options ke saath animation shuru kar deti hai.
