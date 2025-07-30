@@ -5,10 +5,13 @@
 }
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: 
+    radial-gradient(circle at 60% 40%, #7092d3 20%, #4a4ac3 70%),
+    linear-gradient(135deg, #667eea 0%, #030376 100%);
   color: #222;
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 a {
@@ -16,27 +19,32 @@ a {
   color: inherit;
 }
 
-/* Navigation */
+/* Navigation 
 nav {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1rem 2rem;
   position: relative;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 20px rgba(0,0,0,0.1);}
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);}*/
 /* Header */
 header {
-  background: linear-gradient(to right, #3f51b5, #5a55ae); /* Deep indigo gradient 
-  color: #ffffff;*/
-  padding: 2rem 1rem;
+  background: transparent;  /* Let the body gradient show through */
+  color: #ffffff;
+  padding: 4rem 2rem;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  margin-top: 8rem; /* Add this line to push it down */
 }
 
 .nav-container {
@@ -44,13 +52,13 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 500px;
+  gap:2rem;
 }
 
 .nav-logo {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
+  font-weight: 600;
+    color: #0d1a4a; /* dark blue */
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
   margin-right: 2rem;
 }
@@ -59,13 +67,15 @@ header h1 {
   display: flex;
   align-items: center;
   gap: 2rem;
+  margin-left:4rem;
 }
 
 .nav-link {
-  color: #fff;
-  font-weight: 600;
+  color: #07006a;
+  font-weight: 200;
   padding: 0.5rem 1rem;
   border-radius: 25px;
+  border:1px solid #000;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -88,7 +98,8 @@ header h1 {
 }
 
 .nav-link:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: #222;      /* dark grey/black background */
+  color: #fff !important; /* white text */
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
@@ -141,19 +152,21 @@ header h1 {
 .dropdown-content a {
   display: block;
   padding: 0.75rem 1.5rem;
-  color: #333;
+  color: #222; /* Always black text */
   transition: all 0.3s ease;
   border-radius: 10px;
   margin: 0 0.5rem;
   font-size: 0.95rem;
+  background: transparent;
 }
 
 .dropdown-content a:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
+  background: #fff;   /* Keep background white on hover */
+  color: #222;        /* Keep text black on hover */
   transform: translateX(3px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
 }
+
 
 /* Only show dropdown when hovering specifically over the dropdown container */
 .dropdown:hover .dropdown-content {
@@ -214,7 +227,7 @@ nav {
   width: 100%;
   z-index: 1000;
 
-  background: rgba(63, 81, 181, 0.4);
+  background: rgb(255, 255, 255);
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -247,18 +260,17 @@ nav {
 .mobile-menu.active {
   left: 0;
 }
-nav a,
-nav .dropdown-content a {
+nav a {
   color: #fff;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}}
+  /* ... */
+}
+nav .dropdown-content a {
+  color: #222;
+}
 
 nav a:hover,
 .dropdown-content a:hover {
-  color: #ff4081;
+  color: #222;
 }
 
 .mobile-menu-header {
@@ -295,7 +307,7 @@ nav a:hover,
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Header */
+/* Header 
 header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #ffffff;
@@ -303,7 +315,7 @@ header {
   text-align: center;
   position: relative;
   overflow: hidden;
-}
+}*/
 
 header::before {
   content: '';
@@ -406,8 +418,8 @@ main {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #fff;
+  background: transparent;
+  color: #ffffff;
   padding: 4rem 0 0;
   margin-top: 4rem;
   position: relative;
@@ -479,7 +491,7 @@ footer::before {
 }
 
 .footer-ul li a {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255, 255, 255);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -658,8 +670,8 @@ footer::before {
 .footer-ul li a.active,
 .mobile-menu-link.active {
   background: rgba(255, 255, 255, 0.2);
-  color: #feca57 !important;
-  font-weight: 700;
+  color: #0d1a4a !important;
+  font-weight: 800;
   position: relative;
 }
 
