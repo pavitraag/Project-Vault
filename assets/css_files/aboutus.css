@@ -150,13 +150,13 @@
 .about-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-  background: linear-gradient(145deg, #fff, #f8f9ff);
+   background: linear-gradient(145deg, #fff, #eef3ff);
 }
 
 .card-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+background: linear-gradient(135deg, #667eea, #764ba2);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -188,6 +188,7 @@
 }
 
 .about-card p {
+  text-align: Justify;
   font-size: 1.1rem;
   color: #666;
   line-height: 1.8;
@@ -336,6 +337,7 @@
 }
 
 .feature-item p {
+  text-align: Justify;
   color: #666;
   line-height: 1.6;
   font-size: 1rem;
@@ -377,6 +379,7 @@
 }
 
 .thank-you-card p {
+  text-align: Justify;
   font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 2.5rem;
