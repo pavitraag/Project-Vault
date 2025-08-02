@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo">QRGen</div>
+    <ul class="navbar-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">How it Works</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Background Shape -->
+  <div class="bg-shape"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Heading & Intro -->
+    <section class="intro-section">
+      <h1 class="main-heading">Generate Your QR Code Instantly</h1>
+      <p class="intro-text">Enter any text, URL, or message below, and instantly convert it into a QR Code that can be scanned on any device.</p>
+    </section>
+
+    <!-- QR Generator -->
+    <div class="container-component">
+      <div class="generator-box">
+        <h2 class="title">QR Code Generator</h2>
+
+        <!-- InputComponent -->
+        <div class="input-component">
+          <input type="text" id="qr-input" placeholder="Enter text or URL" />
+          <button id="generate-btn">Generate QR Code</button>
+        </div>
+
+        <!-- OutputComponent -->
+        <div class="qr-output-component">
+          <img id="qr-img" src="" alt="QR Code will appear here" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

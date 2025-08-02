@@ -1,0 +1,154 @@
+/* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #4CAF50;
+}
+
+/* Background Blob */
+.blob-shape {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #a0d8ef, #ffffff);
+  top: -150px;
+  left: -150px;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.25;
+}
+
+/* Container */
+.container {
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Heading & Paragraph */
+.main-heading {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.intro-text {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Text Area */
+textarea {
+  width: 100%;
+  height: 300px;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: vertical;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+/* Button */
+button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .main-heading {
+    font-size: 22px;
+  }
+
+  .intro-text {
+    font-size: 14px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
