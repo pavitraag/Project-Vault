@@ -576,14 +576,33 @@ footer {
 }
 
 /* CATEGORY CARDS SECTION */
+.project{
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.45em 1em;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+
+}
 .category-container {
   display: flex;
   justify-content: center;
-  align-items: stretch; /* Make cards equal height */
+  align-items: stretch; 
   gap: 2rem;
   margin: 3rem auto 0 auto;
   max-width: 1100px;
-  flex-wrap: wrap;
+  flex-wrap: wrap;transform: translateY(30px);
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.3s; /* Button fades in after card */
+  align-self: center;
+
 }
 
 .category-card {
@@ -593,19 +612,17 @@ footer {
   padding: 2.2rem 2rem 1.7rem 2rem;
   min-width: 290px;
   max-width: 340px;
-  flex: 1 1 320px; /* All cards grow/shrink equally */
+  flex: 1 1 320px; 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 100%; /* Ensure equal height */
+  justify-content: center;
+  align-items: center;
+  height: 100%;
   transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s cubic-bezier(.4,2,.6,1);
   text-align: left;
   margin-bottom: 1.5rem;
   position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.7s forwards;
+  
 }
 
 .category-card.fade-in {
@@ -644,6 +661,10 @@ footer {
 
 /* Responsive for cards */
 @media (max-width: 900px) {
+  .Explore {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
   .category-container {
     flex-direction: column;
     align-items: center;
@@ -655,7 +676,6 @@ footer {
     width: 100%;
     height: auto;
   }
-}
 
 /* Responsive Footer */
 @media (max-width: 900px) {
@@ -673,4 +693,5 @@ footer {
 .add-project-card {
   position: relative;
   z-index: 10;
+}
 }
