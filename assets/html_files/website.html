@@ -1,80 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webfolio - Project Vault</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-    rel="stylesheet"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link rel="stylesheet" href="../css_files/website.css" />
   <link rel="stylesheet" href="../../style.css">
 </head>
-<body>
-      <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu-header">
-        <div class="nav-logo">Project Vault</div>
-        <div class="mobile-menu-close" id="mobileMenuClose">&times;</div>
-      </div>
-      <div class="mobile-menu-items">
-        <a href="../../index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i>  Home</a>
-        <a href="./aboutus.html" class="mobile-menu-link"><i class="fa-solid fa-circle-info"></i>   About Us</a>
 
-        <div class="mobile-submenu">
-          <div class="mobile-menu-link submenu-toggle"><i class="fa-solid fa-icons"></i> 
-             Components <i class="fa-solid fa-chevron-down arrow-icon"></i>
-          </div>
-          <div class="submenu-items">
-            <a href="./website.html" class="mobile-menu-link">Webfolio</a>
-            <a href="./games.html" class="mobile-menu-link">Games</a>
-            <a href="./ml.html" class="mobile-menu-link">ML Projects</a>
-          </div>
+<body>
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <div class="nav-logo">Project Vault</div>
+      <div class="mobile-menu-close" id="mobileMenuClose">&times;</div>
+    </div>
+    <div class="mobile-menu-items">
+      <a href="../../index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="./aboutus.html" class="mobile-menu-link"><i class="fa-solid fa-circle-info"></i> About Us</a>
+
+      <div class="mobile-submenu">
+        <div class="mobile-menu-link submenu-toggle"><i class="fa-solid fa-icons"></i>
+          Components <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </div>
+        <div class="submenu-items">
+          <a href="./website.html" class="mobile-menu-link">Webfolio</a>
+          <a href="./games.html" class="mobile-menu-link">Games</a>
+          <a href="./ml.html" class="mobile-menu-link">ML Projects</a>
+          <a href="./techStack.html" class="mobile-menu-link"><i class="fa-solid fa-search"></i> by Tech Stack</a>
+        </div>
+      </div>
+
+      <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+      <a href="./discussion.html" class="mobile-menu-link"><i class="fa-solid fa-comment"></i> Forum</a>
+      <a href="./contact.html" class="mobile-menu-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      <div class="mobile-submenu">
+        <div class="mobile-menu-link submenu-toggle"><i class="fa-solid fa-icons"></i>
+          Components <i class="fa-solid fa-chevron-down arrow-icon"></i>
+        </div>
+        <div class="submenu-items">
+          <a href="./website.html" class="mobile-menu-link">Webfolio</a>
+          <a href="./games.html" class="mobile-menu-link">Games</a>
+          <a href="./ml.html" class="mobile-menu-link">ML Projects</a>
         </div>
 
-        <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i>  FAQ</a>
-        <a href="./contact.html" class="mobile-menu-link"><i class="fa-solid fa-phone"></i>  Contact Us</a>
+
+        <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+        <a href="./discussion.html" class="mobile-menu-link"><i class="fa-solid fa-comment"></i> Forum</a>
+        <a href="./contact.html" class="mobile-menu-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+
+      </div>
+
+      <a href="../../faq.html" class="mobile-menu-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+      <a href="./contact.html" class="mobile-menu-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Project Vault</div>
+
+      <div class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-right">
+        <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="./aboutus.html" class="nav-link active"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        <div class="dropdown">
+          <div class="dropdown-toggle nav-link"><i class="fa-solid fa-icons"></i> Components ▾</div>
+          <div class="dropdown-content">
+            <a href="./website.html">Webfolio</a>
+            <a href="./games.html">Games</a>
+            <a href="./ml.html">ML Projects</a>
+            <a href="./techStack.html"><i class="fa-solid fa-search"></i> by Tech Stack</a>
+          </div>
+        </div>
+        <a href="../../faq.html" class="nav-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+        <a href="./discussion.html" class="nav-link"><i class="fa-solid fa-comment"></i> Forum</a>
+        <a href="./contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
       </div>
     </div>
-
-    <nav>
-      <div class="nav-container">
-        <div class="nav-logo">Project Vault</div>
-
-        <div class="mobile-menu-toggle" id="mobileMenuToggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="nav-right">
-          <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
-          <a href="./aboutus.html" class="nav-link"><i class="fa-solid fa-circle-info"></i> About Us</a>
-          <div class="dropdown">
-            <div class="dropdown-toggle nav-link"><<i class="fa-solid fa-icons"></i> Components ▾</div>
-            <div class="dropdown-content">
-              <a href="./website.html">Webfolio</a>
-              <a href="./games.html">Games</a>
-              <a href="./ml.html">ML Projects</a>
-            </div>
-          </div>
-          <a href="../../faq.html" class="nav-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
-          <a href="./contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
-        </div>
-      </div>
-    </nav>
+    <div>
+      <a href="../../index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </nav>
+  
   <!-- Header Section -->
   <header class="webfolio-header">
     <div class="header-content">
       <h1><i class="fas fa-globe"></i> Webfolio</h1>
       <p>Discover beautiful websites built with modern web technologies</p>
-      <a href="../../index.html" class="back-button">
-        <i class="fas fa-arrow-left"></i> Back to Home
-      </a>
     </div>
   </header>
 
@@ -86,7 +108,8 @@
           <i class="fas fa-code"></i>
         </div>
         <h3>Static Websites</h3>
-        <p>Beautiful websites built with HTML, CSS, and vanilla JavaScript showcasing clean design and smooth animations</p>
+        <p>Beautiful websites built with HTML, CSS, and vanilla JavaScript showcasing clean design and smooth animations
+        </p>
         <a href="./staticwebsites.html" class="view-button">
           <span>View Projects</span>
           <i class="fas fa-arrow-right"></i>
@@ -152,9 +175,44 @@
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
+
+      <div class="category-card" data-animation-delay="0.6s">
+        <div class="card-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3>Miscellaneous Projects</h3>
+        <p>Explore a diverse collection of unique tech projects that span multiple domains: from automation scripts to
+          creative utilities and innovative experiments.</p>
+        <a href="./miscellaneous.html" class="view-button">
+          <span>View Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
     </div>
   </main>
 
+  <div class="footer-section quick-links">
+    <h1 class="heading">Quick Links</h1>
+    <ul class="footer-ul">
+      <li>
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+      </li>
+      <li>
+        <a href="./aboutus.html"><i class="fa-solid fa-circle-info"></i> About</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa-solid fa-icons"></i> Components</a>
+      </li>
+      <li>
+        <a href="../../faq.html"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+      </li>
+      <li>
+        <a href="./discussion.html"><i class="fa-solid fa-comment"></i> Forum</a>
+      </li>
+      <li>
+        <a href="./contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
+      </li>
+    </ul>
     <footer>
       <div class="footer-container">
         <div class="footer-section company-info">
@@ -167,30 +225,16 @@
             technologies and AI solutions.
           </p>
           <div class="social">
-            <a
-              class="message"
-              href="mailto:pavitraagopi@gmail.com"
-              target="_blank"
-              aria-label="Email"
-            >
+            <a class="message" href="mailto:pavitraagopi@gmail.com" target="_blank" aria-label="Email">
               <i class="fa-solid fa-envelope"></i>
             </a>
-            <a
-              class="linkedin"
-              href="https://www.linkedin.com/in/pavitraa-g/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
+            <a class="linkedin" href="https://www.linkedin.com/in/pavitraa-g/" target="_blank" aria-label="LinkedIn">
               <i class="fab fa-linkedin"></i>
             </a>
-            <a
-              class="github"
-              href="https://www.github.com/pavitraag"
-              target="_blank"
-              aria-label="GitHub"
-            >
+            <a class="github" href="https://www.github.com/pavitraag" target="_blank" aria-label="GitHub">
               <i class="fab fa-github"></i>
             </a>
+
           </div>
         </div>
 
@@ -201,17 +245,13 @@
               <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
             </li>
             <li>
-              <a href="./aboutus.html"
-                ><i class="fa-solid fa-circle-info"></i> About</a
-              >
+              <a href="./aboutus.html"><i class="fa-solid fa-circle-info"></i> About</a>
             </li>
             <li>
               <a href="#"><i class="fa-solid fa-icons"></i> Components</a>
             </li>
             <li>
-              <a href="../../faq.html"
-                ><i class="fa-solid fa-question-circle"></i> FAQ</a
-              >
+              <a href="../../faq.html"><i class="fa-solid fa-question-circle"></i> FAQ</a>
             </li>
             <li>
               <a href="./contact.html"><i class="fa-solid fa-phone"></i> Contact</a>
@@ -221,36 +261,13 @@
 
         <div class="footer-section send-message">
           <h1 class="heading">Keep In Touch</h1>
-          <form
-            id="contact-form"
-            name="Project Vault Contact"
-            autocomplete="off"
-          >
+          <form id="contact-form" name="Project Vault Contact" autocomplete="off">
             <div class="form-group group1">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Your name"
-                autocomplete="name"
-                required
-              />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Your email"
-                autocomplete="email"
-                required
-              />
+              <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+              <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" required />
             </div>
             <div class="form-group">
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Your message"
-                required
-              ></textarea>
+              <textarea id="message" name="message" placeholder="Your message" required></textarea>
               <button type="submit">
                 <span class="button-text">SEND MESSAGE</span>
                 <div class="loading" style="display: none"></div>
@@ -266,7 +283,8 @@
       </div>
     </footer>
 
-  <script src="../js_files/website.js"></script>
-  <script src="../../script.js"></script>
+    <script src="../js_files/website.js"></script>
+    <script src="../../script.js"></script>
 </body>
+
 </html>
