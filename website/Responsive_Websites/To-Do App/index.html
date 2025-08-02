@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD SECTION START -->
+
+<head>
+    <!-- Character encoding and responsive viewport setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="A powerful and intuitive Too-Doo App by MD._NM. Manage your tasks efficiently with features like task filtering, persistence, and more.">
+    <meta name="keywords"
+        content="Too-Doo App | A Quality Product from Mondal Products, task management, productivity tool, MD._NM">
+    <meta name="developer" content="MD. NAYAJ MONDAL">
+    <meta name="robots" content="index, follow">
+    <meta name="permissions-policy" content="geolocation=*, notifications=*">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Too-Doo App | A Quality Product from Mondal Products">
+    <meta property="og:description" content="Manage your tasks efficiently with this powerful Too-Doo App">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2196f3">
+
+    <!-- Page Title -->
+    <title>Too-Doo App | A Quality Product from Mondal Products</title>
+
+    <!-- External Resources -->
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.jpg" type="image/jpg">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Boxicons -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<!-- HEAD SECTION END -->
+
+<!-- BODY SECTION START -->
+
+<body>
+    <!-- Background Animation Container -->
+    <div class="background-animation">
+        <div class="gradient-bg"></div>
+        <div class="particles">
+            <!-- Particles will be added by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <!-- App Logo and Title -->
+            <div class="nav-logo">
+                <i class="fas fa-check-double"></i>
+                <span class="spans"><b>Too-Doo App</b></span>
+            </div>
+            <!-- Digital Clock Display -->
+            <div class="nav-clock">
+                <div class="clock-container">
+                    <div id="clock"></div>
+                    <div id="date"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Bar Section -->
+    <div class="search-section">
+        <div class="search-container">
+            <div class="search-wrapper">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input type="text" id="searchInput" placeholder="Search tasks and notes..."
+                    aria-label="Search tasks and notes">
+                <div class="search-filters">
+                    <button class="search-filter-btn active" data-filter="all">
+                        <i class="fas fa-search"></i>
+                        <p>All</p>
+                    </button>
+                    <button class="search-filter-btn" data-filter="tasks">
+                        <i class="fas fa-tasks"></i>
+                        <p>Tasks</p>
+                    </button>
+                    <button class="search-filter-btn" data-filter="notes">
+                        <i class="fas fa-sticky-note"></i>
+                        <p>Notes</p>
+                    </button>
+                    <button class="search-filter-btn" data-filter="date">
+                        <i class="fas fa-calendar"></i>
+                        <p>Date</p>
+                    </button>
+                </div>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main">
+        <div class="container">
+            <!-- App Header -->
+            <header>
+                <h1><i class="fas fa-check-double"></i> <span>Task Master</span></h1>
+            </header>
+
+            <!-- Task Input Section -->
+            <div class="add-task-container">
+                <input type="text" id="taskInput" placeholder="Enter your task..." aria-label="Enter task">
+                <button id="addTask" class="btn-add">
+                    <i class="fas fa-plus"></i> Add Task
+                </button>
+            </div>
+
+            <!-- Task Filter Buttons -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <!-- Tasks List Container -->
+            <div class="tasks-container">
+                <ul id="tasksList" aria-label="Tasks list"></ul>
+            </div>
+
+            <!-- Task Statistics Section -->
+            <div class="stats">
+                <span id="totalTasks">Total: 0</span>
+                <span id="completedTasks">Completed: 0</span>
+                <button id="clearCompleted" class="btn-clear">Clear Completed</button>
+            </div>
+        </div>
+
+        <!-- Note Taking Section -->
+        <div class="container notes-container">
+            <header>
+                <h1><i class="fas fa-sticky-note"></i> <span>Quick Notes</span></h1>
+            </header>
+
+            <!-- Note Input Section -->
+            <div class="add-note-container">
+                <input type="text" id="noteTitle" placeholder="Note title..." aria-label="Enter note title">
+                <textarea id="noteContent" placeholder="Enter your notes..." aria-label="Enter note content"></textarea>
+                <button id="addNote" class="btn-add">
+                    <i class="fas fa-plus"></i> Add Note
+                </button>
+            </div>
+
+            <!-- Notes Display Section -->
+            <div class="notes-grid" id="notesGrid">
+                <!-- Notes will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <!-- Animated Wave Background -->
+        <div class="footer-waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+
+        <!-- Footer Content -->
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <i class="fas fa-check-double footer-logo"></i>
+                    <h3>TaskMaster</h3>
+                    <p class="footer-slogan">Organize your life, one task at a time</p>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-section">
+                <div class="social-links">
+                    <!-- Portfolio Website -->
+                    <a href="https://my-portfolio-website-eight-pi.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" class="social-btn" title="Visit Portfolio">
+                        <i class=" fa-solid fa-circle-user"></i>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/md-nayaj-mondal" target="_blank" rel="noopener noreferrer"
+                        class="social-btn" title="Visit LinkedIn">
+                        <i class=" fab fa-linkedin"></i>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/mdnm18" target="_blank" rel="noopener noreferrer" class="social-btn"
+                        title="Visit GitHub">
+                        <i class=" fab fa-github"></i>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="https://x.com/MD_N_M_18" target="_blank" rel="noopener noreferrer" class="social-btn"
+                        title="Visit X">
+                        <i class="bx bxl-twitter"></i>
+                    </a>
+
+                    <a href=" https://www.instagram.com/md._n.m._india_18" target="_blank" rel="noopener noreferrer"
+                        class="social-btn" title="Visit Instagram">
+                        <i class=" fab fa-instagram"></i>
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/mdnayaj.mondal" target="_blank" rel="noopener noreferrer"
+                        class="social-btn" title="Visit Facebook">
+                        <i class=" fab fa-facebook"></i>
+                    </a>
+                    <!-- Telegram -->
+                    <a href="https://www.t.me/Md_NM_18_indian" target="_blank" rel="noopener noreferrer"
+                        class="social-btn" title="Visit Telegram">
+                        <i class=" fab fa-telegram"></i>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:md.n.m.pius18@gmail.com" class="social-btn" title="Visit Email Id">
+                        <i class=" fas fa-envelope"></i>
+                    </a>
+                    <!-- Discord -->
+                    <a href="https://www.discordapp.com/users/1241062535994806393" target="_blank"
+                        rel="noopener noreferrer" class="social-btn" title="Visit Discord">
+                        <i class=" fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Copyright Section -->
+        <div class="footer-bottom">
+            <p>Created with <i class="fas fa-heart heart-icon"></i> by <span class="author-name">MD._NM</span></p>
+            <p class="copyright">Experience Quality and Innovation with<a href="https://mondal-products.vercel.app/"
+                    target="_blank" rel="noopener noreferrer"> Mondal Products </a></p>
+            <p class="copyright">© 2025 Copyright. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+<!-- BODY SECTION END -->
+
+</html>

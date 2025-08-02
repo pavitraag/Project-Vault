@@ -267,9 +267,22 @@ background: linear-gradient(135deg, #667eea, #764ba2);
 .features-section {
   margin: 4rem 0;
 }
+.section-title-2{
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800; 
+  background: linear-gradient(to right, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 3rem; 
+  
+}
 
-.features-grid {
-  display: grid;
+.features-grid { 
+  display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
