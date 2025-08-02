@@ -180,3 +180,36 @@ const subtitleOptions = {
 };
 const typedSubtitle = new Typed('#animated-text', subtitleOptions);
 });
+
+document.querySelectorAll('a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+
+    // Ignore external links, hash links, mailto, tel, or javascript:void(0)
+    if (
+      !href ||
+      href.startsWith('http') ||
+      href.startsWith('#') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('tel:') ||
+      href.startsWith('javascript:')
+    ) return;
+
+    e.preventDefault();
+
+    fetch(href, { method: 'HEAD' }) // Use HEAD for faster check
+      .then(response => {
+        if (!response.ok) {
+          // If response status is not 2xx
+          window.location.href = 'page_not_found.html';
+        } else {
+          window.location.href = href;
+        }
+      })
+      .catch(() => {
+        // If fetch fails (e.g., network error)
+        window.location.href = 'page_not_found.html';
+      });
+  });
+});
+
