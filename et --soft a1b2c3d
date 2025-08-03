@@ -1,0 +1,270 @@
+[33ma7d4e40[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Fixed  homepage card links to navigate to correct component pages
+[33ma00ba4c[m Added Search by tech stack in componenets dropdown in home page
+[33m2c3aab6[m Merge pull request #229 from Roshni866/student_burnout
+[33me20c756[m Merge pull request #225 from PrernaSrivastava1/Component-dropdown
+[33me398a17[m dropdown's structure is fixed
+[33m6d4f9a6[m updated html
+[33m8c14df5[m inital commit
+[33mcdea187[m Dropdown fixed
+[33m6bdc7a9[m Merge pull request #132 from Roshni866/loan-approval-section
+[33m127d62e[m Merge pull request #69 from SK8-infi/reflex-tester
+[33m94a3397[m Merge pull request #204 from vanshika-ramchandani/fix/website.html
+[33m5c5e8c3[m Merge pull request #203 from SK8-infi/main
+[33m81c20a7[m Merge pull request #222 from SujitYalmar/main
+[33md7babdd[m remove bugs
+[33m0fcfaea[m Merge branch 'main' into loan-approval-section
+[33mc5677be[m updated file
+[33mc4e5767[m updated file
+[33ma49d876[m Back button styling and position
+[33mb2ad3b6[m Add css maths duel game
+[33me3d61b1[m Merge branch 'main' into reflex-tester
+[33mba54f04[m update games.html
+[33mbe653f0[m Merge pull request #195 from Pratishtha5/main
+[33meafd88a[m resolve conflicts
+[33m236b814[m Create a
+[33m8181d10[m Create a
+[33mc208b35[m Create a
+[33m3354cc2[m Create a
+[33m3e5a1dd[m resolved conflicts in assets/hml/games.html
+[33m079da7a[m Merge pull request #68 from SK8-infi/Minesweeper
+[33mfe76299[m Merge branch 'main' into Minesweeper
+[33me6ef905[m Update games.html
+[33m0f3e5cb[m updated games.html
+[33m6b7b95e[m Update README.md
+[33m68d8b47[m Update README.md
+[33m9b1e19d[m Merge pull request #191 from pavitraag/revert-184-main
+[33m29c2c5a[m Revert "Spam mail classification file is added"
+[33mac1c8ea[m Merge pull request #182 from Rudra-Pratap-Singh1331/main
+[33ma59791b[m Merge branch 'main' into main
+[33m160f684[m Merge pull request #184 from Eswaramuthu/main
+[33ma02642f[m Merge pull request #178 from Bhoomi-18/discussion-forum
+[33m0bf520d[m Merge branch 'main' into discussion-forum
+[33m3faeee4[m Merge pull request #181 from Bhoomi-18/tech-stack-search
+[33m76cb87a[m Merge branch 'main' into tech-stack-search
+[33m120cbc8[m Merge pull request #143 from Vaishnavishinde9552/ui-navbar-fix
+[33me29398a[m added a new project in games
+[33m5298f4b[m Merge branch 'main' into main
+[33m5e023f7[m Merge branch 'main' into discussion-forum
+[33mb9f3756[m Merge branch 'main' into ui-navbar-fix
+[33m7f4d29b[m Merge pull request #179 from Piyush-Garg757/Correcting-hover-effect
+[33mda730e2[m Merge pull request #177 from tanush-space/JustifyTexts
+[33mef693ba[m Merge pull request #175 from Manishnemade12/contact-us
+[33m97b2758[m Merge pull request #171 from navyasreeb04/main
+[33m18e51fb[m Merge pull request #170 from Paddu909/add-2cards
+[33m6fc7684[m Merge pull request #166 from abinayagoudjandhyala/add-hostwise-site
+[33mac74a15[m Merge pull request #163 from vanshika-ramchandani/feature/face-login
+[33m1405103[m Merge pull request #153 from ShlokTrivedi1/feature
+[33m9340528[m Spam mail classification file is added
+[33m8b697f5[m Merge branch 'main' into main
+[33md6949af[m [UI] fix the contact page form UI
+[33m74cdf64[m added category search by tech stack
+[33m104ab10[m [UI] correct the whole Home page UI
+[33m2a4288d[m Corrected Hover effect
+[33md8a96ef[m Corrected Hover effect
+[33m0c58d31[m added discussion forum and fixed some styling
+[33mb713eda[m  Improve Readability of About Us Subpage by Justifying Text
+[33m729e017[m Merge branch 'main' of https://github.com/Bhoomi-18/Project-Vault into discussion-forum
+[33mfdeeff4[m improve ui/ux of contactus card and fix button dissepear isse , improve in resposiveness
+[33m968acdb[m 🔗 Added HostWise project card under Static Websites
+[33mb240f5f[m Merge branch 'main' of https://github.com/navyasreeb04/Project-Vault
+[33m184486e[m Fixed The background color of components
+[33m5b825cc[m Merge pull request #122 from Soumyosish/Candy_Crush
+[33mf7c3338[m Merge pull request #162 from Aribashakil20/improve-readme
+[33m28f7612[m Merge pull request #167 from ankita-mohantyy/snakeGame-Instructions-Buttons
+[33m3d9e0c0[m Merge pull request #168 from tiya2006/main
+[33m3c43d94[m [feature add]  Added Two New Informative Cards to About Us Section
+[33mfa4a4d7[m Merge branch 'pavitraag:main' into main
+[33m4fb0e18[m Add an icon to website
+[33m1129d6c[m Add HostWise static website with live demo and README
+[33me74cc69[m - Added a Start and Pause button - Added instructions for better user experience
+[33mb331534[m 🖼️ Fixed image markdown syntax in README
+[33m61c1efc[m commit
+[33m8884464[m commit
+[33m9412c8b[m Merge branch 'main' of https://github.com/Soumyosish/Project-Vault into Candy_Crush
+[33m8ba18ce[m Merge remote-tracking branch 'upstream/main' into feature/face-login
+[33m50c103d[m View Code Button
+[33mc5f8063[m Merge remote-tracking branch 'upstream/main' into feature/face-login
+[33m8d48305[m Merge pull request #147 from Pratishtha5/main
+[33m7ccfebc[m Add face recognition login feature
+[33m64a6eab[m Merge pull request #72 from kaurroopak/MLmodels
+[33mc2e2d85[m Merge pull request #113 from Bhoomi-18/added-github-links
+[33m767c9e4[m Merge branch 'main' into added-github-links
+[33ma0e987c[m added icon for fake news classifier
+[33m5f2f414[m HTML file updated with the ml project
+[33m851c669[m Merge branch 'main' of https://github.com/Soumyosish/Project-Vault into Candy_Crush
+[33m2e6c31a[m commit
+[33m11a232e[m Merge branch 'pavitraag:main' into MLmodels
+[33maffdbc9[m Merge pull request #142 from Paddu909/fix/contact-form
+[33mc53bc11[m Merge pull request #135 from Ishika-codeit/cursor-animation
+[33m8034c6a[m Merge pull request #130 from Diksha8-db/Diksha
+[33m6b8b4ac[m Merge branches 'Candy_Crush' and 'main' of https://github.com/Soumyosish/Project-Vault into Candy_Crush
+[33mf67e2e5[m Merge pull request #127 from Piyush-Garg757/Correcting-display-and-visibility-issue
+[33mb8fdb06[m Merge pull request #121 from Shakti13-sys/main
+[33m645849b[m Merge pull request #105 from bhavyaaleti28/add-word-guess-game
+[33m0ae952e[m added discussion forum
+[33mf571330[m Added Feature Page
+[33m2bca466[m added a new project Amazon in websites
+[33m4ac37d3[m Merge branch 'main' into ui-navbar-fix
+[33mf4687ad[m Updated HTML validation and form behavior
+[33mdc9071d[m Fix: Updated HTML structure of contact form for submission handling
+[33m29ff282[m Fix: Updated contact form HTML structure for submission handling
+[33m6741a3d[m Fix: removed duplicate navbar and aligned header
+[33m1649951[m Add modern snake cursor effect with smooth animation and scaling
+[33m2033c3f[m Added Loan Approval Predictor card to the project page
+[33m706dc5b[m 🎮 [Feature Add] Add Word Guess Game with improved UI layout
+[33m336188d[m added responsive portfolio
+[33m5ba34ac[m Merge branch 'pavitraag:main' into added-github-links
+[33m3406396[m Fixed visibility and display
+[33m0a62bb1[m temporary changes
+[33md632c6f[m Merge branch 'main' of https://github.com/pavitraag/Project-Vault into Candy_Crush
+[33m9d73828[m candy crush game added
+[33m6cb80ef[m Update style.css
+[33mfddd530[m Merge pull request #120 from pavitraag/revert-119-main
+[33m24e5b8e[m Revert "[Bug Fix] Add Null Checks for DOM Elements to Prevent JavaScript Errors"
+[33m1c8a7e1[m Merge pull request #119 from Shakti13-sys/main
+[33m380cac4[m Update style.css
+[33mad70390[m Update script.js
+[33m5ca4d07[m Merge pull request #118 from pavitraag/revert-97-ui-card-improvement
+[33m4ed6f75[m Revert "Enhanced the UI of cards"
+[33ma41769a[m Merge pull request #97 from purveee04/ui-card-improvement
+[33m3bdbff6[m Merge pull request #88 from Paridhi004/my-feature-branch
+[33mfec90eb[m [Feature Add] Added github links to projects
+[33m56dd40b[m 📦 [Feature Add] Add Word Guess Game to games section
+[33m5f529fc[m Enhanced the UI of cards
+[33m03d68cc[m done issue #59
+[33m4b1c731[m 📦 FAQs Page Enhancement done
+[33m6369b09[m Update README.md
+[33m9f4e4e7[m Merge branch 'pavitraag:main' into MLmodels
+[33m4e1a0f0[m Added Fake News Classifier
+[33m28a7685[m Add reflex test
+[33m6968e38[m Add Minesweeper
+[33m3ecf18b[m Merge pull request #55 from emmehak/main
+[33mc7e52c8[m Merge pull request #62 from vanixyz/main
+[33mf5e75e9[m Add Memory and Snake Game win overlay and Exit button
+[33m5573ea9[m Merge branch 'main' into main
+[33mbf0bab5[m Merge pull request #51 from Kirti123x/add-favicon
+[33m8e72449[m Merge branch 'main' into main
+[33m047b666[m fixed layout
+[33mc7a1683[m added favicon
+[33m96ada1e[m Merge pull request #50 from RAJVEER42/glassy-navbar
+[33m7aa0809[m Merge pull request #49 from Diksha8-db/Diksha
+[33m6344d54[m Merge pull request #47 from RAJVEER42/ui-button-style
+[33m9b3e036[m Merge pull request #45 from DivyaJain-DataAnalyst/my-feature-branch
+[33m3d2e284[m Merge pull request #44 from VEERESH069/prediction_pipeline_feature_add
+[33m80e8d5c[m faq.html layout fixed
+[33m00dd4de[m ml.html layout fixed
+[33mb3921a9[m 💎 Make navbar glassy with fixed positioning
+[33m5920eb3[m games.html layout fixed
+[33mcbba3bb[m website.html layout fixed
+[33m25f5071[m Simon Says feature implemented
+[33md4003f2[m About page layout fixed
+[33m311d54d[m 💄 Style: Improve button hover effect with smooth transitions
+[33m0d88fcb[m Home page layout fixed
+[33m87c3deb[m Add Code Of Conduct
+[33m169e214[m ml.html
+[33mb9b8583[m Prediction pipeline anemia feature add
+[33m13873a1[m [Feature Add] Baseline ML pipeline with EDA, training and evaluation
+[33m7034e60[m Update issue templates
+[33mf13c742[m add loan approval predictor module
+[33m1180f68[m Merge pull request #41 from snehhhcodes/main
+[33mcbf1866[m Merge branch 'pavitraag:main' into main
+[33m5bdb83e[m Update README.md
+[33m9f80900[m Merge branch 'pavitraag:main' into main
+[33me843bf1[m Add files via upload
+[33m613e2f1[m Merge branch 'pavitraag:main' into main
+[33m702a9b1[m Update README.md
+[33mfdb7fa6[m Merge branch 'pavitraag:main' into main
+[33m5892012[m Update README.md
+[33md479cc9[m Merge branch 'pavitraag:main' into main
+[33m5018f89[m Update README.md
+[33m46765f7[m Merge branch 'pavitraag:main' into main
+[33m718294d[m faq
+[33mecd255d[m Create release-drafter.yml
+[33mec24eab[m Update PULL_REQUEST_TEMPLATE.md
+[33m7d4c2b0[m Create PULL_REQUEST_TEMPLATE.md
+[33mfd428a3[m Update README.md
+[33mf2036fa[m Update README.md
+[33mdc733c6[m Update README.md
+[33m4aadb0f[m [Feature Add] Baseline ML pipeline with EDA, training and evaluation
+[33me949a63[m Update README.md
+[33mdc9d1e8[m Update README.md
+[33m48b5ddc[m Merge pull request #31 from SK8-infi/main
+[33m724a0e8[m Update README.md
+[33mea884dd[m Create LICENSE
+[33m8f4c40e[m Delete website/Static_Websites/a
+[33m65d2e1a[m Update index.html
+[33mb4806c3[m Update staticwebsites.html
+[33m42ada48[m Update staticwebsites.html
+[33m02bfbfd[m Update aboutus.html
+[33m7ad41f7[m Update games.html
+[33ma2e2c0c[m Update ml.html
+[33m341f789[m Update respwebsites.html
+[33mcccdcb4[m Update staticwebsites.html
+[33md1a8c8f[m Update website.html
+[33m8f8b56a[m Add files via upload
+[33m16bdf20[m Update staticwebsites.html
+[33m3c8f47a[m Create style.css
+[33m45a065b[m Create index.html
+[33m60afd65[m Update staticwebsites.html
+[33mbd16e6e[m Update staticwebsites.html
+[33m5e56773[m Create a
+[33mfa156c0[m Delete website/NetFlix directory
+[33m38a957a[m Add files via upload
+[33m4865553[m Create index.html
+[33mea7790d[m Delete website/Home_decor directory
+[33m95a051f[m Create a
+[33m96347c9[m Update ml.html
+[33m9a24dcf[m Update ml.html
+[33m8082f5d[m Update ml.html
+[33m91eb4fb[m Update ml.html
+[33m5b2a6a9[m Create Readme.md
+[33m125ca58[m Update and rename a to Readme.md
+[33m5c470f5[m Add files via upload
+[33m67f0acf[m Delete ML/rest.py
+[33mc6c2721[m Add files via upload
+[33mde15e43[m Create a
+[33mf7209d4[m Rename Restaurant_Reservation (4).ipynb to Restaurant_Reservation.ipynb
+[33m621f140[m Delete ML/Restaurant_Recommendation/a
+[33ma6d7d4c[m Add files via upload
+[33ma0ce9ae[m Create a
+[33m0bd5c0d[m Create rest.py
+[33md90da6a[m Create respwebsites.html
+[33m9a42a53[m Create staticwebsites.html
+[33m583384c[m Update website.html
+[33ma3fedc9[m Update website.html
+[33ma24ba43[m Delete website/Home_decor/a
+[33m20317d7[m Update website.html
+[33m770db3e[m Update ml.html
+[33m7fe71b6[m Update games.html
+[33ma508446[m Update style.css
+[33m6a15d98[m Update games.html
+[33m1f155e2[m Update games.html
+[33m55588c3[m Delete Games/Memory_Match/a
+[33m75fc0c8[m Update website.html
+[33ma2fdde5[m Delete assets/html_files/a
+[33ma65d6f0[m Create style.css
+[33me577f29[m Create index.html
+[33m85a7b79[m Update index.html
+[33m56dd2e5[m Update README.md
+[33m7757d68[m Delete ML/a
+[33m0cb0701[m Delete website/a
+[33m59700bc[m Create a
+[33mf1cb078[m Create a
+[33m6991f36[m Add files via upload
+[33md30df5d[m Create a
+[33m56c5d15[m Add files via upload
+[33mcc2977a[m Create a
+[33mcc174ac[m Add files via upload
+[33m0fb7b6a[m Create a
+[33mee84ba8[m Create a
+[33m685632f[m Create a
+[33m5af828d[m Add files via upload
+[33m35311da[m Create a
+[33mb10a65d[m Delete Games/a
+[33m7aa34aa[m Add files via upload
+[33me19581f[m Create a
+[33m2fde110[m Add files via upload
+[33m869dddf[m Create a
+[33m0352129[m Create a
+[33m6808d3c[m Add files via upload
+[33m2d8c5e5[m Initial commit
