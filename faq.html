@@ -60,7 +60,7 @@
         </h2>
         <h4>
           Below you'll find answers to the most common questions you may have on Project-Vault. If you still can't find the answers you're looking for 
-          <div id="contact-us-button"><a href="assets/html_files/contact.html">Contact us!</a></div>
+          <div id="contact-us-button"><a href="assets/html_files/contact.html">Contact us !</a></div>
         </h4>
       </div>
       <div class="bottom-box">
@@ -237,6 +237,12 @@
       const item = element.parentElement;
       item.classList.toggle('active');
     }
+
+     window.addEventListener('DOMContentLoaded', () => {
+    history.scrollRestoration = "manual";
+    window.scrollTo(0,0);
+    
+  });
   </script>
 
 </body>

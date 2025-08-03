@@ -37,7 +37,6 @@ body {
   font-weight: bold;
 }
 
-
 .bottom-box img {
   height: 22rem;
   margin: auto;
@@ -65,7 +64,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   animation: 2s anim-lineUp ease-out 1;
+  animation: 2s anim-lineUp ease-out 1;
+  margin-top: 50px;
 }
 @keyframes anim-lineUp {
   0% {
