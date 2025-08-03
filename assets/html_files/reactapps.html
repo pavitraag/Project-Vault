@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>React Applications</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🌐React Applications</h1>
+    <a href="website.html" class="back-button">← Back to Home</a>
+  </header>
+  <main class="category-container">
+    <div class="category-card">
+      <h3>News Mag</h3>
+      <p>A sleek and responsive React-based news app that fetches and displays real-time headlines using a news API.</p>
+      
+      <a href="../../website/React_Applications/NewsApp/view_guidelines.html" class="play-button">View Project</a>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/React_Applications/NewsApp" class="play-button">View Code <i class="fab fa-github"></i></a>
+    </div>
+     <div class="category-card">
+      <h3>BMI Calculator</h3>
+      <p>A simple web app to calculate your Body Mass Index (BMI) based on height and weight, helping you understand your health category instantly.</p>
+      
+      <a href="../../website/React_Applications/BMICalculator/guidelines.html" class="play-button">View Project</a>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/React_Applications/BMICalculator" class="play-button">View Code <i class="fab fa-github"></i></a>
+    </div>
+
+  </main>
+  <div id="footer-placeholder"></div>
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
+</body>
+</html>
