@@ -155,4 +155,28 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdownToggle.classList.add("active");
       }
     });
+    // --- Typing Animation for Main Title (<h1>) ---
+const titleOptions = {
+  strings: ["Project Vault"],
+  typeSpeed: 70,
+  backSpeed: 40,
+  backDelay: 2000,
+  showCursor: false,
+  loop: true
+};
+const typedTitle = new Typed('#animated-title', titleOptions);
+
+// --- Typing Animation for Subtitle (<p>) ---
+const subtitleOptions = {
+  strings: [
+    "Discover amazing projects in Web Dev",
+    "Explore creative Games and Designs",
+    "Dive into innovative Machine Learning",
+  ],
+  typeSpeed: 50,
+  backSpeed: 25,
+  backDelay: 1500,
+  loop: true
+};
+const typedSubtitle = new Typed('#animated-text', subtitleOptions);
 });
