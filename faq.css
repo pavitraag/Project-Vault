@@ -215,4 +215,19 @@ h1 {
 .footer {
   width: 100vw;
   height: 10rem;
+
+}
+.footer-section{
+  border: 3px solid;
+}
+.company-info {
+  margin: 50px 60px ;
+  text-align: center;
+  max-width: 100%;
+  border: 3px solid;
+}
+.company-info .heading{
+  color: black;
+  font-size: 1.3rem;
+  line-height: 1.6;
 }
