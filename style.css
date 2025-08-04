@@ -1,4 +1,20 @@
-* {
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #111;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}*/
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,8 +24,11 @@ body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: #222;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.8;
   overflow-x: hidden;
+  padding-left: 2vw; /* Prevent content from touching sidebar */
+  padding-right: 2vw;
 }
 
 a {
@@ -18,10 +37,10 @@ a {
 }
 
 /* ========== NAVIGATION ========== */
-nav {
+/*nav {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1rem 2rem;
-  position: realtive;
+  position: relative;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,7 +49,7 @@ nav {
   box-shadow: 0 2px 20px rgba(0,0,0,0.1);
   width: 100%;
   height: 80px;
-}
+}*/
 /* Header */
 header {
   background: linear-gradient(to right, #3f51b5, #5a55ae); /* Deep indigo gradient 
@@ -40,10 +59,10 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
 }
-
+/*
 header h1 {
   margin: 0;
-  font-size: 0.2rem;
+   font-size: clamp(2rem, 5vw, 4rem);
   background: rgba(63, 81, 181, 0.4);
   padding: 1rem 2rem;
   display: flex;
@@ -54,6 +73,10 @@ header h1 {
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
+}
+*/
+header h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
 }
 
 .nav-container {
@@ -105,7 +128,16 @@ header h1 {
 .nav-link:hover::before {
   left: 100%;
 }
+main {
+  margin-left: 10rem; /* or try padding-left if preferred */
+  transition: margin 0.3s ease-in-out;
+}
 
+@media (min-width: 768px) {
+  main {
+    padding-left: 4rem;
+  }
+}
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
@@ -324,4 +356,73 @@ header h1 {
   left: 0;
 }
 
-/* ... Rest of your CSS remains the same ... */
+/* Sidebar Container */
+.sidebar-container {
+  position: fixed;
+  top: 80px; /* adjust based on your navbar */
+  left: 0;
+  width: 20vw; /* 20% of the viewport width */
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: translateX(-90%);
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+/* Slide in on hover */
+.sidebar-container:hover {
+  transform: translateX(0);
+}
+
+/* Optional: Invisible hover zone at left edge */
+.sidebar-hover-zone {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 20px;
+  height: 100vh;
+  z-index: 998;
+}
+
+/* Category Layout */
+.category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Category Card Styling */
+.category-card {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  border-radius: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.category-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+
+/* Shift main content and footer to the right to avoid being covered */
+main,
+footer,
+header {
+  margin-left: 2%; /* Matches sidebar width */
+  transition: margin-left 0.3s ease;
+}
+
+/* Optional: if you want more spacing */
+@media (max-width: 768px) {
+  main,
+  footer,
+  header {
+    margin-left: 0; /* No shift on smaller screens */
+  }
+}
