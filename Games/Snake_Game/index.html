@@ -1,85 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <style>
-         body{
-            margin:0px;
-            padding:0px;
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: palegreen;
-        }
-        canvas{
-            box-shadow: black 20px 10px 50px;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: palegreen;
+      font-family: Arial, sans-serif;
+    }
 
-        }
+    canvas {
+      box-shadow: black 20px 10px 50px;
+    }
+
+    #startBtn, #pauseBtn, #demoBtn {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      background-color: #222;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    #demoBtn {
+      background-color: #4CAF50;
+    }
+
+    #demoBtn:hover {
+      background-color: #388E3C;
+    }
 
     .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    color: white;
-  }
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      color: white;
+    }
 
-  .hidden {
-    display: none;
-  }
+    .hidden {
+      display: none;
+    }
 
-  .overlay button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    background-color: #4CAF50;
-    color: white;
-    transition: background-color 0.2s;
-  }
+    .overlay button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+    }
 
-  .overlay button:hover {
-    background-color: #388E3C;
-  }
+    .overlay button:hover {
+      background-color: #388E3C;
+    }
 
-  #startBtn, #pauseBtn {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 1px;
-    background-color: #222;
-    color: white;
-    transition: background-color 0.2s;
-  }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      color: #333;
+    }
+
+    .modal-content video {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .info li {
+      margin: 8px 0;
+    }
   </style>
 </head>
 <body>
-    <h1>Snake Game</h1>
-    <canvas id="game" width="400" height="400"></canvas>
- 
-    <h2 id="instruction" style="margin-top: 40px;">Use the arrow keys to control the snake.</h2>
-    <p id="note" style="margin-top: 5px;">Speed increases each time you eat an apple! Good Luck!</p>
-    <button id="startBtn" style="margin-top: 10px;">Start Game</button>
-    <button id="pauseBtn" style="margin-top: 40px; display:none;">Pause</button>
 
-<div id="gameOverOverlay" class="overlay hidden">
-  <h2>Game Over!</h2>
-  <button id="restartBtn">Restart</button>
-  <button id="exitBtn">Exit</button>
+  <h1>Snake Game</h1>
+  <canvas id="game" width="400" height="400"></canvas>
+
+  <h2 id="instruction" style="margin-top: 40px;">Use the arrow keys to control the snake.</h2>
+  <p id="note" style="margin-top: 5px;">Speed increases each time you eat an apple! Good Luck!</p>
+  <button id="startBtn">Start Game</button>
+  <button id="pauseBtn" style="display:none;">Pause</button>
+  <button id="demoBtn">🎥 Watch Demo(for using gestures)</button>
+
+  <div id="gameOverOverlay" class="overlay hidden">
+    <h2>Game Over!</h2>
+    <button id="restartBtn">Restart</button>
+    <button id="exitBtn">Exit</button>
+  </div>
+
+  <!-- Modal for demo -->
+<div id="demoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Demo: Running Snake_main.py with Gestures</h2>
+
+    <ul class="info">
+      <li><strong>File:</strong> Snake_main.py</li>
+      <li><strong>Environment:</strong> Python, OpenCV, MediaPipe, PyAutoGUI</li>
+      <li><strong>Setup:</strong> Run in VS Code terminal using Python 3.7+</li>
+      <li><strong>Gestures Used:</strong>
+        <ul>
+          <li> Index Finger Up → Move Up</li>
+          <li> Index + Middle Finger → Move Down</li>
+          <li> Thumb Out → Move Right</li>
+          <li> Pinky Only → Move Left</li>
+        </ul>
+      </li>
+      <li><strong>Tip:</strong> Ensure webcam is active and your hand is well-lit.</li>
+      <li><strong>To exit:</strong> Press ESC or stop the script manually in VS Code.</li>
+    </ul>
+
+    <!-- Embedded video -->
+    <iframe 
+      src="https://drive.google.com/file/d/1oT13xzvHn6OmPKJ_zqpQm24C1gK5oUuC/preview" 
+      width="100%" height="480" allow="autoplay" frameborder="0" allowfullscreen>
+    </iframe>
+
+  </div>
 </div>
-<script src="script.js"></script>
+
+  <script>
+    const modal = document.getElementById("demoModal");
+    const btn = document.getElementById("demoBtn");
+    const closeBtn = document.getElementById("closeModal");
+
+    btn.onclick = function () {
+      modal.style.display = "block";
+    }
+
+    closeBtn.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
