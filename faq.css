@@ -231,3 +231,31 @@ h1 {
   font-size: 1.3rem;
   line-height: 1.6;
 }
+
+/* === fix: prevent fixed navbar overlapping headings on FAQ page === */
+
+/* adjust this if your navbar height is different */
+:root {
+  --fixed-nav-height: 70px;
+}
+
+/* Add top padding so top content is not hidden under fixed navbar */
+.faq-page main,
+.faq-page #Faq-img-container,
+.faq-page #faq-container {
+  padding-top: calc(var(--fixed-nav-height) + 1rem);
+}
+
+/* Ensure headings are visible when navigated via anchors */
+.faq-page h1,
+.faq-page h2,
+.faq-page h3,
+.faq-page h4 {
+  scroll-margin-top: calc(var(--fixed-nav-height) + 0.75rem);
+}
+
+/* keep navbar on top (safety) */
+.faq-page nav,
+.faq-page .nav-container {
+  z-index: 1000;
+}
