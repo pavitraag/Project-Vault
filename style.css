@@ -674,3 +674,28 @@ footer {
   position: relative;
   z-index: 10;
 }
+
+/* Scroll to Top Btn styling */
+
+#scroll-to-top-btn {
+    font-size: 1.4rem;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 4%;
+    right: 4%;
+    z-index: 99;
+    border: none;
+    outline: none;
+    padding: 1.1rem;
+    background: radial-gradient(#fe6799, #e42766, #bf4e6e);
+    color: #fff;
+    cursor: pointer;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1);
+    display: none;
+}
+
+#scroll-to-top-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 8px 30px #f6d4e954;
+}
