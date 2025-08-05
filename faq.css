@@ -231,3 +231,7 @@ h1 {
   font-size: 1.3rem;
   line-height: 1.6;
 }
+
+#faq-heading {
+  scroll-margin-top: 80px; /* adjust to match navbar height */
+}
