@@ -75,15 +75,25 @@
                 <i class="fas fa-arrow-left"></i> Back to Home</a>
         </div>
     </nav>
+
   <header>
     <h1>Games</h1>
   </header>
-  <main class="category-container">
-    <div class="category-card">
-      <h3>Memory Match</h3>
-      <p>A fun card-flipping memory game built with JavaScript.</p>
-      <a href="../../Games/Memory_Match/index.html" class="play-button">Play Now</a>
-      <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Memory_Match" class="code-button">View Code <i class="fab fa-github"></i></a>
+  <main>
+    <!-- FAVORITES FILTER BUTTON -->
+    <div class="favorites-toggle">
+        <button id="favoritesToggleBtn" onclick="toggleFavorites()">Show Favorites</button>
+    </div>
+    <div class="category-container">
+        <div class="category-card">
+        <h3>Memory Match</h3>
+        <p>A fun card-flipping memory game built with JavaScript.</p>
+        <a href="../../Games/Memory_Match/index.html" class="play-button">Play Now</a>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Memory_Match" class="code-button">View Code <i class="fab fa-github"></i></a>
+        <!-- Favorite Button -->
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+        <i class="fa-regular fa-star"></i>
+        </button>
     </div>
    
     <div class="category-card">
@@ -91,6 +101,9 @@
       <p>Classic snake game implemented in HTML5 canvas.</p>
       <a href="../../Games/Snake_Game/index.html" class="play-button" target="_blank">Play Now</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Snake_Game" class="code-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     
     <div class="category-card">
@@ -98,42 +111,63 @@
       <p>Test Your Memory and Reflexes in This Classic Command Game!.</p>
       <a href="../../Games/Simon_Says_Game/index.html" class="play-button" target="_blank">Play Now</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Simon_Says_Game" class="code-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     <div class="category-card">
       <h3>Reflex Tester</h3>
       <p>Test your reaction time and reflexes with this interactive game.</p>
       <a href="../../Games/Reflex_tester/index.html" class="play-button" target="_blank">Play Now</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Reflex_tester" class="code-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     <div class="category-card">
       <h3>Minesweeper</h3>
       <p>Classic minesweeper game with grid-based puzzle solving!.</p>
       <a href="../../Games/Minesweeper/index.html" class="play-button" target="_blank">Play Now</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Minesweeper" class="code-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     <div class="category-card">
       <h3>Word Guess Game</h3>
       <p>A Wordle-style 5-letter puzzle game with scoring and clues.</p>
       <a href="../../Games/Word_guess/index.html" class="play-button" target="_blank">Play Now</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/" class="code-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     <div class="category-card">
       <h3>Candy Crush</h3>
       <p>Match colorful candies in this addictive puzzle game with special combinations and power-ups!</p>
       <a href="../../Games/Candy_Crush/index.html" class="play-button" target="_blank">Play Now</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/Candy_Crush" class="code-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     <div class="category-card">
         <h3>Typing Speed Game</h3>
         <p>Test your typing speed in a fun and interactive way!</p>
         <a href="../../Games/Typing_Speed_Test/index.html" class="play-button" target="_blank">Play Now</a>
         <a href=" " class="code-button">View Code <i class="fab fa-github"></i></a> <!-- Link to be updated -->
-      </div>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+        <i class="fa-regular fa-star"></i>
+        </button>
+    </div>
       <div class="category-card">
         <h3>CSS Math Duel</h3>
         <p>Two-player speed math race with beautiful animations and competitive gameplay!</p>
         <a href="../../Games/CSS_Math_Duel/index.html" class="play-button" target="_blank">Play Now</a>
         <a href="https://github.com/pavitraag/Project-Vault/tree/main/Games/CSS_Math_Duel" class="code-button">View Code <i class="fab fa-github"></i></a>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+        <i class="fa-regular fa-star"></i>
+        </button>
       </div>
   </main>
     <footer id="contact">

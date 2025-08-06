@@ -440,6 +440,67 @@ header h1 {
   background: #e73370;
 }
 
+/* Favorite Star Button */
+.fav-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 21px;
+  color: #8966e1;
+  transition: color 0.2s ease;
+}
+
+.fav-btn:hover {
+  transform: scale(1.25);
+}
+
+.category-card {
+  position: relative;
+  padding: 20px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fff;
+}
+
+/* When favorited */
+.category-card.favorited .fav-btn i {
+  color:#8966e1;
+}
+
+/* Toggle Button Style */
+.favorites-toggle {
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 60px 60px 0px 30px;
+  padding: 0;
+  background: none;
+}
+
+#favoritesToggleBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(to right, #7c3aed, #9333ea);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+#favoritesToggleBtn:hover {
+  background: linear-gradient(to right, #a855f7, #9333ea);
+  box-shadow: 0 6px 16px rgba(137, 39, 228, 0.6);
+  transform: translateY(-2px); 
+}
+
+
 /* ========== FOOTER ========== */
 footer {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

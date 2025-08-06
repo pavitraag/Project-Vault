@@ -188,6 +188,50 @@ a {
   flex: 1;
 }
 
+.fav-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 21px;
+  color: #8966e1 ;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+
+.fav-btn:hover {
+  transform: scale(1.25);
+}
+
+.favorites-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 30px 70px 30px;
+  padding: 0;
+  background: none;
+}
+
+#favoritesToggleBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: linear-gradient(to right, #7c3aed, #9333ea);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
+}
+
+#favoritesToggleBtn:hover {
+  background: linear-gradient(to right, #a855f7, #9333ea);
+  box-shadow: 0 6px 16px rgba(137, 39, 228, 0.6);
+  transform: translateY(-2px);
+}
+
 /* Tech Stack Tags */
 .tech-stack {
   display: flex;
