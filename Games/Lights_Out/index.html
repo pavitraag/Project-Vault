@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lights Out Puzzle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: radial-gradient(circle at -8.9% 51.2%, rgb(255, 124, 0) 0%, rgb(255, 124, 0) 15.9%, rgb(255, 163, 77) 15.9%, rgb(255, 163, 77) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
+      margin: 20px;
+      font-family: "Bungee", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    h1 {
+      color: #f8f0f0;
+    }
+
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(5, 80px);
+      gap: 5px;
+      justify-content: center;
+      margin: 20px auto;
+    }
+
+    .cell {
+      width: 80px;
+      height: 80px;
+      background-color: #ffcc00; /* Light is on */
+      border: 2px solid #333;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .cell.off {
+      background-color: #333; /* Light is off */
+    }
+
+  /* button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      background-color: #FFA34D;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ffb300; /* Darker yellow on hover */
+     /* transform: translateY(-2px);/*
+    } 
+    /* From Uiverse.io by e-coders */ 
+button {
+ appearance: none;
+ background-color: black;
+ border: 0.125em solid #1A1A1A;
+ border-radius: 0.9375em;
+ box-sizing: border-box;
+ color: #f8f4f4;
+ cursor: pointer;
+ display: inline-block;
+ font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+ font-size: 16px;
+ font-weight: 600;
+ line-height: normal;
+ margin: 0;
+ min-height: 3.75em;
+ min-width: 0;
+ outline: none;
+ padding: 1em 2.3em;
+ text-align: center;
+ text-decoration: none;
+ transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ will-change: transform;
+}
+
+button:disabled {
+ pointer-events: none;
+}
+
+button:hover {
+ color: #fff;
+ background-color: #1A1A1A;
+ box-shadow: rgba(236, 4, 4, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+button:active {
+ box-shadow: none;
+ transform: translateY(0);
+}
+
+    #reset-button {
+      background-color: #FF7C00;
+    }
+
+    #reset-button:hover {
+      background-color: #FF9A00;
+        transform: translateY(-2px);
+    }
+    #how-to {
+      background-color: #FF7C00;
+      text-decoration: none;
+    }
+
+    #score {
+      font-size: 20px;
+      font-weight: bold;
+      color: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lights Out Puzzle</h1>
+  <p>Moves: <span id="score">0</span></p>
+  <div id="game-board"></div>
+  <button id="reset-button">Reset Game</button>
+  <button id="reset-score">Reset Score</button>
+  <button id="how-to" ><a href="https://www.wikihow.com/Solve-Lights-Out-Game">How to</a></button>
+
+  <script>
+    const boardSize = 5; // 5x5 grid
+    const board = document.getElementById("game-board");
+    const resetButton = document.getElementById("reset-button");
+    const resetScoreButton = document.getElementById("reset-score");
+    const scoreElement = document.getElementById("score");
+
+    let grid = [];
+    let score = 0;
+
+    // Create the game board
+    function createBoard() {
+      board.innerHTML = ""; // Clear board
+      grid = Array.from({ length: boardSize }, () =>
+        Array.from({ length: boardSize }, () => Math.random() > 0.5) // Random lights on/off
+      );
+
+      for (let row = 0; row < boardSize; row++) {
+        for (let col = 0; col < boardSize; col++) {
+          const cell = document.createElement("div");
+          cell.classList.add("cell");
+          if (!grid[row][col]) cell.classList.add("off");
+          cell.dataset.row = row;
+          cell.dataset.col = col;
+          cell.addEventListener("click", () => toggleLights(row, col));
+          board.appendChild(cell);
+        }
+      }
+
+      score = 0;
+      updateScore();
+    }
+
+    // Toggle the clicked light and its neighbors
+    function toggleLights(row, col) {
+      const directions = [
+        [0, 0],     // Current cell
+        [-1, 0],    // Top
+        [1, 0],     // Bottom
+        [0, -1],    // Left
+        [0, 1],     // Right
+      ];
+
+      directions.forEach(([dx, dy]) => {
+        const newRow = row + dx;
+        const newCol = col + dy;
+
+        if (newRow >= 0 && newRow < boardSize && newCol >= 0 && newCol < boardSize) {
+          grid[newRow][newCol] = !grid[newRow][newCol];
+          const cell = document.querySelector(`[data-row='${newRow}'][data-col='${newCol}']`);
+          cell.classList.toggle("off");
+        }
+      });
+
+      score++;
+      updateScore();
+      checkWin();
+    }
+
+    // Update the score display
+    function updateScore() {
+      scoreElement.textContent = score;
+    }
+
+    // Check if the player has won
+    function checkWin() {
+      const allOff = grid.every(row => row.every(light => !light));
+      if (allOff) {
+        setTimeout(() => alert("🎉 Congratulations! You turned off all the lights in " + score + " moves!"), 100);
+      }
+    }
+
+    // Reset the game board
+    resetButton.addEventListener("click", createBoard);
+
+    // Reset only the score
+    resetScoreButton.addEventListener("click", () => {
+      score = 0;
+      updateScore();
+    });
+
+    // Initialize the game board
+    createBoard();
+  </script>
+</body>
+</html>
