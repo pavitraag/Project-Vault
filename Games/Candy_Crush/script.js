@@ -59,7 +59,7 @@ class CandyCrush {
                     (col >= 2 && this.board[row][col-1] && this.board[row][col-2] && this.board[row][col-1].color === color && this.board[row][col-2].color === color) ||
                     (row >= 2 && this.board[row-1][col] && this.board[row-2][col] && this.board[row-1][col].color === color && this.board[row-2][col].color === color)
                 );
-                this.board[row][col] = { color };
+                this.board[row][col] = { color, type: 'normal' };
             }
         }
     }
@@ -72,7 +72,11 @@ class CandyCrush {
             for (let col = 0; col < this.boardSize; col++) {
                 const candy = document.createElement('div');
                 const candyData = this.board[row][col];
-                candy.className = `candy ${candyData ? candyData.color : ''}`;
+                let candyClass = `candy ${candyData ? candyData.color : ''}`;
+                if (candyData && candyData.type === 'striped') {
+                    candyClass += ' striped';
+                }
+                candy.className = candyClass;
                 candy.dataset.row = row;
                 candy.dataset.col = col;
                 this.gameBoard.appendChild(candy);
@@ -292,10 +296,21 @@ class CandyCrush {
 
     async handleMatchesAndCascades() {
         let totalMatched = 0;
+        let firstMatch = true;
         while (true) {
             const matches = this.findMatches();
             if (matches.length === 0) break;
             totalMatched += matches.length;
+            if (firstMatch) {
+                if (matches.length >= 5) {
+                    this.showMatchMessage("Divine");
+                } else if (matches.length >= 4) {
+                    this.showMatchMessage("Tasty");
+                } else if (matches.length >= 3) {
+                    this.showMatchMessage("Sweet");
+                }
+                firstMatch = false;
+            }
             await this.removeMatches(matches);
             await this.fillEmptySpaces();
         }
@@ -305,9 +320,65 @@ class CandyCrush {
     }
 
     async removeMatches(matches) {
+        // Group matches by color and position
+        const colorGroups = {};
         for (const [row, col] of matches) {
+            const candy = this.board[row][col];
+            if (candy) {
+                if (!colorGroups[candy.color]) colorGroups[candy.color] = [];
+                colorGroups[candy.color].push([row, col]);
+            }
+        }
+
+        // Find striped candies in matches
+        let extraMatches = [];
+        for (const [row, col] of matches) {
+            const candy = this.board[row][col];
+            if (candy && candy.type === 'striped') {
+                // Clear both row and column for striped candy
+                for (let i = 0; i < this.boardSize; i++) {
+                    // Add all candies in the same row
+                    if (this.board[row][i]) extraMatches.push([row, i]);
+                    // Add all candies in the same column
+                    if (this.board[i][col]) extraMatches.push([i, col]);
+                }
+            }
+        }
+
+        // Merge and deduplicate matches
+        const allMatches = Array.from(new Set([...matches, ...extraMatches].map(([r, c]) => `${r},${c}`)))
+            .map(s => s.split(',').map(Number));
+
+        // Add burst effect
+        for (const [row, col] of allMatches) {
+            const candyElem = this.getCandyAt(row, col);
+            if (candyElem) {
+                candyElem.classList.add('burst');
+            }
+        }
+        await new Promise(r => setTimeout(r, 400));
+
+        // Handle striped candy creation for 4-match
+        for (const color in colorGroups) {
+            if (colorGroups[color].length === 4) {
+                const [row, col] = colorGroups[color][0];
+                this.board[row][col] = { color: color, type: 'striped' };
+                for (let i = 1; i < 4; i++) {
+                    const [r, c] = colorGroups[color][i];
+                    this.board[r][c] = null;
+                }
+            } else {
+                for (const [row, col] of colorGroups[color]) {
+                    this.board[row][col] = null;
+                }
+            }
+        }
+
+        // Remove all candies in extra matches (row/col pops)
+        for (const [row, col] of extraMatches) {
             this.board[row][col] = null;
         }
+
         this.renderBoard();
         await new Promise(r => setTimeout(r, 250));
     }
@@ -324,7 +395,8 @@ class CandyCrush {
                         this.board[above][col] = null;
                     } else {
                         // New candy
-                        this.board[row][col] = { color: this.colors[Math.floor(Math.random() * this.colors.length)] };
+                        let color = this.colors[Math.floor(Math.random() * this.colors.length)];
+                        this.board[row][col] = { color, type: 'normal' };
                     }
                 }
             }
@@ -332,9 +404,31 @@ class CandyCrush {
         this.renderBoard();
         await new Promise(r => setTimeout(r, 250));
     }
+
+    showMatchMessage(text) {
+        const msg = document.getElementById('matchMessage');
+        if (msg) {
+            msg.textContent = text;
+            msg.classList.add('show');
+            setTimeout(() => {
+                msg.classList.remove('show');
+            }, 1000); // Hide after 1 second
+
+            // Force DOM update, then speak
+            requestAnimationFrame(() => {
+                if ('speechSynthesis' in window) {
+                    const utter = new SpeechSynthesisUtterance(text);
+                    utter.rate = 1.1; // Slightly faster
+                    utter.pitch = 1.2; // Slightly higher pitch
+                    window.speechSynthesis.speak(utter);
+                }
+            });
+        }
+    }
 }
 
 // Start the game when the page loads
 window.addEventListener('load', () => {
     new CandyCrush();
-}); 
+});
+
