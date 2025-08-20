@@ -1,0 +1,141 @@
+/* Reset unwanted margin */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: #f9f9f9;
+  }
+  
+  /* Header styling */
+  .ml-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 0; /* remove extra gap */
+  }
+  
+  .ml-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .ml-header p {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 20px ;
+  }
+  
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 0.75rem 1.75rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    z-index: 10;
+  }
+  
+  /* Projects container */
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto; /* centers and adds spacing */
+    padding: 0 20px;
+  }
+  
+  /* Project cards */
+  .project-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 320px; /* ensures equal height */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+  
+  .project-icon {
+    font-size: 2.5rem;
+    display: inline-block;
+  
+    background: linear-gradient(135deg, #667eea, #764ba2);
+  
+    /* For Chrome, Safari, Edge */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    /* For Firefox */
+    background-clip: text;
+    color: transparent;
+  
+    margin-bottom: 15px;
+  }
+  
+  
+  
+  
+  /* Text */
+  .project-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .project-content p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    flex-grow: 1; /* pushes button down */
+  }
+  
+  /* Tags */
+  .tech-stack {
+    margin-bottom: 15px;
+  }
+  
+  .tech-tag {
+    display: inline-block;
+    background: #eee;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 3px;
+    color: #333;
+  }
+  
+  /* Button */
+  .view-code-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+  }
+  
+  .view-code-btn:hover {
+    background: #2575fc;
+  }
+  
