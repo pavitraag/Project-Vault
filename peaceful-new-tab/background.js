@@ -197,3 +197,40 @@ function injectPetsScript() {
     
     document.body.appendChild(petsContainer);
 }
+
+
+// Function to remove pets (executed in content script context)
+function removePetsScript() {
+    const existing = document.getElementById('chrome-pets-extension-container');
+    if (existing) {
+        existing.remove();
+    }
+    
+    const styles = document.getElementById('chrome-pets-styles');
+    if (styles) {
+        styles.remove();
+    }
+}
+
+// Listen for tab updates to inject pets into new pages
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+    if (changeInfo.status === 'complete' && petsEnabled && tab.url) {
+        // Skip chrome:// and extension pages
+        if (tab.url.startsWith('chrome://') || 
+            tab.url.startsWith('chrome-extension://') ||
+            tab.url.startsWith('moz-extension://') ||
+            tab.url.startsWith('edge://')) {
+            return;
+        }
+        
+        try {
+            await chrome.scripting.executeScript({
+                target: { tabId: tabId },
+                function: injectPetsScript
+            });
+            console.log("Pets injected into updated tab:", tab.url);
+        } catch (error) {
+            console.log("Could not inject into updated tab:", tab.url, error.message);
+        }
+    }
+});
