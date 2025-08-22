@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Websites - Project Vault</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
@@ -10,25 +14,40 @@
     <h1>🌐Interactive Websites</h1>
     <a href="website.html" class="back-button">← Back to Home</a>
   </header>
-  <main class="category-container">
-    <div class="category-card">
-      <h3>NetFlix</h3>
-      <p>Website offering movies.</p>
-      <a href="../../website/Netflix/index.html" class="play-button">View Project</a>
-      <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Static_Websites/NetFlix" class="play-button">View Code <i class="fab fa-github"></i></a>
+  <main>
+     <!-- FAVORITES FILTER BUTTON -->
+    <div class="favorites-toggle">
+        <button id="favoritesToggleBtn" onclick="toggleFavoritesView()">Show Favorites</button>
     </div>
-    <div class="category-card">
-      <h3>Portfolio Prototype</h3>
-      <p>A Responsive portfolio prototype for developers to bring out their skills and work.</p>
-      <a href="../../website/Responsive_Websites/Portfolio/index.html" class="play-button">View Project</a>
-    </div>
+    <div class="category-container">
+      <div class="category-card">
+        <h3>NetFlix</h3>
+        <p>Website offering movies.</p>
+        <a href="../../website/Netflix/index.html" class="play-button">View Project</a>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Static_Websites/NetFlix" class="play-button">View Code <i class="fab fa-github"></i></a>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+        </button>
+      </div>
+      <div class="category-card">
+        <h3>Portfolio Prototype</h3>
+        <p>A Responsive portfolio prototype for developers to bring out their skills and work.</p>
+        <a href="../../website/Responsive_Websites/Portfolio/index.html" class="play-button">View Project</a>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+        </button>
+      </div>
       <div class="category-card">
         <h3>Too-Doo App</h3>
         <p>a feature-packed, intuitive, and beautifully designed Task & Notes Manager 🗂️✨. With a live body background 🌟, smart reminders ⏰📍, offline support 📶, haptic feedback 📳, and a digital clock ⏳, this app helps you organize your life efficiently! Built with Progressive Web App (PWA) capabilities, it works seamlessly offline & online.</p>
         <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Responsive_Websites/To-Do App/index.html" class="play-button">View Project</a>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+        </button>
       </div>
     <!-- Add more project cards -->
   </main>
+
   <script>
   fetch("/footer.html")
     .then(response => response.text())
@@ -36,5 +55,6 @@
       document.getElementById("footer-placeholder").innerHTML = data;
     });
 </script>
+<script src="../js_files/favorite.js"></script>
 </body>
 </html>
