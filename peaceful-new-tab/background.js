@@ -79,3 +79,32 @@ async function injectPetsIntoAllTabs() {
         console.error("Error injecting pets into all tabs:", error);
     }
 }
+
+// Remove pets from all tabs
+async function removePetsFromAllTabs() {
+    try {
+        const tabs = await chrome.tabs.query({});
+        
+        for (const tab of tabs) {
+            // Skip chrome:// and extension pages
+            if (tab.url.startsWith('chrome://') || 
+                tab.url.startsWith('chrome-extension://') ||
+                tab.url.startsWith('moz-extension://') ||
+                tab.url.startsWith('edge://')) {
+                continue;
+            }
+            
+            try {
+                await chrome.scripting.executeScript({
+                    target: { tabId: tab.id },
+                    function: removePetsScript
+                });
+                console.log("Pets removed from tab:", tab.url);
+            } catch (error) {
+                console.log("Could not remove pets from tab:", tab.url, error.message);
+            }
+        }
+    } catch (error) {
+        console.error("Error removing pets from all tabs:", error);
+    }
+}
