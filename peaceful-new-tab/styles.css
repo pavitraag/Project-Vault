@@ -378,3 +378,82 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent */
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2); /* dark overlay */
+  z-index: 0;
+}
+
+.emoji-wave {
+  filter: none !important;
+  color: #ff9900 !important; /* or any bright visible color */
+  mix-blend-mode: normal;
+}
+
+
+/* updated sites as buttons */
+#top-sites-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.top-site-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid #aaa;
+  border-radius: 18px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  backdrop-filter: blur(5px);
+  color: white;
+}
+
+.top-site-button:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  transform: scale(1.03);
+}
+
+.top-site-favicon {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+}
+
+.top-site-label {
+  font-weight: 500;
+}
+
+.remove-site {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: crimson;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+  cursor: pointer;
+  pointer-events: auto;
+}
