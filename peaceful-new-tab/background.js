@@ -198,7 +198,6 @@ function injectPetsScript() {
     document.body.appendChild(petsContainer);
 }
 
-
 // Function to remove pets (executed in content script context)
 function removePetsScript() {
     const existing = document.getElementById('chrome-pets-extension-container');
