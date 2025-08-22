@@ -108,3 +108,92 @@ async function removePetsFromAllTabs() {
         console.error("Error removing pets from all tabs:", error);
     }
 }
+
+// Function to inject pets (executed in content script context)
+function injectPetsScript() {
+    // Remove existing pets first
+    const existing = document.getElementById('chrome-pets-extension-container');
+    if (existing) {
+        existing.remove();
+    }
+    
+    // Create pets container
+    const petsContainer = document.createElement('div');
+    petsContainer.id = 'chrome-pets-extension-container';
+    petsContainer.style.cssText = `
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 60px !important;
+        pointer-events: none !important;
+        z-index: 2147483647 !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+    `;
+    
+    // Cute pet characters
+    const cutePets = ["🐶", "🐱", "🐰", "🦊"];
+    
+    // Create pets
+    cutePets.forEach((petEmoji, index) => {
+        const pet = document.createElement('div');
+        pet.className = 'chrome-extension-pet';
+        pet.textContent = petEmoji;
+        pet.style.cssText = `
+            position: absolute !important;
+            bottom: 5px !important;
+            left: ${index * 25 + 5}% !important;
+            font-size: 2rem !important;
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            transition: all 0.3s ease !important;
+            animation: petFloat 3s ease-in-out infinite !important;
+            animation-delay: ${index * -0.5}s !important;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) !important;
+            user-select: none !important;
+        `;
+        
+        // Add hover effect
+        pet.addEventListener('mouseenter', () => {
+            pet.style.transform = 'scale(1.3) translateY(-10px)';
+        });
+        
+        pet.addEventListener('mouseleave', () => {
+            pet.style.transform = '';
+        });
+        
+        // Add click effect
+        pet.addEventListener('click', () => {
+            pet.style.animation = 'petBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            setTimeout(() => {
+                pet.style.animation = 'petFloat 3s ease-in-out infinite';
+                pet.style.animationDelay = `${index * -0.5}s`;
+            }, 600);
+        });
+        
+        petsContainer.appendChild(pet);
+    });
+    
+    // Add CSS animations
+    if (!document.getElementById('chrome-pets-styles')) {
+        const style = document.createElement('style');
+        style.id = 'chrome-pets-styles';
+        style.textContent = `
+            @keyframes petFloat {
+                0%, 100% { transform: translateY(0px) rotate(-1deg); }
+                25% { transform: translateY(-8px) rotate(1deg); }
+                50% { transform: translateY(-4px) rotate(-0.5deg); }
+                75% { transform: translateY(-12px) rotate(0.5deg); }
+            }
+            
+            @keyframes petBounce {
+                0% { transform: scale(1.3) translateY(-10px); }
+                50% { transform: scale(1.5) translateY(-25px) rotate(15deg); }
+                100% { transform: scale(1.3) translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(petsContainer);
+}
