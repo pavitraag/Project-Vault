@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_PEXELS_API_K"; // <-- Replace this
+const API_KEY="YOUR_PEXEL_API_KEY_HERE" //replace the placeholder with your pexels api key
 
 // Greeting and Name
 function getName() {
@@ -174,7 +174,6 @@ document.getElementById("add-site-form").addEventListener("submit", e => {
   e.target.reset();
 });
 
-
 // Pets toggle
 document.getElementById("petsToggle").addEventListener("change", async e => {
   await chrome.runtime.sendMessage({ action: "togglePets", enabled: e.target.checked });
@@ -190,7 +189,6 @@ document.getElementById("clearData").addEventListener("click", () => {
     loadSites();
   }
 });
-
 
 function createPetsOnNewTab() {
     if (document.getElementById('chrome-pets-extension-container')) return;
