@@ -85,20 +85,21 @@ header h1 {
 
 .nav-right {
   display: flex;
-  align-items: flex-end;
-  gap: 1.0rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .nav-link {
   color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
-  padding: 0.3rem 0.3rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 25px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
 
 }
 
@@ -673,4 +674,16 @@ footer {
 .add-project-card {
   position: relative;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+    /* hide desktop links on small screens */
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    /* show hamburger menu */
+  }
 }

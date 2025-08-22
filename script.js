@@ -28,7 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     spans[1].style.opacity = "1";
     spans[2].style.transform = "none";
   }
-
+  function closeMobileMenu() {
+    mobileMenu.classList.remove("active");
+    const spans = mobileMenuToggle.querySelectorAll("span");
+    spans[0].style.transform = "none";
+    spans[1].style.opacity = "1";
+    spans[2].style.transform = "none";
+  }
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", toggleMobileMenu);
   }
