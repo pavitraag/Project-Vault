@@ -115,3 +115,78 @@ async function setBackground() {
     console.error("Error fetching Pexels image:", error);
   }
 }
+
+// Load and display top sites as styled buttons
+function loadSites() {
+  const container = document.getElementById("top-sites-list");
+  container.innerHTML = "";
+  const sites = JSON.parse(localStorage.getItem("sites") || "[]");
+
+  sites.forEach((site, index) => {
+    const button = document.createElement("button");
+    button.className = "top-site-button";
+    button.onclick = () => window.open(site.url, "_blank");
+
+    const content = document.createElement("div");
+    content.className = "top-site-content";
+
+    const favicon = document.createElement("img");
+    favicon.src = `https://www.google.com/s2/favicons?sz=64&domain_url=${site.url}`;
+    favicon.alt = "favicon";
+    favicon.className = "top-site-favicon";
+
+    const label = document.createElement("span");
+    label.textContent = site.name || new URL(site.url).hostname.replace("www.", "");
+    label.className = "top-site-label";
+
+    content.appendChild(favicon);
+    content.appendChild(label);
+
+    const removeBtn = document.createElement("span");
+    removeBtn.textContent = "×";
+    removeBtn.className = "remove-site";
+    removeBtn.onclick = (e) => {
+      e.stopPropagation(); // prevent click from opening link
+      const sites = JSON.parse(localStorage.getItem("sites") || "[]");
+      sites.splice(index, 1);
+      localStorage.setItem("sites", JSON.stringify(sites));
+      loadSites();
+    };
+
+    button.appendChild(content);
+    button.appendChild(removeBtn);
+    container.appendChild(button);
+  });
+}
+
+// Add site handler
+document.getElementById("add-site-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = document.getElementById("site-name").value.trim();
+  const url = document.getElementById("site-url").value.trim();
+
+  if (!url) return;
+
+  const sites = JSON.parse(localStorage.getItem("sites") || "[]");
+  sites.push({ name, url });
+  localStorage.setItem("sites", JSON.stringify(sites));
+  loadSites();
+  e.target.reset();
+});
+
+
+// Pets toggle
+document.getElementById("petsToggle").addEventListener("change", async e => {
+  await chrome.runtime.sendMessage({ action: "togglePets", enabled: e.target.checked });
+});
+
+// Clear Data
+document.getElementById("clearData").addEventListener("click", () => {
+  if (confirm("Clear all stored data?")) {
+    localStorage.clear();
+    chrome.storage.local.clear();
+    setGreeting();
+    fetchQuote();
+    loadSites();
+  }
+});
