@@ -1,0 +1,117 @@
+/* GENERAL PAGE STYLES */
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  margin-top: 80px; /* for fixed navbar */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #0002;
+}
+
+/* FORUM FORM */
+main {
+  max-width: 700px;
+  margin: 2.5rem auto 0 auto;
+  padding: 0 1rem;
+}
+
+form#new-post-form {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.13), 0 1.5px 6px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form#new-post-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  border: 1.5px solid #d1d5db;
+  background: #f5f7fa;
+  color: #222;
+  resize: vertical;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+form#new-post-form textarea:focus {
+  outline: none;
+  border-color: #764ba2;
+  box-shadow: 0 0 0 2px #667eea33;
+}
+
+form#new-post-form button {
+  align-self: flex-end;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px #667eea22;
+}
+
+form#new-post-form button:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* FORUM POSTS */
+#forum-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.post {
+  background: #fff;
+  padding: 1.5rem 1.2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(102, 126, 234, 0.10), 0 1.5px 6px rgba(0,0,0,0.07);
+  margin-bottom: 0;
+  font-size: 1.08rem;
+  color: #333;
+  word-break: break-word;
+  transition: box-shadow 0.2s;
+}
+
+.post:hover {
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  main {
+    max-width: 98vw;
+    padding: 0 0.5rem;
+  }
+  form#new-post-form {
+    padding: 1.2rem 0.5rem;
+  }
+  .post {
+    padding: 1rem 0.7rem;
+  }
+}

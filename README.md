@@ -21,7 +21,15 @@
 - 💡 Great for students, learners, and open-source enthusiasts
 - 📱 Responsive and clean design
 
----
+## Tech Stacks 
+
+🛠 Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+
+
 
 ## 📥 Submitting a Pull Request
 
@@ -111,11 +119,16 @@ Games: 2D games, JavaScript mini-games
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/pavitraag/Project-Vault) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/pavitraag/Project-Vault) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/pavitraag/Project-Vault) ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/pavitraag/Project-Vault) ![GitHub Org's stars](https://img.shields.io/github/stars/pavitraag%2FProject-Vault) ![GitHub License](https://img.shields.io/github/license/pavitraag/Project-Vault) ![GitHub forks](https://img.shields.io/github/forks/pavitraag/Project-Vault) ![GitHub watchers](https://img.shields.io/github/watchers/pavitraag/Project-Vault) 
 ---
 
-## Contributors
+## 🙌 Contributors
 
-Thanks to these amazing people:
+Thanks to these amazing people who have contributed to the **Project Vault** project:
 
-![Contributors](https://contrib.rocks/image?repo=pavitraag/Project-Vault)
+<!-- readme: contributors -start -->
+<p align="center">
+    <img src="https://api.vaunt.dev/v1/github/entities/pavitraag/repositories/Project-Vault/contributors?format=svg&limit=54" width="1000" />
+</p>
+<!-- readme: contributors -end -->
+
 
 ---
 

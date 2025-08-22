@@ -62,24 +62,25 @@ header h1 {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: #fff;
-  padding: 0.875rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
-  animation: slideInUp 0.8s ease-out 0.2s both;
-  position: relative;
-  z-index: 1;
+  font-size: 0.95rem;
+  z-index: 10;
 }
 
 .back-button:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  color: #fff !important;
 }
 
 /* Main Content */
@@ -99,7 +100,7 @@ main {
 }
 
 /* Enhanced Category Cards */
-.category-card {
+.category-card, .stack-card {
   background: linear-gradient(145deg, #ffffff, #f0f0f0);
   border-radius: 20px;
   padding: 2.5rem 2rem;
@@ -121,7 +122,7 @@ main {
 .category-card:nth-child(5) { animation-delay: 0.5s; }
 .category-card:nth-child(6) { animation-delay: 0.6s; }
 
-.category-card::before {
+.category-card::before, .stack-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -132,17 +133,17 @@ main {
   transition: left 0.6s;
 }
 
-.category-card:hover::before {
+.category-card:hover::before, .stack-card:hover::before {
   left: 100%;
 }
 
-.category-card:hover {
+.category-card:hover, .stack-card:hover {
   transform: translateY(-15px) scale(1.02);
   box-shadow: 0 25px 50px rgba(102, 126, 234, 0.25);
   background: linear-gradient(145deg, #fff, #f8f9ff);
 }
 
-.category-card h3 {
+.category-card h3, .stack-card h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: #333;
@@ -150,11 +151,11 @@ main {
   transition: color 0.3s ease;
 }
 
-.category-card:hover h3 {
+.category-card:hover h3, .stack-card:hover h3 {
   color: #667eea;
 }
 
-.category-card p {
+.category-card p, .stack-card p {
   font-size: 1.1rem;
   color: #666;
   line-height: 1.7;
@@ -162,8 +163,8 @@ main {
   opacity: 0.85;
 }
 
-/* Enhanced Play Button */
-.play-button {
+/* Enhanced Play Button, Code Button*/
+.play-button, .code-button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -179,7 +180,7 @@ main {
   font-size: 0.95rem;
 }
 
-.play-button::before {
+.play-button::before, .code-button::before {
   content: '';
   position: absolute;
   top: 0;
@@ -190,11 +191,11 @@ main {
   transition: left 0.5s;
 }
 
-.play-button:hover::before {
+.play-button:hover::before, .code-button:hover::before {
   left: 100%;
 }
 
-.play-button:hover {
+.play-button:hover, .code-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
   background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
@@ -206,7 +207,7 @@ main {
   transition: transform 0.3s ease;
 }
 
-.play-button:hover::after {
+.play-button:hover::after, .code-button:hover::after {
   transform: scale(1.2) rotate(10deg);
 }
 
@@ -230,6 +231,9 @@ main {
 
 .category-card:nth-child(2) h3::before {
   content: '🐍'; /* Snake game */
+}
+.category-card:nth-child(4) h3::before {
+  content: '🎯'; /* Word Guess game */
 }
 
 /* Animations */

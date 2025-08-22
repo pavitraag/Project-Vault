@@ -1,0 +1,475 @@
+*{
+    margin:0;
+    padding:0;
+}
+.flex{
+    display:flex;
+    align-items:flex-start;
+}
+/* styling navbar*/ 
+
+/*styling the inverted V-shape */
+.triangle{
+    background:#2e28ca;
+    clip-path:polygon(65% 0%, 0% 24%, 0% 62%,100% 100%, 100% 63%,  70% 48%, 100% 30%,100% 0%);
+}
+
+.adjacent{
+    display:grid;
+    grid-template-columns:70vh 40vh;
+}
+.introduction{
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    padding : 5rem 2rem;
+    flex-direction: column;
+}
+.introduction h1{
+    font-size:44px;
+    margin-bottom:1rem;
+}
+/*designing the workbtn*/
+.workBtn{
+    display:flex;
+    align-items:center;
+    justify-content:space-evenly;
+    margin:1.5rem 0 0 0;
+    padding:0.85rem;
+    border:2px solid white;
+    background:#241fb8;
+    color:white;
+    border-radius:4px;
+    font-size:16px;
+}
+
+.workBtn div{
+    margin:0 0.5rem 0 0.5rem;
+}
+
+/*styling the header*/
+
+header{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+}
+.nav-only{
+    display:flex;
+    flex-direction:flex-start;
+}
+.nav-links{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:6rem;
+    font-family:'lato';
+}
+.nav-links a{
+    margin-right:1rem;
+}
+.nav-logo{
+    margin:0.5rem 0 0 2rem;
+}
+.navBar{
+    margin-left:30rem;
+}
+.code_image{
+    margin-top:7rem;
+}
+.code_image img{
+    width:515;
+    height:305;
+}
+.contact-links{
+    font-family:roboto;
+    display:block;
+    margin:10rem 5rem 10rem 8rem;
+}
+.contact-links a{
+    margin-left:2rem;
+    text-decoration:none;
+    color:black;
+}
+
+/*making the header section responsive*/
+
+@media screen and (max-width:1285.60px){
+    .triangle{
+        clip-path:polygon(65% 0%, 0% 28%, 0% 60%,100% 100%, 100% 63%,  70% 48%, 100% 30%,100% 0%);
+        width:50vw;
+    }
+    .code_image img{
+        margin-top:22vh;
+        height:42vh;
+        width:32vw;
+    }
+    .navBar{
+        display:none;
+    }
+
+}
+@media screen and (max-width:1285.60px) and (min-width:1195px){
+    .triangle{
+        clip-path:polygon(65% 0%, 0% 26%, 0% 60%,100% 100%, 100% 63%,  70% 48%, 100% 30%,100% 0%);
+        width:40vw;
+    }
+    .code_image img{
+        height:38vh;
+        width:32vw;
+    }
+}
+/*after certain width the inverted triangle will disappear*/
+@media screen and (max-width:650px) {
+    .triangle{
+        display:none;
+    }
+    .contact-links{
+        margin:5rem;
+    }
+    .introduction{
+       display:flex;
+       justify-content:center;
+       flex-direction:column;
+       align-items:center;
+       margin-top:3rem;
+    }
+    .introduction h1, p{
+        text-align:center;
+    }
+    .nav-links{
+        margin-left:3rem;
+    }
+}
+
+/*about-section*/
+
+.about{
+    font-family:roboto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 100vw;
+}
+.about-div{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.about-me{
+    margin-left:4rem;
+    height:auto;
+    width:50vw;
+    font-family:'Lato';
+}
+.about-me h1{
+    color:#241fb8;
+    font-weight:100;
+}
+.about-me p{
+    text-align:justify;
+    margin-top:2.15rem;
+    font-size:18px;
+    font-weight:50;
+}
+
+/* making the about section responsive */
+
+@media screen and (max-width:768px){
+    .about-div{
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+    }
+    .profile-pic{
+        margin-bottom:1rem;
+    }
+    .profile-pic img{
+        transform:scale(0.85);
+    }
+}
+
+/* EDUACTION SCETION */
+#iconDiv{
+    background-color :#241fb8;
+    border-radius: 50%; 
+    padding:0.75rem;
+    font-size: 20px;
+}
+#iconDiv:hover{
+    transform: scale(1.05);
+}
+.educationBox{
+    display : flex;
+    gap : 2rem;
+    align-items: center;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius : 10px;
+    justify-content: space-around;
+    padding : 3rem 3rem;
+
+}
+.educationBox h1{
+    font-weight: 500;
+    font-family: roboto;
+    color : #241fb8;
+}
+.educationBox p{
+    text-align: left;
+    font-size:18px;
+    font-family: roboto;
+    font-weight : 600;
+}
+.educationBox h3{
+    display : flex;
+    gap:0.5rem;
+    margin-top : 0.5rem;
+    font-family: roboto;
+    font-weight: 400;
+}
+.educationBox div{
+    display: flex;
+    flex-direction: column;
+    gap :1rem;
+}
+.educationBox:hover{
+    transform: translateY(10px);
+    transition-duration: 500ms;
+}
+.education{
+    display : flex;
+    flex-direction: column;
+    gap :3rem;
+    width : 80%;
+    margin : auto;
+}
+/*SERVICES*/ 
+.services{
+    display: flex;
+    flex-direction: column;
+    gap:5rem;
+}
+.heading{
+    text-align:center;
+    font-family:'lato';
+    color:#241fb8;
+    margin-top:13rem;
+    font-weight:100;
+}
+.skillDiv{
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding:2rem 2rem;
+    width:80%;
+    margin: auto;
+}
+.skillDiv:hover{
+    transform: translateY(10px);
+    transition-duration: 500ms;
+}
+.skillDiv h1{
+    text-align: center;
+    font-weight: 600;
+    color:#2e28ca;
+    font-family: roboto;
+    margin-bottom:24px;
+}
+.skill{
+    display :flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+    margin-bottom: 1rem;
+}
+.skill-name p{
+    font-family: roboto;
+    font-weight: 600;
+}
+.skill-name{
+    display:flex;
+    width:80%;
+    justify-content: space-between;
+}
+.progress{
+    width:80%;
+    background-color: gray;
+    height:5px;
+    border-radius : 10px;
+}
+.progress-bar{
+    width:80%;
+    background-color:#2e28ca;
+    height: 5px;
+    border-radius: 10px;
+}
+/*Projects and read time */
+
+.extra-content{
+    display:grid;
+    grid-template-rows:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
+}
+.left{
+    margin:3rem 1rem 2rem 15rem;
+}
+.right{
+    margin:3rem 16rem 2rem 3rem;
+}
+.content{
+    font-family:'lato';
+}
+.content > p{
+    margin-top:2rem;
+}
+.read{
+    margin-top:5rem;
+    display:flex;
+    gap:1rem;
+    font-size: 20px;;
+    align-items:center;
+}
+.link{
+    display:flex;
+    flex-direction: row;
+    gap:2rem;
+}
+
+/* making the extra-content responsive as per the requirement*/
+
+@media screen and (max-width:900px){
+    .extra-content{
+        display:flex;
+        flex-direction:column;
+    }
+    .left, .right{
+        margin:3rem;
+    }
+}
+
+@media screen and (min-width:900px) {
+    .education{
+        width : 50%;
+    }
+}
+
+
+/*making the boxes responsive as per the viewport */
+
+
+/*help-section*/
+
+.help{
+    margin:10rem 0 10rem 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:23vw;
+}
+.help-content{
+    font-family:'lato';
+}
+.help-content h1{
+    font-weight:80;
+    color:#241fb8;
+}
+.help-content h3{
+    color:black;
+    margin-top:0.5rem;
+    font-size:28px;
+    font-weight:80;
+}
+/*making the help section responsive*/
+@media screen and (max-width:768px){
+    .help{
+        flex-direction:column;
+        gap:10vw;
+        margin:2rem;
+        margin-bottom:5rem;
+    }
+}
+
+/*footer-section*/
+
+footer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:5rem;
+    gap:30vw;
+    font-family:'lato';
+}
+.footer-logo, .contact-section{
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+}
+.foot-logo{
+    margin-right:1.5rem;
+}
+.contact-section a{
+    text-decoration:none;
+    color:black;
+    margin-left:5vw;
+}
+
+/*making the footer-section responsive*/
+@media screen and (max-width:768px){
+    footer{
+        display:flex;
+        justify-content:center;
+        flex-direction:column;
+        gap:10vw;
+    }
+
+}
+
+/* LABEL */
+.labelDiv{
+    width:100%;
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    padding:0rem 1rem;
+
+}
+.labelDiv input{
+    width:90%;
+    outline : none;
+    border:none;
+    padding:0.75rem 0.5rem;
+    font-size:medium
+}
+.labelDiv label{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.labelDiv i{
+    font-size: large;
+    padding:2px 4px;
+}
+textarea{
+    width:90%;
+    outline:none;
+    border:none;
+}
+.form{
+    width:80%;
+    margin:4rem auto;
+}
+.form form{
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items: center;
+}
+.sendMsg{
+    border-radius: 10px;
+    background-color:#241fb8;
+    color:white;
+    padding:0.5rem 1.5rem;
+    border:none;
+    outline:none;
+    font-size: 16px;
+}
+
+

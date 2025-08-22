@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Cloning</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!--font style for text-->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+
+    <!--inclusion of cdn js link to access font-awesome icons-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="nav-only">
+          <div class="nav-logo">
+            <img src="nav_logo.png" width="50" height="50" />
+          </div>
+
+          <div class="nav-links">
+            <a
+              href="#"
+              style="text-decoration: none; color: black; font-weight: 600"
+              >HOME</a
+            >
+            <a href="#" style="text-decoration: none; color: black">ABOUT</a>
+            <a
+              href="#"
+              style="text-decoration: none; color: black"
+              id="services"
+              >SKILLS</a
+            >
+            <a href="#" style="text-decoration: none; color: black" id="blog"
+              >PROJECTS</a
+            >
+            <a href="#" style="text-decoration: none; color: black" id="blog"
+              >EDUCATION</a
+            >
+          </div>
+        </div>
+
+        <div class="introduction">
+          <h1 style="font-weight: 80; font-family: Verdana">
+            <span style="font-weight: 600">Hey, </span> I'm Charles
+          </h1>
+          <p style="font-size: 34px; font-family: roboto; font-weight: 50">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </p>
+          <button class="workBtn">
+            <div><i class="fa-solid fa-right-long"></i></div>
+            <div>
+              <span> CONNECT WITH ME </span>
+            </div>
+          </button>
+        </div>
+
+        <!--contact-links-->
+        <div class="contact-links">
+          <a href="#">GITHUB</a>
+          <a href="#">LINKEDIN</a>
+          <a href="#">DISCORD</a>
+        </div>
+      </div>
+
+      <div class="triangle">
+        <button class="workBtn navBar">
+          <div>
+            <i class="fa-solid fa-right-long"></i>
+          </div>
+          <div>
+            <span> WORK WITH ME </span>
+          </div>
+        </button>
+        <div class="adjacent">
+          <div class="code_image">
+            <img src="code_image.jpg" width="515" height="305" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--about section-->
+    <div class="about">
+      <div class="about-div">
+        <div class="profile-pic">
+          <img src="profile-pic.png" width="300" height="300" />
+        </div>
+
+        <div class="about-me">
+          <h1>ABOUT ME</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
+            deserunt officia sapiente dolor, porro harum iste sed optio
+            reprehenderit dolorem sint praesentium tempora alias consequatur
+            laboriosam possimus repudiandae nemo obcaecati, quod similique
+            dolorum, error at laudantium! Esse quaerat mollitia labore quibusdam
+            sed, ipsa dolore ex dignissimos sit tempora quos qui?
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime ex
+            dolorum tempore provident facilis exercitationem laudantium! Facilis
+            vitae tempore consequuntur, debitis asperiores possimus voluptatibus
+            perferendis?
+          </p>
+
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+            odit ullam nihil alias quas ipsa iusto a tempore. Dicta consequatur
+            nostrum iusto ea, odio animi? Ex veritatis omnis beatae recusandae.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--EDUCATION SECTION-->
+    <h1 class="heading" style="margin-bottom: 1rem">EDUCATION</h1>
+    <div class="educationDiv">
+      <div class="education">
+        <div class="educationBox">
+          <div id="iconDiv">
+            <i class="fa-solid fa-school" style="color: white"></i>
+          </div>
+          <div>
+            <h1>Degree Name</h1>
+            <p>College name</p>
+            <h3>
+              <i class="fa-solid fa-award" style="color: #1648df"></i> CGPA :
+              9.4
+            </h3>
+            <h3>
+              <i class="fa-solid fa-calendar" style="color: #2f4ee9"></i> 20XX -
+              20XX
+            </h3>
+          </div>
+        </div>
+        <div class="educationBox">
+          <div id="iconDiv">
+            <i class="fa-solid fa-school" style="color: white"></i>
+          </div>
+          <div>
+            <h1>Degree Name</h1>
+            <p>School/College name</p>
+            <h3>
+              <i class="fa-solid fa-award" style="color: #1648df"></i> CGPA :
+              9.4
+            </h3>
+            <h3>
+              <i class="fa-solid fa-calendar" style="color: #2f4ee9"></i> 20XX -
+              20XX
+            </h3>
+          </div>
+        </div>
+        <div class="educationBox">
+          <div id="iconDiv">
+            <i class="fa-solid fa-school" style="color: white"></i>
+          </div>
+          <div>
+            <h1>Degree Name</h1>
+            <p>College/School name</p>
+            <h3>
+              <i class="fa-solid fa-award" style="color: #1648df"></i> CGPA :
+              9.4
+            </h3>
+            <h3>
+              <i class="fa-solid fa-calendar" style="color: #2f4ee9"></i> 20XX -
+              20XX
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--SKILLS-->
+    <h1 class="heading">SKILLS</h1>
+    <div class="services">
+      <div class="skillDiv">
+        <h1>FRONTEND SKILLS</h1>
+        <div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>HTML5</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>Framer Motion</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>React.js</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>CSS3</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skillDiv">
+        <h1>BACKEND SKILLS</h1>
+        <div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>Express.js</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>Node.js</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>Next.js</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>Laravel</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skillDiv">
+        <h1>DATABASES</h1>
+        <div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>MONGODB</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-name">
+              <p>SQL</p>
+              <p>80%</p>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <h1
+      style="
+        color: #241fb8;
+        font-weight: 100;
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top:5rem
+      "
+    >
+      PROJECTS
+    </h1>
+
+    <!-- extra-content and projects -->
+    <div class="extra-content">
+      <div
+        class="div1 square"
+        style="background: rgb(52, 79, 213); color: white"
+      >
+        <div class="content left">
+          <h2 style="font-size: 30px; font-weight: 80">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, culpa.
+          </h2>
+          <p>may-20XX</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quos quisquam accusamus vel fugiat enim expedita obcaecati quam libero nemo.</p>
+
+          <div class="link">
+            <div class="read" style="margin-top: 6rem">
+                <i class="fa-brands fa-github" style="color: white"></i>
+                <p>GITHUB</p>
+              </div>
+              <div class="read" style="margin-top: 6rem">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <p>LIVE DEMO</p>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div
+        class="div1 square"
+        style="background: black; color: white"
+      >
+        <div class="content left">
+          <h2 style="font-size: 30px; font-weight: 80">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, culpa.
+          </h2>
+          <p>may-20XX</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quos quisquam accusamus vel fugiat enim expedita obcaecati quam libero nemo.</p>
+
+          <div class="link">
+            <div class="read" style="margin-top: 6rem">
+                <i class="fa-brands fa-github" style="color: white"></i>
+                <p>GITHUB</p>
+              </div>
+              <div class="read" style="margin-top: 6rem">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <p>LIVE DEMO</p>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <div
+      class="div1 square"
+    >
+      <div class="content left">
+        <h2 style="font-size: 30px; font-weight: 80">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, culpa.
+        </h2>
+        <p>may-20XX</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quos quisquam accusamus vel fugiat enim expedita obcaecati quam libero nemo.</p>
+
+        <div class="link">
+          <div class="read" style="margin-top: 6rem">
+              <i class="fa-brands fa-github" style="color:black"></i>
+              <p>GITHUB</p>
+            </div>
+            <div class="read" style="margin-top: 6rem">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <p>LIVE DEMO</p>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div
+    class="div1 square"
+    style="background: rgb(52, 79, 213); color: white"
+  >
+    <div class="content left">
+      <h2 style="font-size: 30px; font-weight: 80">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, culpa.
+      </h2>
+      <p>may-20XX</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quos quisquam accusamus vel fugiat enim expedita obcaecati quam libero nemo.</p>
+
+      <div class="link">
+        <div class="read" style="margin-top: 6rem">
+            <i class="fa-brands fa-github" style="color: white"></i>
+            <p>GITHUB</p>
+          </div>
+          <div class="read" style="margin-top: 6rem">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <p>LIVE DEMO</p>
+          </div>
+      </div>
+      
+    </div>
+  </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+     <h1 class="heading"> CONTACT ME</h1>
+     <div class="form">
+     <form>
+        <div class="labelDiv">
+            <label><i class="fa-solid fa-user" style="color: #3b56de;"></i>
+            <input type="text" name="fullname" placeholder="Enter your name" />
+            </label>
+        </div>
+        <div class="labelDiv">
+            <label><i class="fa-solid fa-envelope" style="color: #3b56de;"></i>
+            <input type="email" name="email" placeholder="Enter your email" />
+            </label>
+        </div>
+        <div class="labelDiv">
+            <label>
+                <i class="fa-solid fa-message" style="color: #3b56de;"></i>
+                <textarea
+                    rows="10"
+                    placeholder="Enter your message"
+                ></textarea>
+            </label>
+        </div>
+        <div>
+            <button
+            class="sendMsg"
+            >SEND MESSAGE</button>
+        </div>
+     </form>
+    </div>
+
+    <!--footer section-->
+    <footer style="margin-top: 2rem">
+      <div class="footer-logo">
+        <div class="foot-logo">
+          <img src="nav_logo.png" width="50px" height="50px" />
+        </div>
+        <div class="footer-content">
+          <h4>Lorem ipsum dolor sit.</h4>
+          <p>&copy; 2025 - All rights reserved</p>
+        </div>
+      </div>
+
+      <!--contact-section-->
+      <div class="contact-section">
+        <a href="#">GITHUB</a>
+        <a href="#">LINKEDIN</a>
+        <a href="#">DISCORD</a>
+      </div>
+    </footer>
+  </body>
+</html>

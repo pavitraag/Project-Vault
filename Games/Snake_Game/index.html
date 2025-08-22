@@ -5,66 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
-    <style>
-         body{
-            margin:0px;
-            padding:0px;
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: palegreen;
-        }
-        canvas{
-            box-shadow: black 20px 10px 50px;
-
-        }
-
-    .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    color: white;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .overlay button {
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    background-color: #4CAF50;
-    color: white;
-    transition: background-color 0.2s;
-  }
-
-  .overlay button:hover {
-    background-color: #388E3C;
-  }
-    </style>
+    <link rel="stylesheet" href="snakeGame.css">
 </head>
 <body>
-    <h1>Snake Game</h1>
-    <canvas id="game" width="400" height="400"></canvas>
+    <div class="snake-game-container">
+        <!-- Cartoonistic Snake Decoration -->
+        <div class="snake-decoration">
+            <svg width="120" height="80" viewBox="0 0 120 80">
+                <defs>
+                    <linearGradient id="snakeDecoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#45a049;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="snakeDecoGlow">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge> 
+                            <feMergeNode in="coloredBlur"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+                <!-- Snake body segments -->
+                <ellipse cx="30" cy="40" rx="15" ry="8" fill="url(#snakeDecoGradient)" filter="url(#snakeDecoGlow)"/>
+                <ellipse cx="50" cy="40" rx="12" ry="7" fill="url(#snakeDecoGradient)" filter="url(#snakeDecoGlow)"/>
+                <ellipse cx="70" cy="40" rx="10" ry="6" fill="url(#snakeDecoGradient)" filter="url(#snakeDecoGlow)"/>
+                <ellipse cx="85" cy="40" rx="8" ry="5" fill="url(#snakeDecoGradient)" filter="url(#snakeDecoGlow)"/>
+                <!-- Snake head -->
+                <ellipse cx="15" cy="40" rx="18" ry="10" fill="url(#snakeDecoGradient)" filter="url(#snakeDecoGlow)"/>
+                <!-- Eyes -->
+                <circle cx="12" cy="35" r="2" fill="white"/>
+                <circle cx="12" cy="45" r="2" fill="white"/>
+                <circle cx="11" cy="35" r="1" fill="black"/>
+                <circle cx="11" cy="45" r="1" fill="black"/>
+                <!-- Tongue -->
+                <path d="M 5 40 L 2 38 L 2 42 Z" fill="#ff6b6b"/>
+                <!-- Food -->
+                <circle cx="95" cy="35" r="4" fill="#ff6b6b" opacity="0.8"/>
+                <circle cx="98" cy="32" r="2" fill="#ffeb3b" opacity="0.6"/>
+            </svg>
+        </div>
+        
+        <h1 class="game-title">🐍 Snake Game</h1>
+        
+        <div class="game-area">
+            <div class="score-display">
+                <div class="score-label">Score</div>
+                <div class="score-value" id="scoreValue">0</div>
+            </div>
+            
+            <div class="game-board" id="gameBoard">
+                <svg id="gameSvg" width="400" height="400" viewBox="0 0 400 400">
+                    <defs>
+                        <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
+                        </pattern>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#45a049;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="foodGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff5252;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="400" fill="url(#gridPattern)"/>
+                    <rect width="400" height="400" fill="none" stroke="#333" stroke-width="2"/>
+                </svg>
+            </div>
+            
+            <div class="game-controls">
+                <button id="startBtn" class="game-btn primary">Start Game</button>
+                <button id="pauseBtn" class="game-btn secondary" style="display:none;">Pause</button>
+            </div>
+        </div>
+        
+        <div class="game-instructions">
+            <h2>🎮 How to Play</h2>
+            <p>Use <strong>Arrow Keys</strong> or <strong>WASD</strong> to control the snake</p>
+            <p>Eat the red food to grow and increase your score!</p>
+            <p>Speed increases as you progress - Good luck! 🍀</p>
+        </div>
+    </div>
 
-<div id="gameOverOverlay" class="overlay hidden">
-  <h2>Game Over!</h2>
-  <button id="restartBtn">Restart</button>
-  <button id="exitBtn">Exit</button>
-</div>
-<script src="script.js"></script>
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎯 Game Over!</h2>
+            <div class="final-score">
+                <span>Final Score: </span>
+                <span id="finalScore">0</span>
+            </div>
+            <div class="modal-buttons">
+                <button id="restartBtn" class="game-btn primary">Play Again</button>
+                <button id="exitBtn" class="game-btn secondary">Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="snakeGame.js"></script>
 </body>
 </html>
