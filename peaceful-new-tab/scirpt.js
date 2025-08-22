@@ -190,3 +190,98 @@ document.getElementById("clearData").addEventListener("click", () => {
     loadSites();
   }
 });
+
+
+function createPetsOnNewTab() {
+    if (document.getElementById('chrome-pets-extension-container')) return;
+
+    const petsContainer = document.createElement('div');
+    petsContainer.id = 'chrome-pets-extension-container';
+    petsContainer.style.cssText = `
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        pointer-events: none;
+        z-index: 2147483647;
+        font-family: system-ui, -apple-system, sans-serif;
+    `;
+
+    const cutePets = ["🐶", "🐱", "🐰", "🦊"];
+    const numberOfPets = 4;
+
+    for (let i = 0; i < numberOfPets; i++) {
+        const pet = document.createElement('div');
+        pet.className = 'chrome-extension-pet walking-pet';
+        pet.textContent = cutePets[i];
+        pet.style.cssText = `
+            position: absolute;
+            bottom: 5px;
+            left: ${i * 25 + 10}%;
+            font-size: 2rem;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+            animation: petFloat 3s ease-in-out infinite;
+            animation-delay: ${i * -0.5}s;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            user-select: none;
+        `;
+
+        pet.addEventListener('mouseenter', () => {
+            pet.style.transform = 'scale(1.3) translateY(-10px)';
+            pet.style.filter = 'drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4))';
+        });
+
+        pet.addEventListener('mouseleave', () => {
+            pet.style.transform = '';
+            pet.style.filter = 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))';
+        });
+
+        pet.addEventListener('click', () => {
+            pet.style.animation = 'petBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+            setTimeout(() => {
+                pet.style.animation = 'petFloat 3s ease-in-out infinite';
+                pet.style.animationDelay = `${i * -0.5}s`;
+            }, 600);
+        });
+
+        petsContainer.appendChild(pet);
+    }
+
+    // Add keyframe styles once
+    if (!document.getElementById('chrome-pets-styles')) {
+        const style = document.createElement('style');
+        style.id = 'chrome-pets-styles';
+        style.textContent = `
+            @keyframes petFloat {
+                0%, 100% { transform: translateY(0px) rotate(-1deg); }
+                25% { transform: translateY(-8px) rotate(1deg); }
+                50% { transform: translateY(-4px) rotate(-0.5deg); }
+                75% { transform: translateY(-12px) rotate(0.5deg); }
+            }
+
+            @keyframes petBounce {
+                0% { transform: scale(1.3) translateY(-10px); }
+                50% { transform: scale(1.5) translateY(-25px) rotate(15deg); }
+                100% { transform: scale(1.3) translateY(-10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    document.body.appendChild(petsContainer);
+}
+
+
+
+
+
+
+// Init
+setGreeting();
+fetchQuote();
+loadSites();
+setBackground();
+createPetsOnNewTab();
