@@ -1,4 +1,3 @@
-/* Gen Z Modern UI Styles */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Global styles */
@@ -240,7 +239,6 @@ body {
 .setting-item:last-child {
     border-bottom: none;
 }
-
 
 
 /* Pets container */
