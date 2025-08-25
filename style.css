@@ -599,7 +599,6 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100%; /* Ensure equal height */
   transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s cubic-bezier(.4,2,.6,1);
   text-align: left;
   margin-bottom: 1.5rem;
@@ -631,8 +630,8 @@ footer {
 }
 
 .category-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(18px) scale(25);
+  box-shadow: 0 18px 32px rgba(99, 124, 232, 0.13), 0 15px 6px rgba(86, 21, 100, 0.07);
   z-index: 2;
 }
 
