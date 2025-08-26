@@ -85,20 +85,21 @@ header h1 {
 
 .nav-right {
   display: flex;
-  align-items: flex-end;
-  gap: 1.0rem;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .nav-link {
   color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
-  padding: 0.3rem 0.3rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 25px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
 
 }
 
@@ -659,7 +660,6 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100%; /* Ensure equal height */
   transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s cubic-bezier(.4,2,.6,1);
   text-align: left;
   margin-bottom: 1.5rem;
@@ -691,8 +691,8 @@ footer {
 }
 
 .category-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+  transform: translateY(18px) scale(25);
+  box-shadow: 0 18px 32px rgba(99, 124, 232, 0.13), 0 15px 6px rgba(86, 21, 100, 0.07);
   z-index: 2;
 }
 
@@ -734,4 +734,16 @@ footer {
 .add-project-card {
   position: relative;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .nav-right {
+    display: none;
+    /* hide desktop links on small screens */
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    /* show hamburger menu */
+  }
 }
