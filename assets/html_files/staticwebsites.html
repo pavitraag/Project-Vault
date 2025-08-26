@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <title>Websites - Project Vault</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="/style.css" />
   <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
@@ -10,18 +15,30 @@
     <h1>🌐Static Websites</h1>
     <a href="website.html" class="back-button">← Back to Home</a>
   </header>
-  <main class="category-container">
-    <div class="category-card">
-      <h3>NetFlix</h3>
-      <p>Website offering movies.</p>
-      <a href="../../website/Static_Websites/Netflix/index.html" class="play-button">View Project</a>
-      <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Static_Websites/NetFlix" class="play-button">View Code <i class="fab fa-github"></i></a>
+  <main>
+    <!-- FAVORITES FILTER BUTTON -->
+    <div class="favorites-toggle">
+      <button id="favoritesToggleBtn" onclick="toggleFavoritesView()">Show Favorites</button>
     </div>
+    <div class="category-container">
+      <div class="category-card">
+        <h3>NetFlix</h3>
+        <p>Website offering movies.</p>
+        <a href="../../website/Static_Websites/Netflix/index.html" class="play-button">View Project</a>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Static_Websites/NetFlix" class="play-button">View Code <i class="fab fa-github"></i></a>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+        <i class="fa-regular fa-star"></i>
+        </button>
+      </div>
+
     <div class="category-card">
       <h3>3D_Rotate_Tube</h3>
       <p>Website offering movies.</p>
       <a href="../../website/Static_Websites/3D_Rotate_Tube/index.html" class="play-button">View Project</a>
       <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Static_Websites/3D_Rotate_Tube" class="play-button">View Code <i class="fab fa-github"></i></a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
   
     <!-- Add more project cards -->
@@ -29,12 +46,18 @@
       <h3>Amazon</h3>
       <p>Website for Online shopping.</p>
       <a href="../../website/Static_Websites/Amazon/index.html" class="play-button">View Project</a>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
     </div>
     <div class="category-card">
   <h3>HostWise</h3>
   <p>Website for Rentals></p>
   <a href="../../website/Static_Websites/hostwise-site/index.html" class="play-button" target="_blank">🌐 View Project</a>
   <a href="https://github.com/abinayagoudjandhyala/Project-Vault/tree/add-hostwise-site/website/Static_Websites/hostwise-site" class="play-button" target="_blank">💻 View Code</a>
+  <button class="fav-btn" onclick="toggleFavorite(this)">
+    <i class="fa-regular fa-star"></i>
+  </button>
 </div>
     <div class="category-card">
       <h3>SunNotScreen</h3>
@@ -49,6 +72,8 @@
 
   </main>
   <div id="footer-placeholder"></div>
+
+<script src="../js_files/favorite.js"></script>
 <script>  fetch("../../footer.html")
     .then(response => response.text())
     .then(data => {

@@ -54,6 +54,10 @@
   </header>
 
   <main class=".webfolio-main">
+    <!-- FAVORITES FILTER BUTTON -->
+    <div class="favorites-toggle">
+      <button id="favoritesToggleBtn" onclick="toggleFavoritesView()">Show Favorites</button>
+    </div>
     <div class="category-container">
 
       <div class="category-card">
@@ -62,11 +66,81 @@
           learning basic computer vision and authentication.</p>
         <a href="https://github.com/pavitraag/Project-Vault/tree/main/Miscellaneous/face-recognition-login"
           class="view-button">View Code</a><br>
+        <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+        </button>
       </div>
     </div>
   </main>
 
   <div id="footer-placeholder"></div>
+  <script>
+  function toggleFavorite(btn) {
+    const card = btn.closest('.category-card');
+    const title = card.querySelector('h3').innerText;
+    const icon = btn.querySelector('i');
+    const pageKey = window.location.pathname.split("/").pop().replace(".html", "");
+    const storageKey = `favorites-${pageKey}`;
+    const favorites = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+    card.classList.toggle('favorited');
+    const isFav = card.classList.contains('favorited');
+
+    icon.classList.toggle('fa-regular', !isFav);
+    icon.classList.toggle('fa-solid', isFav);
+
+    if (isFav) {
+      if (!favorites.includes(title)) favorites.push(title);
+    } else {
+      const index = favorites.indexOf(title);
+      if (index !== -1) favorites.splice(index, 1);
+    }
+
+    localStorage.setItem(storageKey, JSON.stringify(favorites));
+  }
+
+  function loadFavorites() {
+    const pageKey = window.location.pathname.split("/").pop().replace(".html", "");
+    const storageKey = `favorites-${pageKey}`;
+    const favorites = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+    document.querySelectorAll('.category-card').forEach(card => {
+      const title = card.querySelector('h3').innerText;
+      const icon = card.querySelector('.fav-btn i');
+      if (favorites.includes(title)) {
+        card.classList.add('favorited');
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid');
+      }
+    });
+  }
+
+  function toggleFavoritesView() {
+    const btn = document.getElementById('favoritesToggleBtn');
+    const showOnlyFavorites = btn.classList.toggle('showing');
+    const pageKey = window.location.pathname.split("/").pop().replace(".html", "");
+    const storageKey = `favorites-${pageKey}`;
+    const favorites = JSON.parse(localStorage.getItem(storageKey)) || [];
+
+    document.querySelectorAll('.category-card').forEach(card => {
+      const title = card.querySelector('h3').innerText;
+      card.style.display = (showOnlyFavorites && !favorites.includes(title)) ? 'none' : 'block';
+    });
+
+    btn.innerText = showOnlyFavorites ? 'Show All' : 'Show Favorites';
+  }
+
+  window.addEventListener('DOMContentLoaded', loadFavorites);
+</script>
+
+  <script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
   <script>
     fetch("../../footer.html")
       .then(response => response.text())

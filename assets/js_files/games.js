@@ -255,3 +255,49 @@ const handleResize = debounce(() => {
 }, 250);
 
 window.addEventListener("resize", handleResize);
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const favoriteButtons = document.querySelectorAll(".fav-btn");
+  const favoritesToggleBtn = document.getElementById("favoritesToggleBtn");
+
+  // ⭐ Toggle star icon on each card
+  favoriteButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("favorited");
+
+      const icon = btn.querySelector("i");
+      icon.classList.toggle("fa-regular");
+      icon.classList.toggle("fa-solid");
+
+      // Optional: Make the star gold if favorited
+      if (btn.classList.contains("favorited")) {
+        icon.style.color = "light purple";
+      } else {
+        icon.style.color = "inherit";
+      }
+    });
+  });
+
+  // 🔄 Show Favorites / Show All toggle
+  favoritesToggleBtn.addEventListener("click", () => {
+    const isFiltering = favoritesToggleBtn.innerText === "Show All";
+    const allCards = document.querySelectorAll(".category-card");
+
+    allCards.forEach((card) => {
+      const starBtn = card.querySelector(".fav-btn");
+      const isFavorited = starBtn && starBtn.classList.contains("favorited");
+
+      if (isFiltering) {
+        // Show all cards
+        card.style.display = "block";
+      } else {
+        // Show only favorited cards
+        card.style.display = isFavorited ? "block" : "none";
+      }
+    });
+
+    // Toggle button text
+    favoritesToggleBtn.innerText = isFiltering ? "Show Favorites" : "Show All";
+  });
+});

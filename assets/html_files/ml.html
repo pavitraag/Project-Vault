@@ -12,8 +12,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
   />
-  <link rel="stylesheet" href="../css_files/ml.css" />
   <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../css_files/ml.css" />
 
   <title>Websites - Project Vault</title>
   <link rel="stylesheet" href="/Project-Vault/style.css" />
@@ -90,6 +90,9 @@
   </header>
 
   <main class="ml-main">
+    <div class="favorites-toggle">
+    <button id="favoritesToggleBtn" onclick="toggleFavorites()">Show Favorites</button>
+    </div>
     <div class="projects-container">
       <div class="project-card fade-in" style="animation-delay: 0.1s">
         <div class="project-icon">
@@ -98,6 +101,10 @@
         <div class="project-content">
           <h3>Restaurant Recommender</h3>
           <p>ML-based recommendation system using KNN and clustering algorithms to suggest restaurants based on user preferences and dining history.</p>
+          <!-- Favorite Button -->
+          <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+          </button>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">KNN</span>
@@ -117,6 +124,9 @@
         <div class="project-content">
           <h3>Anemia Prediction</h3>
           <p>Machine learning model that predicts anemia risk based on various health parameters and blood test results.</p>
+          <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+          </button>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Classification</span>
@@ -136,6 +146,9 @@
         <div class="project-content">
           <h3>Fake News Classifier</h3>
           <p>Machine learning model that predicts whether a given news article is real or fake based on its textual content.</p>
+          <button class="fav-btn" onclick="toggleFavorite(this)">
+          <i class="fa-regular fa-star"></i>
+          </button>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Classification</span>
@@ -146,6 +159,16 @@
           </a>
         </div>
       </div>
+ 
+
+
+    <div class="category-card">
+      <h3>Anemia Prediction</h3>
+      <p>Predicts Anemia</p>
+      <button class="fav-btn" onclick="toggleFavorite(this)">
+      <i class="fa-regular fa-star"></i>
+      </button>
+      <a href="https://github.com/VEERESH069/Project-Vault/blob/prediction_pipeline_feature_add/ML/Anemia_prediction/anemia_prediction_pipeline.ipynb"  class = "play-button" target="_blank">View Code</a>
 
       <div class="project-card fade-in" style="animation-delay: 0.2s">
         <div class="project-icon">
@@ -166,6 +189,7 @@
         </div>
       </div>
 
+
       <div class="project-card fade-in" style="animation-delay: 0.2s">
         <div class="project-icon">
           <i class="fa-solid fa-battery-quarter"></i>
@@ -184,6 +208,25 @@
           </a>
         </div>
       </div>
+
+
+   <div class="category-card">
+    <h3>Loan Approval Predictor</h3>
+    <p>Predicts whether a loan will be approved based on applicant data</p>
+    <button class="fav-btn" onclick="toggleFavorite(this)">
+    <i class="fa-regular fa-star"></i>
+    </button>
+    <a href="https://github.com/roshni866/Project-Vault/blob/loan-approval-section/ML/Loan_approval_predictor/loan_predictions.ipynb" class="play-button" target="_blank">View Code</a>
+  </div>
+  <div class="category-card">
+    <h3>Student Burnout Detector</h3>
+    <p>Predicts student burnout based on various factors</p>
+    <button class="fav-btn" onclick="toggleFavorite(this)">
+    <i class="fa-regular fa-star"></i>
+    </button>
+    <a href="https://github.com/roshni866/Project-Vault/blob/student_burnout/ML/Student_burnout_detector/predict.ipynb" class="play-button" target="_blank">View Code</a>
+  </div>
+    <!-- Add more project cards -->
 
       <!-- Add more project cards -->
 
