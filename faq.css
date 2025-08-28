@@ -219,6 +219,7 @@ h1 {
 }
 .footer-section{
   border: 3px solid;
+  padding: 20px;
 }
 .company-info {
   margin: 50px 60px ;
@@ -231,3 +232,124 @@ h1 {
   font-size: 1.3rem;
   line-height: 1.6;
 }
+.footer-section .social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        main {
+            /* Adjust this value to match your nav bar's height */
+            margin-top: 100px;
+        }
+
+        /* --- Responsive Navigation Styles --- */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* This centers items vertically in the nav container */
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: flex-end; /* This centers the links vertically */
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #1a202c; /* A dark background color */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #2d3748;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 2rem;
+            height: 2rem;
+            background: transparent;
+            border: none;
+        }
+
+        .mobile-menu-toggle span {
+            width: 2rem;
+            height: 0.25rem;
+            background: white;
+            border-radius: 10px;
+            transition: all 0.3s linear;
+            position: relative;
+            transform-origin: 1px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .nav-right {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #2d3748;
+                position: absolute;
+                top: 72px; /* Adjust based on nav height */
+                left: 0;
+                padding-bottom: 1rem;
+            }
+
+            .nav-right.active {
+                display: flex;
+            }
+
+            .nav-link,
+            .dropdown-toggle {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-content {
+                position: relative;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+        }
