@@ -20,8 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
       rel="stylesheet"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-
   <body>
     <div class="mobile-menu" id="mobileMenu">
       <div class="mobile-menu-header">
@@ -68,7 +68,7 @@
           <span></span>
         </div>
 
-        <div class="nav-right">
+        <div class="nav-right" id="navRight">
           <a href="./index.html" class="nav-link"
             ><i class="fa-solid fa-house"></i> Home</a
           >
@@ -104,10 +104,12 @@
     <main>
       <section id="Faq-img-container">
         <div class="top-box">
-          <h1 class="text-gray-1000 text-3xl font-bold mb-6 text-center">
+          <h1 class="text-gray-1000 text-3xl font-bold mb-6 text-center pt-10">
             <a href="#faq-heading">Do You Have Questions?</a>
           </h1>
-          <h2>We have answers <i>(well, most of the time!)</i></h2>
+          <h2>
+            We have answers <i>(well, most of the time!)</i>
+          </h2>
           <h4>
             Below you'll find answers to the most common questions you may have
             on Project-Vault. If you still can't find the answers you're looking
@@ -237,7 +239,7 @@
           <div class="social">
             <a
               class="message"
-              href="mailto:pavitraagopi@gmail.com"
+              href="mailto:pavitraa_gopi@gmail.com"
               target="_blank"
               aria-label="Email"
             >
@@ -253,7 +255,7 @@
             </a>
             <a
               class="github"
-              href="https://www.github.com/pavitraag"
+              href="https://www.github.com/pavitraa"
               target="_blank"
               aria-label="GitHub"
             >
@@ -345,6 +347,13 @@
         const item = element.parentElement;
         item.classList.toggle("active");
       }
+
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const navRight = document.getElementById("navRight");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        navRight.classList.toggle("active");
+      });
     </script>
     <script src="script.js"></script>
   </body>
