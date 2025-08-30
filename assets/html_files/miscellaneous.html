@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Miscellaneous Projects - Project Vault</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="../css_files/website.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Project Vault</div>
+
+      <div class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="nav-right">
+        <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="./aboutus.html" class="nav-link active"><i class="fa-solid fa-circle-info"></i> About Us</a>
+        <div class="dropdown">
+          <div class="dropdown-toggle nav-link"><i class="fa-solid fa-icons"></i> Components ▾</div>
+          <div class="dropdown-content">
+            <a href="./website.html">Webfolio</a>
+            <a href="./games.html">Games</a>
+            <a href="./ml.html">ML Projects</a>
+            <a href="./techStack.html"><i class="fa-solid fa-search"></i> by Tech Stack</a>
+          </div>
+        </div>
+        <a href="../../faq.html" class="nav-link"><i class="fa-solid fa-question-circle"></i> FAQ</a>
+        <a href="./discussion.html" class="nav-link"><i class="fa-solid fa-comment"></i> Forum</a>
+        <a href="./contact.html" class="nav-link"><i class="fa-solid fa-phone"></i> Contact Us</a>
+      </div>
+
+    </div>
+    <div>
+      <a href="../../index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Home
+      </a>
+    </div>
+  </nav>
+
+  <header class="webfolio-header">
+    <div class="header-content">
+      <h1>Miscellaneous Projects</h1>
+      <p>Explore a variety of projects across different domains.</p>
+    </div>
+  </header>
+
+  <main class=".webfolio-main">
+    <div class="category-container">
+
+      <div class="category-card">
+        <h3>Face Recognition Login System</h3>
+        <p>A secure login system using Flask and OpenCV to authenticate users through facial recognition. Great for
+          learning basic computer vision and authentication.</p>
+        <a href="https://github.com/pavitraag/Project-Vault/tree/main/Miscellaneous/face-recognition-login"
+          class="view-button">View Code</a><br>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch("../../footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      });
+  </script>
+</body>
+
+</html>

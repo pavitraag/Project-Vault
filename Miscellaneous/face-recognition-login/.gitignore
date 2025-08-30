@@ -1,0 +1,4 @@
+dataset/
+recognizer/
+__pycache__/
+users.db
