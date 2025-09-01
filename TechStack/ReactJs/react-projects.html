@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Projects - Project Vault</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="react-projects.css" />
+  <link rel="stylesheet" href="../../style.css" />
+</head>
+<body>
+  <header class="ml-header">
+    <div class="header-content">
+      <h1>React.js Projects</h1>
+      <p>Beginner-friendly React.js projects showcasing UI components, hooks, and simple applications</p>
+      <a href="../../index.html" class="back-button">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="ml-main">
+    <div class="projects-container">
+
+      <!-- Todo App -->
+      <div class="project-card fade-in" style="animation-delay: 0.1s">
+        <div class="project-icon">
+          <i class="fas fa-list-check"></i>
+        </div>
+        <div class="project-content">
+          <h3>Todo List App</h3>
+          <p>A simple React app to add, delete, and mark tasks as complete using useState hook.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Hooks</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+          <a href="https://github.com/yourusername/react-projects/todo-app" 
+             class="view-code-btn" target="_blank">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Weather App -->
+      <div class="project-card fade-in" style="animation-delay: 0.2s">
+        <div class="project-icon">
+          <i class="fas fa-cloud-sun"></i>
+        </div>
+        <div class="project-content">
+          <h3>Weather App</h3>
+          <p>A React app that fetches weather data from OpenWeather API and displays city weather.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">API</span>
+            <span class="tech-tag">Axios</span>
+          </div>
+          <a href="https://github.com/yourusername/react-projects/weather-app" 
+             class="view-code-btn" target="_blank">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Calculator -->
+      <div class="project-card fade-in" style="animation-delay: 0.3s">
+        <div class="project-icon">
+          <i class="fas fa-calculator"></i>
+        </div>
+        <div class="project-content">
+          <h3>Calculator</h3>
+          <p>A simple React calculator app that performs basic arithmetic operations.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">CSS</span>
+          </div>
+          
+          <a href="https://github.com/yourusername/react-projects/calculator" 
+             class="view-code-btn" target="_blank">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Quiz App -->
+      <div class="project-card fade-in" style="animation-delay: 0.4s">
+        <div class="project-icon">
+          <i class="fas fa-question"></i>
+        </div>
+        <div class="project-content">
+          <h3>Quiz App</h3>
+          <p>A React quiz app with multiple-choice questions and score tracking.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">State Management</span>
+          </div>
+          <a href="https://github.com/yourusername/react-projects/quiz-app" 
+             class="view-code-btn" target="_blank">
+            <i class="fab fa-github"></i> View Code
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="contact">
+      <div class="footer-container">
+          <div class="footer-section company-info">
+              <h1 class="heading">Project Vault</h1>
+              <p>
+                  Project Vault is a curated collection of diverse projects ranging
+                  from stunning websites and interactive games to intelligent machine
+                  learning applications and classic React programs.
+              </p>
+              <div class="social">
+                  <a class="message" href="mailto:pavitraagopi@gmail.com" target="_blank" aria-label="Email">
+                      <i class="fa-solid fa-envelope"></i>
+                  </a>
+                  <a class="linkedin" href="https://www.linkedin.com/in/pavitraa-g/" target="_blank" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a class="github" href="https://www.github.com/pavitraag" target="_blank" aria-label="GitHub">
+                      <i class="fab fa-github"></i>
+                  </a>
+              </div>
+          </div>
+
+          <div class="footer-section quick-links">
+              <h1 class="heading">Quick Links</h1>
+              <ul class="footer-ul">
+                  <li><a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                  <li><a href="./aboutus.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+                  <li><a href="#"><i class="fa-solid fa-icons"></i> Components</a></li>
+                  <li><a href="../../faq.html"><i class="fa-solid fa-question-circle"></i> FAQ</a></li>
+                  <li><a href="./discussion.html"><i class="fa-solid fa-comment"></i> Forum</a></li>
+                  <li><a href="./contact.html"><i class="fa-solid fa-phone"></i> Contact</a></li>
+              </ul>
+          </div>
+
+          <div class="footer-section send-message">
+              <h1 class="heading">Keep In Touch</h1>
+              <form id="contact-form" name="Project Vault Contact" autocomplete="off">
+                  <div class="form-group group1">
+                      <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required />
+                      <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email" required />
+                  </div>
+                  <div class="form-group">
+                      <textarea id="message" name="message" placeholder="Your message" required></textarea>
+                      <button type="submit">
+                          <span class="button-text">SEND MESSAGE</span>
+                          <div class="loading" style="display: none"></div>
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+      <div class="copyright">
+          Created By Pavitraa ❤️ | © <span id="currentYear">2024</span> All Rights Reserved
+      </div>
+  </footer>
+
+<script src="../../script.js"></script>
+<script src="../js_files/react.js"></script>
+</body>
+</html>
