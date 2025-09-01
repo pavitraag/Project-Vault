@@ -686,3 +686,67 @@ footer {
     /* show hamburger menu */
   }
 }
+
+/* Card styling */
+.card {
+  width: 300px;
+  padding: 20px;
+  margin: 50px auto;
+  background: #f0f0f0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Buttons */
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s
+}
+
+.action-btn:hover {
+  transform: translateY(-2px)
+  background-color: #6366f1;
+}
+
+/* Toast container */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+/* Toast message */
+.toast {
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  min-width: 200px;
+  animation: slideIn 0.5s, fadeOut 0.5s 2.5s forwards;
+}
+
+/* Toast types */
+.toast.project { background-color: #28a745; }   /* Green */
+.toast.comment { background-color: #17a2b8; }  /* Blue */
+.toast.favorite { background-color: #e83e8c; } /* Pink */
+
+/* Animations */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateX(100%); }
+}
