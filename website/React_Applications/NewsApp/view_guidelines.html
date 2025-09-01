@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Run News Mag Locally</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem 2.5rem;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    h1 {
+      color: #4f46e5;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+    }
+
+    code {
+      background-color: #f0f0f0;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.95rem;
+    }
+
+    ol {
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: #4f46e5;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🛠️ Run <em>News Mag</em> Locally</h1>
+    <p>This project is not deployed online yet. You can run it on your system by following the steps below:</p>
+
+    <ol>
+      <li>Clone the repository:<br><code>git clone https://github.com/your_username/Project-Vault.git</code></li>
+      <li>Go to the project folder:<br><code>cd Project-Vault/website/React_Applications/NewsApp</code></li>
+      <li>Install the dependencies:<br><code>npm install</code></li>
+      <li>Start the development server:<br><code>npm run dev</code></li>
+      <li>Visit the app at:<br><code>http://localhost:5173</code></li>
+    </ol>
+
+    <p>🔗 <a href="https://github.com/ssz2605/Project-Vault/tree/newsapp-feature/website/React_Applications/NewsApp" target="_blank">View source code on GitHub</a></p>
+  </div>
+</body>
+</html>

@@ -28,7 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     spans[1].style.opacity = "1";
     spans[2].style.transform = "none";
   }
-
+  function closeMobileMenu() {
+    mobileMenu.classList.remove("active");
+    const spans = mobileMenuToggle.querySelectorAll("span");
+    spans[0].style.transform = "none";
+    spans[1].style.opacity = "1";
+    spans[2].style.transform = "none";
+  }
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", toggleMobileMenu);
   }
@@ -180,3 +186,39 @@ const subtitleOptions = {
 };
 const typedSubtitle = new Typed('#animated-text', subtitleOptions);
 });
+
+
+function showToast(type) {
+  const container = document.getElementById('toast-container');
+  let message = '';
+
+  if(type === 'project') message = '✅ New Project Added!';
+  if(type === 'comment') message = '💬 Comment Posted Successfully!';
+  if(type === 'favorite') message = '❤️ Added to Favorites!';
+
+  const toast = document.createElement('div');
+  toast.classList.add('toast', type);
+  toast.innerText = message;
+
+  container.appendChild(toast);
+
+  // Remove toast after 3 seconds
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+document.querySelectorAll(".action-buttons button").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const typeMap = {
+        "New Project Added": "project",
+        "New Comment": "comment",
+        "Added to Favorites": "favorite",
+      };
+      const msg = btn.textContent.trim();
+      const type = typeMap[msg] || "project";
+      showToast(msg, type);
+    });
+  });
+
+

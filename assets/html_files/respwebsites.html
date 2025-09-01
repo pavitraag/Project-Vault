@@ -27,6 +27,34 @@
         <p>a feature-packed, intuitive, and beautifully designed Task & Notes Manager 🗂️✨. With a live body background 🌟, smart reminders ⏰📍, offline support 📶, haptic feedback 📳, and a digital clock ⏳, this app helps you organize your life efficiently! Built with Progressive Web App (PWA) capabilities, it works seamlessly offline & online.</p>
         <a href="https://github.com/pavitraag/Project-Vault/tree/main/website/Responsive_Websites/To-Do App/index.html" class="play-button">View Project</a>
       </div>
+
+    <!-- Blogging website code-->
+     <div class="category-card">
+      <h3>Blogify</h3>
+          <p>Blogging Website</p>
+        <a href="../../website/Responsive_Websites/Blogging/blogging.html" class="play-button">View Project</a>
+        <a href="#" class="play-button" onclick="copyLocalCode('../../website/Responsive_Websites/Blogging/blogging.html')"> Copy Code <i class="fab fa-github"></i></a>
+    </div>
+    <!-- Blogging Ends here -->
+
+    <!-- Travelling website code-->
+     <div class="category-card">
+      <h3>Wondurlust</h3>
+          <p> Travelling Website</p>
+        <a href="../../website/Responsive_Websites/Travelling/travelling.html" class="play-button">View Project</a>
+        <a href="#" class="play-button" onclick="copyLocalCode('../../website/Responsive_Websites/Travelling/travelling.html')"> Copy Code <i class="fab fa-github"></i></a>
+    </div>
+    <!-- Travelling Ends here -->
+
+    <!-- Shopping website code-->
+     <div class="category-card">
+      <h3>Shopify</h3>
+          <p> Shopping Website</p>
+        <a href="../../website/Responsive_Websites/shopping/shopify.html" class="play-button">View Project</a>
+        <a href="#" class="play-button" onclick="copyLocalCode('../../website/Responsive_Websites/shopping/shopify.html')"> Copy Code <i class="fab fa-github"></i></a>
+    </div>
+    <!-- Shopping Ends here -->
+
     <!-- Add more project cards -->
   </main>
   <script>
@@ -35,6 +63,23 @@
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
+
+    //Copy Code Script on the system itself
+      function copyLocalCode(filePath)
+      {
+        fetch(filePath)
+          .then(response => response.text())
+          .then(data => {
+            navigator.clipboard.writeText(data).then(() => {
+              alert("Code copied to clipboard!");
+            }).catch(err => {
+              alert("Failed to copy: " + err);
+            });
+          })
+          .catch(error => {
+            alert("Error loading file: " + error);
+          });
+      }
 </script>
 </body>
 </html>
