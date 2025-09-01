@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word Search Puzzle</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: #a1bfdd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        margin: 0;
+      }
+      h1 {
+        color: #060663;
+        font-size: clamp(2rem, 5vw, 2.2rem);
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      #grid {
+        display: grid;
+        gap: 5px;
+        user-select: none;
+        margin-bottom: 20px;
+        touch-action: none;
+      }
+      .cell {
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 10px;
+        border: 2px solid #d0d7de;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+        font-size: clamp(0.8rem, 2.5vw, 1.3rem);
+        cursor: pointer;
+        transition: 0.2s all;
+      }
+      .cell:hover {
+        transform: scale(1.05);
+      }
+      .highlight {
+        color: white;
+        border: none;
+      }
+      #words {
+        margin-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        max-width: 95%;
+      }
+      #words span {
+        font-weight: bold;
+        background: #fff;
+        padding: 5px 12px;
+        border-radius: 8px;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      #controls {
+        margin-top: 10px;
+      }
+      button {
+        background: #860a0a;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+      button:hover {
+        background: #e21e1e;
+      }
+      .sparkle {
+        position: fixed;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        pointer-events: none;
+        animation: fall 1s linear forwards;
+        z-index: 9999;
+      }
+      @keyframes fall {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(100vh);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Word Search Puzzle</h1>
+    <div id="grid"></div>
+    <div id="words"></div>
+    <div id="controls">
+      <button onclick="newPuzzle()">New Puzzle</button>
+    </div>
+
+    <script>
+      const gridSize = 10;
+      const grid = document.getElementById("grid");
+      const wordList = document.getElementById("words");
+      const allWords = [
+        "CAT",
+        "DOG",
+        "BOOK",
+        "CODE",
+        "GAME",
+        "TREE",
+        "BIRD",
+        "JAVA",
+        "NOTE",
+        "RAIN",
+        "MOON",
+        "STAR",
+        "FISH",
+        "LOVE",
+        "HERO",
+        "CLOUD",
+        "WIND",
+        "FIRE",
+        "SNOW",
+        "ROCK",
+      ];
+      const colors = [
+        "#a8dadc",
+        "#f4a261",
+        "#e9c46a",
+        "#90be6d",
+        "#f6bd60",
+        "#cdb4db",
+        "#ffb4a2",
+        "#8ecae6",
+        "#b5ead7",
+        "#f7aef8",
+      ];
+      let words = [];
+      let gridData = [];
+      let selected = [];
+      let isDragging = false;
+      let sparkleInterval;
+
+      // generate new puzzle
+      function newPuzzle() {
+        stopSparkles();
+        grid.innerHTML = "";
+        wordList.innerHTML = "";
+        words = shuffle(allWords).slice(0, 10);
+        gridData = Array.from({ length: gridSize }, () =>
+          Array(gridSize).fill("")
+        );
+
+        // place words horizontally or vertically
+        words.forEach((word) => {
+          let placed = false;
+          while (!placed) {
+            let direction = Math.random() < 0.5 ? "H" : "V";
+            let row = Math.floor(Math.random() * gridSize);
+            let col = Math.floor(Math.random() * gridSize);
+            if (direction === "H" && col + word.length <= gridSize) {
+              if (checkSpace(row, col, word.length, "H")) {
+                for (let i = 0; i < word.length; i++) {
+                  gridData[row][col + i] = word[i];
+                }
+                placed = true;
+              }
+            } else if (direction === "V" && row + word.length <= gridSize) {
+              if (checkSpace(row, col, word.length, "V")) {
+                for (let i = 0; i < word.length; i++) {
+                  gridData[row + i][col] = word[i];
+                }
+                placed = true;
+              }
+            }
+          }
+        });
+
+        // fill rest with random letters
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let r = 0; r < gridSize; r++) {
+          for (let c = 0; c < gridSize; c++) {
+            if (!gridData[r][c]) {
+              gridData[r][c] =
+                letters[Math.floor(Math.random() * letters.length)];
+            }
+          }
+        }
+
+        // render grid
+        grid.style.gridTemplateColumns = `repeat(${gridSize}, minmax(30px, 1fr))`;
+        gridData.forEach((row, r) => {
+          row.forEach((letter, c) => {
+            const div = document.createElement("div");
+            div.className = "cell";
+            div.textContent = letter;
+            div.dataset.row = r;
+            div.dataset.col = c;
+            grid.appendChild(div);
+          });
+        });
+
+        // render words
+        words.forEach((w) => {
+          const span = document.createElement("span");
+          span.textContent = w;
+          wordList.appendChild(span);
+        });
+      }
+
+      // check free space
+      function checkSpace(row, col, len, dir) {
+        if (dir === "H") {
+          for (let i = 0; i < len; i++) {
+            if (gridData[row][col + i] && gridData[row][col + i] !== words)
+              return false;
+          }
+        } else {
+          for (let i = 0; i < len; i++) {
+            if (gridData[row + i][col] && gridData[row + i][col] !== words)
+              return false;
+          }
+        }
+        return true;
+      }
+
+      // drag select
+      grid.addEventListener("mousedown", (e) => {
+        if (e.target.classList.contains("cell")) {
+          isDragging = true;
+          selected = [e.target];
+          e.target.style.background = "#ccc";
+        }
+      });
+      grid.addEventListener("mouseover", (e) => {
+        if (
+          isDragging &&
+          e.target.classList.contains("cell") &&
+          !selected.includes(e.target)
+        ) {
+          selected.push(e.target);
+          e.target.style.background = "#ccc";
+        }
+      });
+      document.addEventListener("mouseup", () => {
+        if (isDragging) checkWord();
+      });
+
+      grid.addEventListener("touchstart", (e) => {
+        const t = e.touches[0];
+        const target = document.elementFromPoint(t.clientX, t.clientY);
+        if (target && target.classList.contains("cell")) {
+          isDragging = true;
+          selected = [target];
+          target.style.background = "#ccc";
+        }
+      });
+      grid.addEventListener("touchmove", (e) => {
+        const t = e.touches[0];
+        const target = document.elementFromPoint(t.clientX, t.clientY);
+        if (
+          isDragging &&
+          target &&
+          target.classList.contains("cell") &&
+          !selected.includes(target)
+        ) {
+          selected.push(target);
+          target.style.background = "#ccc";
+        }
+      });
+      document.addEventListener("touchend", () => {
+        if (isDragging) checkWord();
+      });
+
+      function checkWord() {
+        let word = selected.map((cell) => cell.textContent).join("");
+        let rev = word.split("").reverse().join("");
+        let foundIndex = words.findIndex((w) => w === word || w === rev);
+        if (foundIndex !== -1) {
+          selected.forEach((cell) => {
+            cell.style.background = colors[foundIndex % colors.length];
+            cell.classList.add("highlight");
+          });
+          [...wordList.children].forEach((span) => {
+            if (span.textContent === words[foundIndex])
+              span.style.textDecoration = "line-through";
+          });
+          if (
+            [...wordList.children].every(
+              (span) => span.style.textDecoration === "line-through"
+            )
+          ) {
+            startSparkles();
+          }
+        } else {
+          selected.forEach((cell) => (cell.style.background = "#fff"));
+        }
+        selected = [];
+        isDragging = false;
+      }
+
+      // sparkles
+      function startSparkles() {
+        sparkleInterval = setInterval(() => {
+          const sparkle = document.createElement("div");
+          sparkle.className = "sparkle";
+          sparkle.style.left = Math.random() * 100 + "vw";
+          sparkle.style.top = "0px";
+          sparkle.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+          document.body.appendChild(sparkle);
+          setTimeout(() => sparkle.remove(), 1000);
+        }, 100);
+      }
+      function stopSparkles() {
+        clearInterval(sparkleInterval);
+        document.querySelectorAll(".sparkle").forEach((s) => s.remove());
+      }
+
+      // shuffle helper
+      function shuffle(arr) {
+        return arr.sort(() => Math.random() - 0.5);
+      }
+
+      // start
+      newPuzzle();
+    </script>
+  </body>
+</html>

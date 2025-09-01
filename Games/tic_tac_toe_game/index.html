@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <style>
+      :root {
+        --bg-color: #192a56;
+        --x-color: #7dd1ff;
+        --o-color: #ffee34;
+        --cell-bg: #273c75;
+        --cell-hover: #40739e;
+        --font-main: "Segoe UI", sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: var(--font-main);
+      }
+
+      body {
+        background-color: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: white;
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: rem;
+        color: var(--x-color);
+        margin-bottom: rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      h1 img {
+        height: 150px;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .game {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        max-width: 400px;
+        width: 100%;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 100%;
+      }
+
+      .cell {
+        background-color: var(--cell-bg);
+        border-radius: 10px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        color: white;
+      }
+
+      .cell:hover {
+        background-color: var(--cell-hover);
+      }
+
+      .controls {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: var(--o-color);
+        color: #000000;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background-color: #9d9910;
+      }
+
+      .status {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: #dcdde1;
+      }
+
+      @media (max-width: 500px) {
+        h1 {
+          font-size: 2.5rem;
+        }
+        h1 img {
+          max-width: 90%;
+        }
+        .cell {
+          height: 80px;
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      <img src="tac1.png" alt="Tic Tac Toe Logo" />
+    </h1>
+    <div class="game">
+      <div class="status" id="status">X's Turn</div>
+      <div class="board" id="board"></div>
+      <div class="controls">
+        <button onclick="startNewGame()">New Game</button>
+      </div>
+    </div>
+
+    <script>
+      const board = document.getElementById("board");
+      const status = document.getElementById("status");
+
+      let currentPlayer = "X";
+      let cells = Array(9).fill(null);
+      let gameOver = false;
+
+      function renderBoard() {
+        board.innerHTML = "";
+        cells.forEach((value, index) => {
+          const cell = document.createElement("div");
+          cell.classList.add("cell");
+          cell.textContent = value;
+          cell.style.color =
+            value === "X"
+              ? "var(--x-color)"
+              : value === "O"
+              ? "var(--o-color)"
+              : "white";
+          cell.addEventListener("click", () => makeMove(index));
+          board.appendChild(cell);
+        });
+      }
+
+      function makeMove(index) {
+        if (cells[index] || gameOver) return;
+        cells[index] = currentPlayer;
+        renderBoard();
+        if (checkWinner()) {
+          status.textContent = `${currentPlayer} Wins!`;
+          gameOver = true;
+        } else if (!cells.includes(null)) {
+          status.textContent = "It's a Draw!";
+          gameOver = true;
+        } else {
+          currentPlayer = currentPlayer === "X" ? "O" : "X";
+          status.textContent = `${currentPlayer}'s Turn`;
+        }
+      }
+
+      function checkWinner() {
+        const winPatterns = [
+          [0, 1, 2],
+          [3, 4, 5],
+          [6, 7, 8],
+          [0, 3, 6],
+          [1, 4, 7],
+          [2, 5, 8],
+          [0, 4, 8],
+          [2, 4, 6],
+        ];
+        return winPatterns.some((pattern) => {
+          const [a, b, c] = pattern;
+          return cells[a] && cells[a] === cells[b] && cells[b] === cells[c];
+        });
+      }
+
+      function startNewGame() {
+        cells = Array(9).fill(null);
+        currentPlayer = "X";
+        gameOver = false;
+        status.textContent = "X's Turn";
+        renderBoard();
+      }
+
+      startNewGame();
+    </script>
+  </body>
+</html>
