@@ -1,17 +1,20 @@
 body {
+  background: linear-gradient(135deg, #d4c4f7, #bfa5f2);
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  background: #dac8f7;
-  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
-  max-width: 700px;
-  margin: 50px auto;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px #bfcddb;
-  padding: 25px 20px;
+  background: rgba(255, 255, 255, 0.15);  
+  backdrop-filter: blur(15px);           
+  -webkit-backdrop-filter: blur(15px); 
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  padding: 20px;
 }
 
 .header {
@@ -42,18 +45,20 @@ body {
   margin-bottom: 18px;
 }
 .level-btn {
-  background: #ede4fe;
+  background: rgba(255, 255, 255, 0.4);
   color: #7f67a3;
   border: 2px solid #a799d9;
   border-radius: 14px;
   padding: 8px 12px;
   font-size: 15px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
 }
 .level-btn.active,
 .level-btn:hover {
-  background: #7f67a3;
+  background: linear-gradient(135deg, #8e77c8, #715ca9);
   color: #fff;
+  transform: scale(1.05);
 }
 
 .content-area {
@@ -63,7 +68,7 @@ body {
 }
 
 .quote-text {
-  background: #f0eaff;
+  background: rgba(240, 234, 255, 0.8);
   border: 2px solid #cbbdf7;
   border-radius: 10px;
   padding: 20px;
@@ -71,9 +76,9 @@ body {
   min-height: 90px;
   cursor: pointer;
   font-family: monospace;
+  box-shadow: inset 0 2px 6px rgba(140, 122, 173, 0.15);
 }
 
-/* Correct & incorrect styles for green and red */
 .quote-text span.correct {
   background: #e3fbe6;
   color: #1db954;
@@ -95,12 +100,13 @@ body {
   margin-bottom: 12px;
 }
 .stat-box {
-  background: #f0ebff;
+  background: rgba(240, 235, 255, 0.85);
   border: 1px solid #d8cfff;
   border-radius: 9px;
   padding: 8px 5px;
   flex: 1;
   text-align: center;
+  box-shadow: 0 2px 6px rgba(140, 122, 173, 0.15);
 }
 .stat-label {
   font-size: 12px;
@@ -118,17 +124,89 @@ body {
   padding: 10px 20px;
   border: none;
   border-radius: 16px;
-  background: #715ca9;
+  background: linear-gradient(135deg, #715ca9, #8e77c8);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
 }
 .restart-btn:hover {
-  background: #513b7f;
+  background: linear-gradient(135deg, #513b7f, #715ca9);
+  transform: scale(1.05);
 }
 
 @media (max-width: 700px) {
   .container { padding: 12px 6px; }
   .header h1 { font-size: 18px; }
-  .quote-text { font-size: 13px; padding: 10px;}
+  .quote-text { font-size: 13px; padding: 10px; }
 }
+
+/* Timer dropdown container */
+.stat-box.timer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+}
+
+/* Dropdown styling */
+.dropdown-container select {
+  font-size: 13px;
+  padding: 6px 28px 6px 8px;
+  border: 1.5px solid #b39ddb;
+  border-radius: 6px;
+  background-color: #e6e0f8;
+  color: #4a3f75;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='purple' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 14px;
+  transition: 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown-container select:hover {
+  border-color: #9575cd;
+  background-color: #dcd2f3;
+}
+
+.dropdown-container select:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 5px rgba(126, 87, 194, 0.4);
+}
+
+.dropdown-container select option {
+  background-color: #f2ebff;
+  color: #4a3f75;
+  padding: 6px;
+}
+
+.dropdown-container select option:hover,
+.dropdown-container select option:checked {
+  background-color: #d1c4e9;
+  color: #311b92;
+}
+
+.restart-btn {
+    margin: 0 auto;
+    display: block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #715ca9, #8e77c8);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+.restart-btn:hover {
+    background: linear-gradient(135deg, #513b7f, #715ca9);
+    transform: scale(1.05);
+}
+

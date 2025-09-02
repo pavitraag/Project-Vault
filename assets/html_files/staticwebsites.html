@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>Websites - Project Vault</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="../../style.css" />
 </head>
 <body>
   <header>
@@ -36,11 +36,20 @@
   <a href="../../website/Static_Websites/hostwise-site/index.html" class="play-button" target="_blank">🌐 View Project</a>
   <a href="https://github.com/abinayagoudjandhyala/Project-Vault/tree/add-hostwise-site/website/Static_Websites/hostwise-site" class="play-button" target="_blank">💻 View Code</a>
 </div>
+    <div class="category-card">
+      <h3>SunNotScreen</h3>
+      <p>Sunscreen Photostability Tester</p>
+      <a href="../../website/Static_Websites/SunNotScreen/index.html" class="play-button">View Project</a>
+    </div>
+    <div class="category-card">
+      <h3>KeyBlaze</h3>
+      <p>Typing Speed Tester</p>
+      <a href="../../website/Static_Websites/KeyBlaze/index.html" class="play-button">View Project</a>
+    </div>
 
   </main>
   <div id="footer-placeholder"></div>
-<script>
-  fetch("/footer.html")
+<script>  fetch("../../footer.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
