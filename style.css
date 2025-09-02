@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,6 +6,31 @@
 
 body {
   font-family: 'Inter', sans-serif;
+
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #111;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #222;
+  font-size: 1rem;
+  line-height: 1.8;
+  overflow-x: hidden;
+  padding-left: 2vw; /* Prevent content from touching sidebar */
+  padding-right: 2vw;
+
   background: 
     radial-gradient(circle at 60% 40%, #7092d3 20%, #4a4ac3 70%),
     linear-gradient(135deg, #667eea 0%, #030376 100%);
@@ -13,6 +38,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
+
 }
 
 a {
@@ -23,14 +49,33 @@ a {
 
 /* ========== NAVIGATION ========== */
 
+/*nav {
+=======
+
 nav {
+
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 1rem 2rem;
+  position: relative;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 80px;
+}*/
+/* Header */
+header {
+  background: linear-gradient(to right, #3f51b5, #5a55ae); /* Deep indigo gradient 
+  color: #ffffff;*/
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+
 /* Header */
 header {
   display: flex;
@@ -53,14 +98,19 @@ header p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-}
 
+}
+/*
 header h1 {
   margin: 0;
+
+   font-size: clamp(2rem, 5vw, 4rem);
+=======
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
   margin-top: 8rem; /* from your branch */
   text-shadow: 0 4px 8px rgba(0,0,0,0.3); /* from your branch */
+
   background: rgba(63, 81, 181, 0.4);
   padding: 1rem 2rem;
   display: flex;
@@ -72,15 +122,19 @@ header h1 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
+*/
+header h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
 
 }
 
 .nav-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 .nav-logo {
   font-size: 2.1rem;    /* from main */
@@ -88,13 +142,27 @@ header h1 {
   color: #0d1a4a;       /* keep your dark blue */
 }
 
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+.nav-logo {
+  font-size: 1.0rem;
+  font-weight: 800;
+  color: #fff;
 
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding-left: 30px;
+  margin-right: 20px;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+
 .navbar {
   gap: 1.5rem;      /* from main */
   margin-left: 4rem; /* from ui-fixes-navbar */
@@ -107,13 +175,16 @@ header h1 {
   padding: 0.5rem 0.8rem; /* from main */
 }
 
+
   border-radius: 25px;
   border:1px solid #000;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+
   white-space: nowrap;
+
 
 }
 
@@ -131,7 +202,16 @@ header h1 {
 .nav-link:hover::before {
   left: 100%;
 }
+main {
+  margin-left: 10rem; /* or try padding-left if preferred */
+  transition: margin 0.3s ease-in-out;
+}
 
+@media (min-width: 768px) {
+  main {
+    padding-left: 4rem;
+  }
+}
 .nav-link:hover {
   background: #222;      /* dark grey/black background */
   color: #fff !important; /* white text */
@@ -150,14 +230,14 @@ header h1 {
 }
 
 .dropdown-content {
-  display:inline;
+  display: none;
   position: absolute;
   top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   background: linear-gradient(to right, #3f51b5, #5a55ae);
   transform: translateX(-50%) translateY(-10px);
-  background: rgb(97, 52, 156);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(15px);
   min-width: 220px;
   border-radius: 15px;
@@ -168,7 +248,6 @@ header h1 {
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 1001;
-  flex-direction: column;
 }
 
 .dropdown-content::before {
@@ -207,7 +286,7 @@ header h1 {
 /* Only show dropdown when hovering specifically over the dropdown container */
 
 .dropdown:hover .dropdown-content {
-  display: flex;
+  display: block;
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
@@ -221,6 +300,7 @@ header h1 {
   padding: 0.5rem;
   z-index: 1002;
 }
+
 .mobile-menu-toggle span {
   width: 25px;
   height: 3px;
@@ -262,6 +342,10 @@ nav {
   left: 0;
   width: 100%;
   z-index: 1000;
+
+
+  background: rgba(63, 81, 181, 0.4);
+
 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
   padding: 1rem;
@@ -269,6 +353,7 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -350,10 +435,6 @@ nav a:hover,
 /* ========== HEADER ========== */
 
 header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: #ffffff;
   padding: 4rem 2rem;
@@ -362,13 +443,6 @@ header {
   position: relative;
   overflow: hidden;
 }*/
-
-header h1,
-header p {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 header h1 {
   font-size: clamp(2rem, 5vw, 4rem);
@@ -400,25 +474,21 @@ header h1 {
   left: 0;
 }
 
-/* add project form */
-.add-project-section {
-  margin: 4rem 0;
-}
-
-.add-project-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 4rem 2rem;
-  border-radius: 25px;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
-}
-
-.add-project-card::before {
-  position: absolute;
-  top: 0;
+/* Sidebar Container */
+.sidebar-container {
+  position: fixed;
+  top: 80px; /* adjust based on your navbar */
   left: 0;
+
+  width: 20vw; /* 20% of the viewport width */
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: translateX(-90%);
+  transition: transform 0.3s ease-in-out;
+  padding: 1rem;
+  z-index: 999;
+  overflow-y: auto;
+
   right: 0;
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="thank-pattern" width="80" height="80" patternUnits="userSpaceOnUse"><circle cx="40" cy="40" r="3" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23thank-pattern)"/></svg>');
@@ -634,24 +704,31 @@ transition: all 0.3s ease;
   color: #fff;
   font-size: 1.5rem;
   transition: color 0.3s, transform 0.3s;
+
 }
 
-.footer-section .social a:hover {
-  color: #ff4081;
-  transform: scale(1.15);
+/* Slide in on hover */
+.sidebar-container:hover {
+  transform: translateX(0);
 }
 
-.copyright {
-  text-align: center;
-  color: #e0e0e0;
-  font-size: 1rem;
-  margin-top: 2rem;
-  letter-spacing: 0.5px;
+/* Optional: Invisible hover zone at left edge */
+.sidebar-hover-zone {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 20px;
+  height: 100vh;
+  z-index: 998;
 }
 
-/* CATEGORY CARDS SECTION */
+/* Category Layout */
 .category-container {
   display: flex;
+
+  flex-direction: column;
+  gap: 1.2rem;
+=======
   justify-content: center;
   align-items: stretch; /* Make cards equal height */
   gap: 2rem;
@@ -715,52 +792,46 @@ transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.7rem;
+
 }
 
-.category-card p {
-  color: #444;
-  font-size: 1.05rem;
-  margin-bottom: 0;
-  font-weight: 500;
+/* Category Card Styling */
+.category-card {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+  border-radius: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
 }
 
 .category-card:hover {
+
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
   transform: translateY(18px) scale(25);
   box-shadow: 0 18px 32px rgba(99, 124, 232, 0.13), 0 15px 6px rgba(86, 21, 100, 0.07);
   z-index: 2;
+
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+
+/* Shift main content and footer to the right to avoid being covered */
+main,
+footer,
+header {
+  margin-left: 2%; /* Matches sidebar width */
+  transition: margin-left 0.3s ease;
 }
 
-/* Responsive for cards */
-@media (max-width: 900px) {
-  .category-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .category-card {
-    max-width: 95vw;
-    min-width: 0;
-    width: 100%;
-    height: auto;
-  }
-}
-
-/* Responsive Footer */
-@media (max-width: 900px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: stretch;
-  }
-  .footer-section {
-    min-width: 0;
+/* Optional: if you want more spacing */
+@media (max-width: 768px) {
+  main,
+  footer,
+  header {
+    margin-left: 0; /* No shift on smaller screens */
   }
 }
 
@@ -845,3 +916,4 @@ button {
 @keyframes fadeOut {
   to { opacity: 0; transform: translateX(100%); }
 }
+
