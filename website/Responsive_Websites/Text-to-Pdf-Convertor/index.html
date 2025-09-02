@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Text to PDF Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">PDFify</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Features</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- Decorative Shape -->
+  <div class="blob-shape"></div>
+
+  <!-- Main Content -->
+  <main class="container">
+    <h1 class="main-heading">Convert Text to PDF Instantly</h1>
+    <p class="intro-text">Type or paste your text into the box below and click the button to download it as a PDF file. Clean, quick, and free!</p>
+
+    <!-- InputComponent -->
+    <textarea id="text-input" placeholder="Type your text here..."></textarea>
+    <button onclick="generatePDF()" id="download-btn">Download PDF</button>
+
+    <!-- Optional Audio -->
+    <audio id="click-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_1b6c5e11c5.mp3" preload="auto"></audio>
+  </main>
+
+  <!-- jsPDF from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
