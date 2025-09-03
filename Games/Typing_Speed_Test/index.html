@@ -17,7 +17,7 @@
             <div class="content-area">
                 <div class="quote-text" tabindex="0" id="quote"></div>
                 <input type="text" class="hidden-input" id="input">
-                
+
                 <div class="stats-panel">
                     <div class="stat-box">
                         <div class="stat-label">WPM</div>
@@ -35,13 +35,24 @@
                         <div class="stat-label">Time</div>
                         <div class="stat-value" id="time">60</div>
                     </div>
+
+                    <div class="stat-box timer-box">
+                        <div class="dropdown-container">
+                            <select id="timeSelect">
+                                <option value="" disabled selected>Set Time</option>
+                                <option value="30">30s</option>
+                                <option value="60">1 min</option>
+                                <option value="120">2 min</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                
+                <!-- Moved button below stats panel: -->
                 <button class="btn restart-btn" id="restart">Try Again</button>
             </div>
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
+

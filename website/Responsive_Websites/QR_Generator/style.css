@@ -1,0 +1,182 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e7ff);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  background-color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #4CAF50;
+}
+
+/* Background Shapes */
+.bg-shape {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #a0d8ef, #ffffff);
+  top: -150px;
+  left: -150px;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.25;
+}
+
+/* Main Content */
+.main-content {
+  z-index: 1;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading & Intro */
+.intro-section {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.main-heading {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Container */
+.container-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Card */
+.generator-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Title */
+.title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* InputComponent */
+.input-component input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: border 0.3s ease;
+}
+
+.input-component input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.input-component button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-component button:hover {
+  background-color: #45a049;
+}
+
+/* Output */
+.qr-output-component {
+  margin-top: 20px;
+}
+
+.qr-output-component img {
+  width: 200px;
+  height: 200px;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 24px;
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+
+  .qr-output-component img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
+
+
